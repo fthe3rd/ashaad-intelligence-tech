@@ -15,9 +15,17 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.1.8",
+    "@lucide/astro": "^1.8.0",
+    "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.5"
   },
   "devDependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/postcss": "^4.2.2",
+    "autoprefixer": "^10.4.27",
+    "lucide-astro": "^0.556.0",
+    "postcss": "^8.5.9",
+    "tailwindcss": "^4.2.2",
     "wrangler": "^4.81.0"
   },
   "overrides": {

@@ -1,17 +1,1444 @@
 ---
+import Layout from '../layouts/Layout.astro';
 
+const services = [
+  {
+    id: 'digital-security',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/></svg>`,
+    label: 'Digital Security',
+    desc: 'Advanced CCTV surveillance and intelligent security systems protecting homes, businesses and communities.',
+    href: '/services#digital-security',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80',
+    imageAlt: 'Security camera surveillance',
+  },
+  {
+    id: 'networking',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M5 8v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M12 12v4"/></svg>`,
+    label: 'Networking',
+    desc: 'Enterprise-grade networking infrastructure — from structured cabling to wireless and fibre solutions.',
+    href: '/services#networking',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80',
+    imageAlt: 'Network server room cables',
+  },
+  {
+    id: 'it-protocols',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+    label: 'IT Protocols',
+    desc: 'Comprehensive IT management, server configuration, software deployment, and system integration.',
+    href: '/services#it-protocols',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80',
+    imageAlt: 'IT systems and server management',
+  },
+  {
+    id: 'solar',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`,
+    label: 'Solar Systems',
+    desc: 'Clean, reliable solar energy and power bank solutions to keep your operations running 24/7.',
+    href: '/services#solar',
+    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80',
+    imageAlt: 'Solar panels installation',
+  },
+];
+
+const stats = [
+  { value: '2018', label: 'Founded' },
+  { value: '3+', label: 'Countries' },
+  { value: '4', label: 'Core Services' },
+  { value: '100%', label: 'Committed' },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Hello Ashaad Intelligence Tech</h1>
-	</body>
-</html>
+<Layout title="Home" description="Ashaad Intelligent Technologies — Leading provider of solar systems, IT protocols, networking and CCTV security in Zimbabwe and beyond.">
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img
+        src="/images/hero-image.png"
+        alt="Ashaad Intelligent Technologies"
+        class="hero-bg-img"
+        onerror="this.onerror=null; this.style.display='none';"
+      />
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <!-- Decorative grid lines -->
+    <div class="hero-grid" aria-hidden="true">
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+    </div>
+
+    <div class="hero-inner container">
+      <div class="hero-content">
+        <p class="section-label reveal">Est. 2018 &mdash; Zimbabwe</p>
+        <h1 class="display-heading hero-title reveal reveal-delay-2">
+          Bringing the<br />
+          <em>Digital World</em><br />
+          to Everyone.
+        </h1>
+        <p class="hero-subtitle body-text reveal reveal-delay-3">
+          Leading provider of solar systems, IT protocols, networking<br class="br-desktop" />
+          and CCTV products across Zimbabwe, Mozambique &amp; South Africa.
+        </p>
+        <div class="hero-actions reveal reveal-delay-4">
+          <a href="/services" class="btn-primary">
+            Our Services
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/about" class="btn-outline">Learn About Us</a>
+        </div>
+      </div>
+
+      <!-- Hero image card (right) -->
+      <div class="hero-card reveal reveal-delay-3">
+        <div class="hero-card-inner">
+          <img
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80"
+            alt="Security camera technology"
+            class="hero-card-img"
+            onerror="this.style.background='var(--bg-card)'; this.src='';"
+          />
+          <div class="hero-card-badge">
+            <span class="badge-dot"></span>
+            Smart &amp; Secure
+          </div>
+        </div>
+        <div class="hero-card-stat">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">Years Serving<br />Southern Africa</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        {stats.map((s) => (
+          <div class="stat-item">
+            <div class="stat-value">{s.value}</div>
+            <div class="stat-desc">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services-section">
+    <div class="container">
+      <div class="services-header">
+        <p class="section-label">What We Do</p>
+        <h2 class="display-heading section-title">
+          Four Pillars of<br />Smart Technology
+        </h2>
+        <a href="/services" class="btn-outline services-cta-link">
+          All Services
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="services-grid">
+        {services.map((service) => (
+          <a href={service.href} class="service-card">
+            <div class="service-card-img-wrap">
+              <img
+                src={service.image}
+                alt={service.imageAlt}
+                class="service-card-img"
+                onerror="this.style.background='var(--navy)';"
+              />
+              <div class="service-card-img-overlay"></div>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon" set:html={service.icon} />
+              <h3 class="service-name">{service.label}</h3>
+              <p class="service-desc">{service.desc}</p>
+              <div class="service-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT TEASER ===== -->
+  <section class="about-section">
+    <div class="about-media">
+      <img
+        src="https://images.unsplash.com/photo-1497366754035-f200581374b8?auto=format&fit=crop&w=900&q=80"
+        alt="Modern technology office"
+        class="about-img"
+        onerror="this.style.background='var(--bg-card)';"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80"
+        alt="Solar energy panels"
+        class="about-img-2"
+        onerror="this.style.background='var(--navy)';"
+      />
+      <div class="about-year-badge">
+        <span class="year-num">2018</span>
+        <span class="year-label">Founded</span>
+      </div>
+    </div>
+    <div class="about-content">
+      <p class="section-label">Who We Are</p>
+      <h2 class="display-heading about-title">
+        A Smart World,<br />
+        <em>For Everyone.</em>
+      </h2>
+      <p class="body-text about-text">
+        Ashaad Intelligent Technologies PLT is committed to bringing the digital world
+        to every family and organization across Southern Africa. We build the infrastructure
+        that connects communities, secures futures, and powers progress.
+      </p>
+      <p class="body-text about-text">
+        Rooted in Zimbabwe and active across Mozambique and South Africa, we uphold the
+        enterprise spirit of <strong>Professionalization &middot; Dedication &middot; Concentration</strong> in
+        everything we deliver.
+      </p>
+      <div class="about-values">
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <span>Serve Mankind</span>
+        </div>
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <span>Best Quality</span>
+        </div>
+        <div class="value-item">
+          <div class="value-dot"></div>
+          <span>Guaranteed Security</span>
+        </div>
+      </div>
+      <a href="/about" class="btn-primary">
+        Our Story
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== REGIONS INLINE ===== -->
+  <div class="regions-inline container">
+    <span class="regions-inline-label">Operating across</span>
+    <span class="regions-inline-flag">🇿🇼 Zimbabwe</span>
+    <span class="regions-inline-sep">/</span>
+    <span class="regions-inline-flag">🇲🇿 Mozambique</span>
+    <span class="regions-inline-sep">/</span>
+    <span class="regions-inline-flag">🇿🇦 South Africa</span>
+    <span class="regions-inline-note">— Since 2018</span>
+  </div>
+
+  <!-- ===== SOLAR FEATURE ===== -->
+  <section class="solar-section">
+    <div class="solar-content">
+      <p class="section-label">Clean Energy</p>
+      <h2 class="display-heading solar-title">
+        Power That<br /><em>Never Stops.</em>
+      </h2>
+      <p class="body-text solar-text">
+        Our solar systems and power bank solutions provide clean, uninterrupted energy
+        for homes, offices, and enterprises. Because smart technology only works when
+        the lights stay on.
+      </p>
+      <a href="/services#solar" class="btn-primary">
+        Solar Solutions
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="solar-media">
+      <img
+        src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80"
+        alt="Solar panels installation"
+        class="solar-img"
+        onerror="this.style.background='var(--bg-card)';"
+      />
+      <div class="solar-stat-card">
+        <div class="solar-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
+        </div>
+        <div class="solar-stat-text">Clean &amp; Reliable Energy</div>
+        <div class="solar-stat-sub">24/7 Power Solutions</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SURVEILLANCE CAMERAS ===== -->
+  <section class="cameras-section">
+    <div class="container">
+      <div class="cameras-header">
+        <div class="cameras-header-left">
+          <p class="section-label">Surveillance Systems</p>
+          <h2 class="display-heading cameras-title">
+            Every Angle.<br />Every Threat.<br /><em>Covered.</em>
+          </h2>
+        </div>
+        <div class="cameras-header-right">
+          <p class="body-text cameras-intro">
+            From compact dome cameras to high-powered long-range bullet lenses,
+            our surveillance portfolio covers residential homes, commercial premises, and industrial sites.
+            We supply, install, and maintain the full range.
+          </p>
+          <a href="/services#digital-security" class="btn-outline">
+            All Security Solutions
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Feature image + stat bar -->
+      <div class="cameras-feature">
+        <img
+          src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1400&q=80"
+          alt="Professional surveillance camera installation"
+          class="cameras-feature-img"
+          onerror="this.style.background='var(--bg-card)';"
+        />
+        <div class="cameras-feature-overlay"></div>
+        <div class="cameras-feature-pills">
+          <span class="cam-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            HD &amp; 4K Resolution
+          </span>
+          <span class="cam-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            Night Vision IR
+          </span>
+          <span class="cam-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            Remote Monitoring
+          </span>
+          <span class="cam-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            Motion Detection AI
+          </span>
+        </div>
+      </div>
+
+      <!-- Camera product cards -->
+      <div class="cameras-grid">
+        <div class="camera-card">
+          <div class="camera-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80"
+              alt="Dome CCTV camera"
+              class="camera-img"
+              onerror="this.style.background='var(--bg-card)';"
+            />
+            <span class="camera-badge">Best Seller</span>
+          </div>
+          <div class="camera-info">
+            <div class="camera-type">01 / Dome Camera</div>
+            <h3 class="camera-name">Indoor & Outdoor Dome</h3>
+            <p class="camera-desc">360° coverage in a vandal-resistant dome housing. Ideal for retail, offices and entrances.</p>
+            <ul class="camera-specs">
+              <li>Up to 4K resolution</li>
+              <li>IR night vision 30m</li>
+              <li>IP66 weatherproof</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="camera-card">
+          <div class="camera-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1548504769-900b70ed122e?auto=format&fit=crop&w=700&q=80"
+              alt="Bullet CCTV security camera"
+              class="camera-img"
+              onerror="this.style.background='var(--bg-card)';"
+            />
+          </div>
+          <div class="camera-info">
+            <div class="camera-type">02 / Bullet Camera</div>
+            <h3 class="camera-name">Long-Range Bullet</h3>
+            <p class="camera-desc">Powerful directional lens for car parks, perimeters, and long corridors. High deterrent value.</p>
+            <ul class="camera-specs">
+              <li>Up to 80m IR range</li>
+              <li>Varifocal lens 2.8–12mm</li>
+              <li>H.265+ compression</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="camera-card">
+          <div class="camera-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1560732488-6b0df240254a?auto=format&fit=crop&w=700&q=80"
+              alt="PTZ surveillance camera"
+              class="camera-img"
+              onerror="this.style.background='var(--bg-card)';"
+            />
+            <span class="camera-badge camera-badge--new">Advanced</span>
+          </div>
+          <div class="camera-info">
+            <div class="camera-type">03 / PTZ Camera</div>
+            <h3 class="camera-name">Pan-Tilt-Zoom</h3>
+            <p class="camera-desc">Full motorised control for large open areas. Follow movement automatically with AI tracking.</p>
+            <ul class="camera-specs">
+              <li>360° continuous pan</li>
+              <li>Auto-tracking AI</li>
+              <li>30× optical zoom</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="camera-card">
+          <div class="camera-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=700&q=80"
+              alt="Network IP security camera"
+              class="camera-img"
+              onerror="this.style.background='var(--bg-card)';"
+            />
+          </div>
+          <div class="camera-info">
+            <div class="camera-type">04 / IP Network Camera</div>
+            <h3 class="camera-name">Smart IP System</h3>
+            <p class="camera-desc">Internet-connected with cloud storage and app access. Monitor your property from anywhere.</p>
+            <ul class="camera-specs">
+              <li>Cloud & local storage</li>
+              <li>Mobile app control</li>
+              <li>Two-way audio</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="cameras-cta-row">
+        <p class="body-text cameras-cta-note">
+          Not sure which system suits your property?
+        </p>
+        <a href="/contact" class="btn-primary">
+          Get a Free Assessment
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="cta-bg">
+      <img
+        src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80"
+        alt="Network infrastructure"
+        class="cta-bg-img"
+        onerror="this.style.background='var(--navy)';"
+      />
+      <div class="cta-overlay"></div>
+    </div>
+    <div class="container cta-inner">
+      <p class="section-label" style="color: rgba(0, 212, 180,0.9)">Partner With Us</p>
+      <h2 class="display-heading cta-title">
+        Become Part of<br />Something Bigger.
+      </h2>
+      <p class="body-text cta-text">
+        Join Ashaad Intelligent Technologies as a partner. Together, we'll deliver the best
+        service, the best quality — and help build a world-class African brand.
+      </p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn-primary">
+          Get in Touch
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/services" class="btn-outline">Explore Services</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: var(--navy) url('/images/hero-image.png') center/cover no-repeat;
+  }
+
+  .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.55) saturate(0.9);
+  }
+
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(105deg, rgba(8, 8, 15,0.82) 35%, rgba(8, 8, 15,0.25) 100%),
+      linear-gradient(to bottom, transparent 55%, var(--bg) 100%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .grid-line {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 212, 180,0.08), transparent);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 4rem;
+    align-items: center;
+    padding-top: 140px;
+    padding-bottom: 120px;
+    flex: 1;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    max-width: 480px;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  /* Hero card */
+  .hero-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-card-inner {
+    position: relative;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    aspect-ratio: 3/4;
+  }
+
+  .hero-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .hero-card-inner:hover .hero-card-img {
+    transform: scale(1.04);
+  }
+
+  .hero-card-badge {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(8, 8, 15, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-light);
+    padding: 0.5rem 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  .hero-card-stat {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+  }
+
+  .stat-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ===== STATS ===== */
+  .stats-section {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .stat-item {
+    padding: 2rem;
+    text-align: center;
+    border-right: 1px solid var(--border);
+    transition: background 0.25s;
+  }
+
+  .stat-item:last-child {
+    border-right: none;
+  }
+
+  .stat-item:hover {
+    background: rgba(0, 212, 180, 0.05);
+  }
+
+  .stat-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.75rem;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-desc {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ===== SERVICES ===== */
+  .services-section {
+    padding: 7rem 0;
+    background: var(--bg);
+  }
+
+  .services-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    margin-top: 1rem;
+  }
+
+  .services-cta-link {
+    flex-shrink: 0;
+    align-self: flex-end;
+    margin-bottom: 0.25rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    text-decoration: none;
+    transition: background 0.25s, transform 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card-img-wrap {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+  }
+
+  .service-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65) saturate(0.75);
+    transition: filter 0.4s ease, transform 0.5s ease;
+  }
+
+  .service-card:hover .service-card-img {
+    filter: brightness(0.85) saturate(1);
+    transform: scale(1.06);
+  }
+
+  .service-card-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8, 8, 15,0.9) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .service-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.75rem 2rem 2rem;
+    flex: 1;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .service-card:hover {
+    background: #0f1c2b;
+    transform: translateY(-4px);
+  }
+
+  .service-icon {
+    color: var(--accent);
+    padding: 0.75rem;
+    background: rgba(0, 212, 180, 0.08);
+    width: fit-content;
+    border: 1px solid rgba(0, 212, 180, 0.15);
+    transition: background 0.25s;
+  }
+
+  .service-card:hover .service-icon {
+    background: rgba(0, 212, 180, 0.15);
+  }
+
+  .service-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .service-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .service-arrow {
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.25s, transform 0.25s;
+  }
+
+  .service-card:hover .service-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ===== ABOUT SECTION ===== */
+  .about-section {
+    padding: 7rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--bg-section);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    align-items: center;
+  }
+
+  .about-media {
+    position: relative;
+    padding-right: 4rem;
+  }
+
+  .about-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border: 1px solid var(--border-light);
+  }
+
+  .about-img-2 {
+    position: absolute;
+    bottom: -3rem;
+    right: 0;
+    width: 55%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border: 4px solid var(--bg-section);
+  }
+
+  .about-year-badge {
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+    background: var(--accent);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .year-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--bg);
+    line-height: 1;
+  }
+
+  .year-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(8, 8, 15, 0.7);
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 4rem;
+  }
+
+  .about-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin-top: 1rem;
+  }
+
+  .about-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .about-text {
+    font-size: 0.9375rem;
+  }
+
+  .about-text strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .about-values {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background: var(--bg-card);
+    border-left: 3px solid var(--accent);
+    margin: 0.5rem 0;
+  }
+
+  .value-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .value-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* ===== REGIONS INLINE ===== */
+  .regions-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    padding: 1.25rem 2rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin: 0 auto;
+  }
+
+  .regions-inline-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-subtle);
+  }
+
+  .regions-inline-flag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .regions-inline-sep {
+    color: var(--text-subtle);
+    font-size: 0.8rem;
+  }
+
+  .regions-inline-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-left: auto;
+  }
+
+  /* ===== CAMERAS ===== */
+  .cameras-section {
+    padding: 8rem 0;
+    background: var(--bg-section);
+    border-top: 1px solid var(--border);
+  }
+
+  .cameras-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 4rem;
+  }
+
+  .cameras-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-top: 1rem;
+  }
+
+  .cameras-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .cameras-header-right {
+    padding-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .cameras-intro {
+    font-size: 0.975rem;
+    line-height: 1.85;
+  }
+
+  /* Feature panoramic image */
+  .cameras-feature {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 21/7;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    border: 1px solid var(--border-light);
+  }
+
+  .cameras-feature-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.55) saturate(0.85);
+    transition: filter 0.5s ease;
+  }
+
+  .cameras-feature:hover .cameras-feature-img {
+    filter: brightness(0.7) saturate(1);
+  }
+
+  .cameras-feature-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8,8,15,0.6) 0%, transparent 50%, rgba(8,8,15,0.3) 100%);
+    pointer-events: none;
+  }
+
+  .cameras-feature-pills {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.75rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .cam-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(8,8,15,0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-light);
+    padding: 0.4rem 0.9rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .cam-pill svg {
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* Camera product cards */
+  .cameras-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .camera-card {
+    background: var(--bg-card);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: background 0.25s;
+  }
+
+  .camera-card:hover {
+    background: #101018;
+  }
+
+  .camera-img-wrap {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+  }
+
+  .camera-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.72) saturate(0.8);
+    transition: filter 0.4s ease, transform 0.5s ease;
+  }
+
+  .camera-card:hover .camera-img {
+    filter: brightness(0.9) saturate(1);
+    transform: scale(1.05);
+  }
+
+  .camera-badge {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--cta);
+    padding: 0.25rem 0.65rem;
+  }
+
+  .camera-badge--new {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  .camera-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    flex: 1;
+  }
+
+  .camera-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .camera-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .camera-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .camera-specs {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 0.25rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .camera-specs li {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .camera-specs li::before {
+    content: '›';
+    color: var(--accent);
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  .cameras-cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .cameras-cta-note {
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 1100px) {
+    .cameras-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .cameras-header {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .cameras-feature {
+      aspect-ratio: 16/9;
+    }
+
+    .cameras-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cameras-cta-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  /* ===== SOLAR ===== */
+  .solar-section {
+    padding: 7rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .solar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .solar-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin-top: 1rem;
+  }
+
+  .solar-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .solar-text {
+    font-size: 0.9375rem;
+    max-width: 440px;
+  }
+
+  .solar-media {
+    position: relative;
+  }
+
+  .solar-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border: 1px solid var(--border-light);
+  }
+
+  .solar-stat-card {
+    position: absolute;
+    bottom: -2rem;
+    left: -2rem;
+    background: var(--bg-deep);
+    border: 1px solid var(--border-light);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 180px;
+  }
+
+  .solar-icon {
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+  }
+
+  .solar-stat-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-transform: uppercase;
+  }
+
+  .solar-stat-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    position: relative;
+    padding: 9rem 0;
+    overflow: hidden;
+    margin-top: 4rem;
+  }
+
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .cta-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.25) saturate(0.5);
+  }
+
+  .cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(8, 8, 15,0.97) 40%,
+      rgba(8, 8, 15,0.7) 100%
+    );
+  }
+
+  .cta-inner {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    max-width: 680px;
+  }
+
+  .cta-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.05;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+    max-width: 520px;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  /* Breakpoint utilities */
+  .br-desktop {
+    display: block;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1100px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      padding-top: 120px;
+      gap: 3rem;
+    }
+
+    .hero-card {
+      display: none;
+    }
+
+    .about-section {
+      grid-template-columns: 1fr;
+      gap: 5rem;
+    }
+
+    .about-media {
+      padding-right: 0;
+    }
+
+    .about-content {
+      padding-left: 0;
+    }
+
+    .solar-section {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-item:nth-child(2) {
+      border-right: none;
+    }
+
+    .stat-item:nth-child(1),
+    .stat-item:nth-child(2) {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .services-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .br-desktop {
+      display: none;
+    }
+
+    .solar-stat-card {
+      position: static;
+      margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  }
+</style>

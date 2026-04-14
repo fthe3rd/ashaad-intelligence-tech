@@ -1,0 +1,916 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const values = [
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>`,
+    title: 'Professionalization',
+    desc: 'Every project is executed with the highest standards of technical excellence, training, and industry best practice.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    title: 'Dedication',
+    desc: 'We are unwavering in our commitment to customers — before, during and long after every installation and deployment.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>`,
+    title: 'Concentration',
+    desc: 'Focused expertise in our four core domains means deeper knowledge, faster solutions, and better outcomes.',
+  },
+];
+
+const regions = [
+  {
+    country: 'Zimbabwe',
+    flag: '🇿🇼',
+    desc: 'Our headquarters and primary market. We serve individuals, businesses, and government institutions across the nation.',
+    highlight: 'Primary HQ',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Modern buildings in Zimbabwe',
+    city: 'Harare',
+  },
+  {
+    country: 'Mozambique',
+    flag: '🇲🇿',
+    desc: 'Expanding our reach across the border, delivering reliable technology solutions to our neighbours.',
+    highlight: 'Active Region',
+    image: 'https://images.unsplash.com/photo-1589139981099-b3a4a78e8cf3?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Mozambique landscape and coastline',
+    city: 'Maputo',
+  },
+  {
+    country: 'South Africa',
+    flag: '🇿🇦',
+    desc: 'Serving the broader Southern African market with premium technology products and services.',
+    highlight: 'Active Region',
+    image: 'https://images.unsplash.com/photo-1577948000111-9c970dfe3743?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Johannesburg skyline South Africa',
+    city: 'Johannesburg',
+  },
+];
+---
+
+<Layout title="About Us" description="Learn about Ashaad Intelligent Technologies — founded in 2018, committed to bringing smart technology to Zimbabwe, Mozambique and South Africa.">
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1497366754035-f200581374b8?auto=format&fit=crop&w=1600&q=80"
+        alt="Modern technology workspace"
+        class="page-hero-img"
+        onerror="this.style.background='var(--navy)';"
+      />
+      <div class="page-hero-overlay"></div>
+    </div>
+    <div class="container page-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>About</span>
+      </div>
+      <p class="section-label reveal">Our Story</p>
+      <h1 class="display-heading page-title reveal reveal-delay-2">
+        Built on Purpose,<br />
+        <em>Driven by Mission.</em>
+      </h1>
+      <p class="page-subtitle body-text reveal reveal-delay-3">
+        Since 2018, Ashaad Intelligent Technologies has been on a mission to bring<br class="br-desktop" />
+        the digital world to every family and organization across Southern Africa.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== STORY ===== -->
+  <section class="story-section" id="story">
+    <div class="container story-inner">
+      <div class="story-content">
+        <p class="section-label">How We Began</p>
+        <h2 class="display-heading story-title">
+          From Zimbabwe<br />to the Region.
+        </h2>
+        <p class="body-text">
+          Ashaad Intelligent Technologies PLT was founded in 2018 with a clear and simple belief:
+          that cutting-edge technology should not be a privilege of the few. From our home in Zimbabwe,
+          we set out to deliver world-class digital security, networking, IT systems, and clean energy
+          solutions to individuals, businesses and communities across Southern Africa.
+        </p>
+        <p class="body-text" style="margin-top: 1rem;">
+          Today, we are recognised as a leading service provider in the region — operating across
+          Zimbabwe, Mozambique, and South Africa — with a growing portfolio of solutions that
+          connect, protect, and power our clients every day.
+        </p>
+        <div class="story-mission">
+          <div class="mission-line"></div>
+          <blockquote class="mission-quote">
+            "Bringing the Digital World to Everyone, Every Family, and Every Organization —
+            Building a Smart World Where Everything is Connected and Security is Guaranteed."
+          </blockquote>
+        </div>
+      </div>
+      <div class="story-media">
+        <div class="story-img-stack">
+          <img
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=700&q=80"
+            alt="Modern buildings and technology infrastructure"
+            class="story-img-main"
+            onerror="this.style.background='var(--bg-card)';"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=500&q=80"
+            alt="Network infrastructure server room"
+            class="story-img-inset"
+            onerror="this.style.background='var(--navy)';"
+          />
+        </div>
+        <div class="story-badge">
+          <div class="badge-inner">
+            <span class="badge-year">2018</span>
+            <span class="badge-text">Est. Zimbabwe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VISION FULL BLEED ===== -->
+  <section class="vision-section" id="mission">
+    <div class="vision-bg">
+      <img
+        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80"
+        alt="Connected digital world"
+        class="vision-img"
+        onerror="this.style.background='var(--navy)';"
+      />
+      <div class="vision-overlay"></div>
+    </div>
+    <div class="container vision-inner">
+      <div class="vision-content">
+        <p class="section-label" style="color: rgba(0, 212, 180,0.9)">Our Vision</p>
+        <h2 class="display-heading vision-title">
+          A Connected,<br />Secure World<br />for All.
+        </h2>
+      </div>
+      <div class="vision-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Nationwide Reach</h3>
+          <p>Serving clients across Zimbabwe and into neighbouring countries with reliable, consistent service delivery.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Security Guaranteed</h3>
+          <p>Every system we deploy is built around the principle that security is a right, not a luxury.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
+          </div>
+          <h3>Clean Power</h3>
+          <p>Solar and power solutions ensure that technology keeps running regardless of grid constraints.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>For Everyone</h3>
+          <p>From family homes to large enterprises — our products and pricing serve all levels of the market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CORE VALUES ===== -->
+  <section class="values-section">
+    <div class="container">
+      <div class="values-header">
+        <p class="section-label">Enterprise Spirit</p>
+        <h2 class="display-heading section-title">
+          How We Work,<br />Every Day.
+        </h2>
+      </div>
+      <div class="values-grid">
+        {values.map((v, i) => (
+          <div class="value-card">
+            <div class="value-number">0{i + 1}</div>
+            <div class="value-icon" set:html={v.icon} />
+            <h3 class="value-title">{v.title}</h3>
+            <p class="value-desc">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REGIONS ===== -->
+  <section class="about-regions" id="regions">
+    <div class="container">
+      <div class="regions-header">
+        <p class="section-label">Where We Operate</p>
+        <h2 class="display-heading section-title">
+          Our Southern<br />African Footprint.
+        </h2>
+      </div>
+      <div class="regions-grid">
+        {regions.map((r) => (
+          <div class="region-card">
+            <div class="region-media">
+              <img
+                src={r.image}
+                alt={r.imageAlt}
+                class="region-img"
+                onerror="this.style.background='var(--navy)';"
+              />
+              <div class="region-img-overlay"></div>
+              <div class="region-flag">{r.flag}</div>
+              <span class="region-badge">{r.highlight}</span>
+            </div>
+            <div class="region-body">
+              <div class="region-meta">
+                <p class="region-city">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  {r.city}
+                </p>
+                <h3 class="region-name">{r.country}</h3>
+              </div>
+              <p class="region-desc">{r.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECH IMAGES GALLERY ===== -->
+  <section class="gallery-section">
+    <div class="gallery-grid">
+      <div class="gallery-item large">
+        <img
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
+          alt="Security camera technology"
+          onerror="this.style.background='var(--bg-card)';"
+        />
+        <div class="gallery-label">Digital Security</div>
+      </div>
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80"
+          alt="Solar panels"
+          onerror="this.style.background='var(--bg-card)';"
+        />
+        <div class="gallery-label">Solar Power</div>
+      </div>
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80"
+          alt="Server room networking"
+          onerror="this.style.background='var(--bg-card)';"
+        />
+        <div class="gallery-label">Networking</div>
+      </div>
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+          alt="IT infrastructure systems"
+          onerror="this.style.background='var(--bg-card)';"
+        />
+        <div class="gallery-label">IT Protocols</div>
+      </div>
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
+          alt="Modern city infrastructure"
+          onerror="this.style.background='var(--bg-card)';"
+        />
+        <div class="gallery-label">Southern Africa</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="about-cta">
+    <div class="container about-cta-inner">
+      <div class="about-cta-text">
+        <p class="section-label">Join the Journey</p>
+        <h2 class="display-heading about-cta-title">
+          Ready to Build<br />the Future Together?
+        </h2>
+      </div>
+      <div class="about-cta-actions">
+        <a href="/contact" class="btn-primary">
+          Contact Us
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/services" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* PAGE HERO */
+  .page-hero {
+    position: relative;
+    padding: 160px 0 100px;
+    overflow: hidden;
+  }
+
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .page-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3) saturate(0.7);
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      rgba(8, 8, 15,0.95) 40%,
+      rgba(8, 8, 15,0.4) 100%
+    );
+  }
+
+  .page-hero-inner {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 850px;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .breadcrumb a {
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--accent);
+  }
+
+  .breadcrumb span:last-child {
+    color: var(--text);
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 5.5vw, 5rem);
+    line-height: 1.0;
+  }
+
+  .page-title em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+    max-width: 600px;
+    line-height: 1.8;
+  }
+
+  /* STORY */
+  .story-section {
+    padding: 7rem 0;
+    background: var(--bg);
+  }
+
+  .story-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .story-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .story-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin-top: 1rem;
+  }
+
+  .story-mission {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    padding: 1.5rem;
+    background: var(--bg-card);
+  }
+
+  .mission-line {
+    width: 3px;
+    flex-shrink: 0;
+    background: var(--accent);
+  }
+
+  .mission-quote {
+    font-family: 'Syne', sans-serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* Story media */
+  .story-media {
+    position: relative;
+  }
+
+  .story-img-stack {
+    position: relative;
+  }
+
+  .story-img-main {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border: 1px solid var(--border-light);
+  }
+
+  .story-img-inset {
+    position: absolute;
+    bottom: -3rem;
+    left: -3rem;
+    width: 55%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border: 4px solid var(--bg);
+  }
+
+  .story-badge {
+    position: absolute;
+    top: 2rem;
+    right: -1.5rem;
+    z-index: 10;
+  }
+
+  .badge-inner {
+    background: var(--accent);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .badge-year {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--bg);
+    line-height: 1;
+  }
+
+  .badge-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(8, 8, 15, 0.7);
+  }
+
+  /* VISION */
+  .vision-section {
+    position: relative;
+    padding: 9rem 0;
+    overflow: hidden;
+  }
+
+  .vision-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .vision-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.2) saturate(0.6);
+  }
+
+  .vision-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(8, 8, 15,0.95) 40%,
+      rgba(8, 8, 15,0.5) 100%
+    );
+  }
+
+  .vision-inner {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .vision-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.05;
+    color: var(--text);
+    margin-top: 1rem;
+  }
+
+  .vision-pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .pillar {
+    padding: 1.5rem;
+    background: rgba(8, 8, 15, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.25s;
+  }
+
+  .pillar:hover {
+    border-color: var(--accent);
+  }
+
+  .pillar-icon {
+    color: var(--accent);
+  }
+
+  .pillar h3 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .pillar p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* VALUES */
+  .values-section {
+    padding: 7rem 0;
+    background: var(--bg-section);
+  }
+
+  .values-header {
+    margin-bottom: 4rem;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .value-card {
+    background: var(--bg-card);
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s;
+  }
+
+  .value-card:hover {
+    background: #0f1c2b;
+  }
+
+  .value-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(0, 212, 180, 0.08);
+    line-height: 1;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .value-icon {
+    color: var(--accent);
+    padding: 0.75rem;
+    background: rgba(0, 212, 180, 0.08);
+    width: fit-content;
+    border: 1px solid rgba(0, 212, 180, 0.15);
+  }
+
+  .value-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .value-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* REGIONS */
+  .about-regions {
+    padding: 7rem 0;
+    background: var(--bg);
+  }
+
+  .regions-header {
+    margin-bottom: 4rem;
+  }
+
+  .regions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .region-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+
+  .region-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+
+  .region-media {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .region-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) saturate(0.85);
+    transition: filter 0.4s ease, transform 0.5s ease;
+  }
+
+  .region-card:hover .region-img {
+    filter: brightness(0.85) saturate(1);
+    transform: scale(1.05);
+  }
+
+  .region-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8, 8, 15,0.8) 0%, transparent 55%);
+    pointer-events: none;
+  }
+
+  .region-body {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .region-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .region-badge {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 0.25rem 0.75rem;
+  }
+
+  .region-flag {
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+    font-size: 1.75rem;
+    line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  }
+
+  .region-city {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .region-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .region-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* GALLERY */
+  .gallery-section {
+    padding: 0;
+    background: var(--bg-deep);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2px;
+    background: var(--bg-deep);
+    max-height: 600px;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: brightness(0.7) saturate(0.8);
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.04);
+    filter: brightness(0.85) saturate(1);
+  }
+
+  .gallery-item.large {
+    grid-row: 1 / 3;
+    min-height: 500px;
+  }
+
+  .gallery-item:not(.large) {
+    min-height: 249px;
+  }
+
+  .gallery-label {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text);
+    background: rgba(8, 8, 15, 0.8);
+    padding: 0.4rem 0.75rem;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ABOUT CTA */
+  .about-cta {
+    padding: 7rem 0;
+    background: var(--bg-section);
+    border-top: 1px solid var(--border);
+  }
+
+  .about-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .about-cta-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about-cta-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.1;
+  }
+
+  .about-cta-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+  }
+
+  /* Responsive */
+  .br-desktop { display: block; }
+
+  @media (max-width: 1100px) {
+    .story-inner,
+    .vision-inner {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+
+    .story-img-inset {
+      position: static;
+      margin-top: 1rem;
+      width: 60%;
+    }
+
+    .story-badge {
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .regions-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .vision-pillars {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      max-height: none;
+    }
+
+    .gallery-item.large {
+      grid-row: auto;
+      min-height: 280px;
+    }
+
+    .gallery-item:not(.large) {
+      min-height: 200px;
+    }
+
+    .about-cta-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .br-desktop { display: none; }
+
+    .page-title { font-size: 2.5rem; }
+  }
+</style>

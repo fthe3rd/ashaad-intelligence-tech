@@ -1,0 +1,269 @@
+---
+// MinimalistHero.astro - Pure Astro Implementation
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  logoText: string;
+  navLinks: { label: string; href: string }[];
+  mainText: string;
+  readMoreLink: string;
+  imageSrc: string;
+  imageAlt: string;
+  overlayText: {
+    part1: string;
+    part2: string;
+  };
+  socialLinks: { iconName: string; href: string }[];
+  locationText: string;
+}
+
+const {
+  logoText,
+  navLinks,
+  mainText,
+  readMoreLink,
+  imageSrc,
+  imageAlt,
+  overlayText,
+  socialLinks,
+  locationText,
+  class: className,
+  ...rest
+} = Astro.props;
+
+// Import only the icons we need from lucide-astro
+import { Facebook, Instagram, Twitter, Linkedin } from 'lucide-astro';
+
+// Map icon names to components
+const iconMap: Record<string, any> = {
+  facebook: Facebook,
+  instagram: Instagram,
+  twitter: Twitter,
+  linkedin: Linkedin,
+};
+---
+
+<div
+  class:list={[
+    'relative flex h-screen w-full flex-col items-center justify-between overflow-hidden p-8 font-sans md:p-12',
+    className,
+  ]}
+  style={{ backgroundColor: 'hsl(var(--background))', color: 'hsl(var(--foreground))' }}
+  {...rest}
+>
+  <!-- Header -->
+  <header class="hero-header z-30 flex w-full max-w-7xl items-center justify-between">
+    <div class="hero-logo text-xl font-bold tracking-wider" style={{ color: 'hsl(var(--foreground))' }}>
+      {logoText}
+    </div>
+    <nav class="hidden items-center space-x-8 md:flex">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="nav-link text-sm font-medium tracking-widest transition-colors"
+          style={{ color: 'hsl(var(--foreground) / 0.6)' }}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    <button
+      class="hero-menu-btn flex flex-col space-y-1.5 md:hidden"
+      aria-label="Open menu"
+      id="mobile-menu-toggle"
+    >
+      <span class="block h-0.5 w-6" style={{ backgroundColor: 'hsl(var(--foreground))' }}></span>
+      <span class="block h-0.5 w-6" style={{ backgroundColor: 'hsl(var(--foreground))' }}></span>
+      <span class="block h-0.5 w-5" style={{ backgroundColor: 'hsl(var(--foreground))' }}></span>
+    </button>
+  </header>
+
+  <!-- Main Content Area -->
+  <div class="relative grid w-full max-w-7xl flex-grow grid-cols-1 items-center gap-8 md:grid-cols-3">
+    <!-- Left Text Content -->
+    <div class="hero-text-left order-2 z-20 text-center md:order-1 md:text-left">
+      <p class="mx-auto max-w-xs text-sm leading-relaxed md:mx-0" style={{ color: 'hsl(var(--foreground) / 0.8)' }}>
+        {mainText}
+      </p>
+      <a
+        href={readMoreLink}
+        class="mt-4 inline-block text-sm font-medium underline transition-opacity hover:opacity-80"
+        style={{ color: 'hsl(var(--foreground))' }}
+      >
+        Read More
+      </a>
+    </div>
+
+    <!-- Center Image with Circle -->
+    <div class="relative order-1 flex h-full items-center justify-center md:order-2">
+      <div
+        class="hero-circle absolute z-0 h-[300px] w-[300px] rounded-full md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]"
+        style={{ backgroundColor: 'rgba(250, 204, 21, 0.9)' }}
+      ></div>
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        class="hero-image relative z-10 h-auto w-56 scale-150 object-cover md:w-64 lg:w-72"
+        onerror="this.onerror=null; this.src='https://placehold.co/400x600/eab308/ffffff?text=Image+Not+Found';"
+      />
+    </div>
+
+    <!-- Right Text -->
+    <div class="hero-text-right order-3 z-20 flex items-center justify-center text-center md:justify-start">
+      <h1 class="text-7xl font-extrabold leading-none md:text-8xl lg:text-9xl" style={{ color: 'hsl(var(--foreground))' }}>
+        {overlayText.part1}
+        <br />
+        {overlayText.part2}
+      </h1>
+    </div>
+  </div>
+
+  <!-- Footer Elements -->
+  <footer class="hero-footer z-30 flex w-full max-w-7xl items-center justify-between">
+    <div class="flex items-center space-x-4">
+      {socialLinks.map((link) => {
+        const IconComponent = iconMap[link.iconName.toLowerCase()];
+        return IconComponent ? (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon transition-colors"
+            style={{ color: 'hsl(var(--foreground) / 0.6)' }}
+          >
+            <IconComponent class="h-5 w-5" />
+          </a>
+        ) : null;
+      })}
+    </div>
+    <div class="text-sm font-medium" style={{ color: 'hsl(var(--foreground) / 0.8)' }}>
+      {locationText}
+    </div>
+  </footer>
+</div>
+
+<style>
+  /* CSS Animations replacing Framer Motion */
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes imageReveal {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Apply animations */
+  .hero-logo {
+    animation: fadeInLeft 0.5s ease-out forwards;
+  }
+
+  .nav-link {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  .hero-menu-btn {
+    animation: fadeInRight 0.5s ease-out forwards;
+  }
+
+  .hero-text-left {
+    animation: fadeInUp 0.6s ease-out 1s forwards;
+    opacity: 0;
+  }
+
+  .hero-circle {
+    animation: scaleIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+    opacity: 0;
+  }
+
+  .hero-image {
+    animation: imageReveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+    opacity: 0;
+  }
+
+  .hero-text-right {
+    animation: fadeInUp 0.6s ease-out 1.2s forwards;
+    opacity: 0;
+  }
+
+  .hero-footer > div:first-child {
+    animation: fadeInUp 0.5s ease-out 1.2s forwards;
+    opacity: 0;
+  }
+
+  .hero-footer > div:last-child {
+    animation: fadeInUp 0.5s ease-out 1.3s forwards;
+    opacity: 0;
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-logo,
+    .nav-link,
+    .hero-menu-btn,
+    .hero-text-left,
+    .hero-circle,
+    .hero-image,
+    .hero-text-right,
+    .hero-footer > div {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  // Simple mobile menu toggle (optional enhancement)
+  document.getElementById('mobile-menu-toggle')?.addEventListener('click', () => {
+    // Add your mobile menu logic here
+    console.log('Mobile menu clicked');
+  });
+</script>

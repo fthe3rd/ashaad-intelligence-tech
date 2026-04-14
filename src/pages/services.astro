@@ -1,0 +1,590 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    id: 'digital-security',
+    number: '01',
+    title: 'Digital Security',
+    subtitle: 'Protect What Matters Most',
+    description: `Our digital security solutions cover the full spectrum of surveillance and protection. From high-definition CCTV camera installations to intelligent video analytics, access control systems, and remote monitoring — we design and implement security infrastructure that gives you complete, real-time visibility and control.`,
+    features: [
+      'CCTV Surveillance Systems (HD & IP)',
+      'Video Analytics & Motion Detection',
+      'Access Control & Biometrics',
+      'Remote Monitoring Solutions',
+      'Alarm Systems & Integration',
+      '24/7 Technical Support',
+    ],
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'Security camera surveillance system',
+    accent: '#c8870f',
+  },
+  {
+    id: 'networking',
+    number: '02',
+    title: 'Networking',
+    subtitle: 'Connect Your World',
+    description: `Reliable connectivity is the backbone of any modern organization. We design, install, and maintain networking infrastructure that scales with your needs — from structured cabling and enterprise switches to wireless access points, fibre optic solutions, and VoIP systems. We ensure your network is fast, stable, and secure.`,
+    features: [
+      'Structured Cabling (Cat5e/Cat6/Cat6a)',
+      'Fibre Optic Installation',
+      'Wireless & Wi-Fi Solutions',
+      'Enterprise Switches & Routers',
+      'VoIP & Unified Communications',
+      'Network Security & Firewalls',
+    ],
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'Network server room and data cables',
+    accent: '#c8870f',
+    reverse: true,
+  },
+  {
+    id: 'it-protocols',
+    number: '03',
+    title: 'IT Protocols',
+    subtitle: 'Smart Systems, Smarter Management',
+    description: `From server configuration to software deployment and end-user support, our IT protocols service covers the complete technology lifecycle of your organization. We implement industry-standard protocols and best practices to ensure your systems are efficient, secure, and future-ready.`,
+    features: [
+      'Server Setup & Configuration',
+      'Software Deployment & Licensing',
+      'IT Infrastructure Management',
+      'Cybersecurity & Data Protection',
+      'Cloud Integration & Migration',
+      'Helpdesk & User Support',
+    ],
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'IT systems and digital infrastructure',
+    accent: '#c8870f',
+  },
+  {
+    id: 'solar',
+    number: '04',
+    title: 'Solar Systems & Power Banks',
+    subtitle: 'Clean Energy, Always On',
+    description: `Power outages should never stop your business or compromise your security. Our solar energy solutions provide clean, sustainable power for residential homes, commercial buildings, and industrial facilities. Combined with our high-capacity power bank systems, we ensure your critical technology infrastructure runs without interruption.`,
+    features: [
+      'Solar Panel Installation & Design',
+      'Battery Storage Systems',
+      'Power Banks & UPS Solutions',
+      'Grid-Tied & Off-Grid Systems',
+      'Load Shedding Solutions',
+      'Maintenance & Monitoring',
+    ],
+    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'Solar panel installation on rooftop',
+    accent: '#c8870f',
+    reverse: true,
+  },
+];
+---
+
+<Layout title="Services" description="Explore Ashaad Intelligent Technologies' four core services: digital security, networking, IT protocols, and solar energy solutions.">
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80"
+        alt="Digital technology infrastructure"
+        class="page-hero-img"
+        onerror="this.style.background='var(--navy)';"
+      />
+      <div class="page-hero-overlay"></div>
+    </div>
+    <div class="container page-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Services</span>
+      </div>
+      <p class="section-label reveal">What We Offer</p>
+      <h1 class="display-heading page-title reveal reveal-delay-2">
+        Four Pillars of<br />
+        <em>Smart Technology.</em>
+      </h1>
+      <p class="page-subtitle body-text reveal reveal-delay-3">
+        Comprehensive technology solutions built for the needs of Southern Africa —
+        from digital security to clean energy and everything in between.
+      </p>
+
+      <!-- Services quick nav -->
+      <div class="services-nav reveal reveal-delay-4">
+        {services.map((s) => (
+          <a href={`#${s.id}`} class="snav-link">
+            <span class="snav-num">{s.number}</span>
+            {s.title}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE SECTIONS ===== -->
+  {services.map((service) => (
+    <section class={`service-section ${service.reverse ? 'reverse' : ''}`} id={service.id}>
+      <div class="service-media">
+        <img
+          src={service.image}
+          alt={service.imageAlt}
+          class="service-img"
+          onerror="this.style.background='var(--bg-card)';"
+        />
+        <div class="service-img-overlay"></div>
+        <div class="service-number-badge">{service.number}</div>
+      </div>
+      <div class="service-content">
+        <p class="section-label">{service.title}</p>
+        <h2 class="display-heading service-title">{service.subtitle}</h2>
+        <p class="body-text service-desc">{service.description}</p>
+        <div class="feature-list">
+          {service.features.map((f) => (
+            <div class="feature-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>{f}</span>
+            </div>
+          ))}
+        </div>
+        <a href="/contact" class="btn-primary">
+          Enquire About This Service
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+  ))}
+
+  <!-- ===== WHY ASHAAD ===== -->
+  <section class="why-section">
+    <div class="why-bg">
+      <img
+        src="https://images.unsplash.com/photo-1497366754035-f200581374b8?auto=format&fit=crop&w=1600&q=80"
+        alt="Modern technology office"
+        class="why-img"
+        onerror="this.style.background='var(--navy)';"
+      />
+      <div class="why-overlay"></div>
+    </div>
+    <div class="container why-inner">
+      <p class="section-label" style="color:rgba(0, 212, 180,0.9)">Why Choose Us</p>
+      <h2 class="display-heading why-title">
+        The Ashaad<br />Difference.
+      </h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Proven Track Record</h3>
+          <p>Since 2018, we've built a reputation for reliable delivery and quality that keeps clients coming back.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Expert Team</h3>
+          <p>Our certified technicians bring deep expertise across all four service domains, ensuring quality at every level.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Fast Response</h3>
+          <p>When you need support, we're there. Our local presence means faster response times and less downtime.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Best Value</h3>
+          <p>High-quality products and expert installation at competitive prices — maximum value, guaranteed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="services-cta">
+    <div class="container services-cta-inner">
+      <div>
+        <p class="section-label">Ready to Start?</p>
+        <h2 class="display-heading services-cta-title">
+          Let's Build Something<br />Remarkable Together.
+        </h2>
+      </div>
+      <div class="services-cta-actions">
+        <a href="/contact" class="btn-primary">
+          Get a Free Consultation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/about" class="btn-outline">About Ashaad</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* PAGE HERO */
+  .page-hero {
+    position: relative;
+    padding: 160px 0 100px;
+    overflow: hidden;
+  }
+
+  .page-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .page-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.25) saturate(0.6);
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      rgba(8, 8, 15,0.97) 40%,
+      rgba(8, 8, 15,0.5) 100%
+    );
+  }
+
+  .page-hero-inner {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 850px;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .breadcrumb a {
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span:last-child { color: var(--text); }
+
+  .page-title {
+    font-size: clamp(2.5rem, 5.5vw, 5rem);
+    line-height: 1.0;
+  }
+
+  .page-title em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+    max-width: 600px;
+    line-height: 1.8;
+  }
+
+  .services-nav {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  .snav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .snav-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .snav-num {
+    color: var(--accent);
+    font-size: 0.65rem;
+  }
+
+  /* SERVICE SECTIONS */
+  .service-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .service-section.reverse {
+    direction: rtl;
+  }
+
+  .service-section.reverse > * {
+    direction: ltr;
+  }
+
+  .service-media {
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+  }
+
+  .service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    filter: brightness(0.75) saturate(0.85);
+  }
+
+  .service-section:hover .service-img {
+    transform: scale(1.03);
+  }
+
+  .service-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(8, 8, 15,0.2) 0%,
+      rgba(8, 8, 15,0.05) 100%
+    );
+  }
+
+  .service-section.reverse .service-img-overlay {
+    background: linear-gradient(
+      to left,
+      rgba(8, 8, 15,0.2) 0%,
+      rgba(8, 8, 15,0.05) 100%
+    );
+  }
+
+  .service-number-badge {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(0, 212, 180, 0.3);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .service-content {
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    background: var(--bg-card);
+  }
+
+  .service-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.1;
+    margin-top: 0.5rem;
+  }
+
+  .service-desc {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+  }
+
+  .feature-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    margin: 0.5rem 0;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .feature-item svg {
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* WHY SECTION */
+  .why-section {
+    position: relative;
+    padding: 9rem 0;
+    overflow: hidden;
+  }
+
+  .why-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .why-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.2) saturate(0.5);
+  }
+
+  .why-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(8, 8, 15,0.97) 35%,
+      rgba(8, 8, 15,0.6) 100%
+    );
+  }
+
+  .why-inner {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .why-title {
+    font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+    line-height: 1.05;
+    margin-top: 1rem;
+    max-width: 600px;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .why-card {
+    padding: 2rem 1.5rem;
+    background: rgba(8, 8, 15, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.25s;
+  }
+
+  .why-card:hover {
+    border-color: var(--accent);
+  }
+
+  .why-icon {
+    color: var(--accent);
+  }
+
+  .why-card h3 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .why-card p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* CTA */
+  .services-cta {
+    padding: 7rem 0;
+    background: var(--bg-section);
+    border-top: 1px solid var(--border);
+  }
+
+  .services-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .services-cta-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    margin-top: 1rem;
+  }
+
+  .services-cta-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1000px) {
+    .service-section,
+    .service-section.reverse {
+      grid-template-columns: 1fr;
+      direction: ltr;
+    }
+
+    .service-content {
+      padding: 3rem 2rem;
+    }
+
+    .service-media {
+      min-height: 350px;
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .feature-list {
+      grid-template-columns: 1fr;
+    }
+
+    .services-cta-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .page-title { font-size: 2.5rem; }
+  }
+</style>

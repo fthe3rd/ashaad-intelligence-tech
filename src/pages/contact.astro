@@ -72,7 +72,7 @@ const services = [
   <section class="contact-hero">
     <div class="hero-bg">
       <img
-        src="https://images.unsplash.com/photo-1497366754035-f200581374b8?auto=format&fit=crop&w=1600&q=80"
+        src="https://images.unsplash.com/photo-1653566031486-dc4ead13a35d?auto=format&fit=crop&w=1600&q=80"
         alt="Modern technology office"
         class="hero-bg-img"
         onerror="this.style.opacity='0';"
@@ -105,7 +105,7 @@ const services = [
       <div class="contact-info-col">
         <div class="info-media">
           <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+            src="https://images.unsplash.com/photo-1510849911856-cdc9335e5597?auto=format&fit=crop&w=800&q=80"
             alt="Ashaad team working on technology solutions"
             class="info-img"
             onerror="this.style.background='var(--navy)';"
@@ -149,7 +149,7 @@ const services = [
         </div>
       </div>
 
-      <!-- RIGHT: Form Column -->
+      <!-- RIGHT: Form + Map Column -->
       <div class="contact-form-col">
         <div class="form-header">
           <p class="section-label">Send a Message</p>
@@ -219,6 +219,20 @@ const services = [
             <p class="success-sub">We'll be in touch shortly.</p>
           </div>
         </div>
+
+        <!-- Map -->
+        <div class="contact-map">
+          <iframe
+            src="https://maps.google.com/maps?q=Harare,+Zimbabwe&output=embed"
+            width="100%"
+            height="300"
+            style="border:0; display:block;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ashaad Intelligent Technologies — Harare, Zimbabwe"
+          ></iframe>
+        </div>
       </div>
     </div>
   </section>
@@ -238,60 +252,6 @@ const services = [
     </a>
   </div>
 
-  <!-- ===== PARTNER CTA ===== -->
-  <section class="partner-section">
-    <div class="partner-bg">
-      <img
-        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=80"
-        alt="Smart security technology"
-        class="partner-bg-img"
-        onerror="this.style.background='var(--navy)';"
-      />
-      <div class="partner-overlay"></div>
-    </div>
-    <div class="container partner-inner">
-      <div class="partner-content">
-        <p class="section-label">Become a Partner</p>
-        <h2 class="display-heading partner-title">
-          Let Ashaad Become<br />a World Brand.
-        </h2>
-        <p class="body-text partner-text">
-          We invite distributors, resellers, and technology partners to join us.
-          Together, we will deliver the best service, the best quality —
-          and build an Africa-first technology brand recognized worldwide.
-        </p>
-        <div class="partner-cards">
-          <div class="partner-card">
-            <div class="pc-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div>
-              <div class="pc-title">Reseller Programme</div>
-              <div class="pc-desc">Sell our products and earn competitive margins</div>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="pc-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <div>
-              <div class="pc-title">Regional Distributor</div>
-              <div class="pc-desc">Exclusive territory rights in your region</div>
-            </div>
-          </div>
-          <div class="partner-card">
-            <div class="pc-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <div>
-              <div class="pc-title">Tech Partner</div>
-              <div class="pc-desc">Collaborate on installations and projects</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </Layout>
 
 <script>
@@ -403,14 +363,15 @@ const services = [
   .breadcrumb a:hover { color: var(--accent); }
 
   .hero-title {
-    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-    line-height: 1.0;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    font-weight: 600;
   }
 
   .hero-title em {
-    font-style: italic;
-    color: var(--accent);
+    font-style: normal;
+    color: var(--text);
   }
 
   .hero-subtitle {
@@ -553,11 +514,11 @@ const services = [
   }
 
   .detail-icon {
-    color: var(--accent);
+    color: var(--text-muted);
     flex-shrink: 0;
     padding: 0.6rem;
-    background: rgba(191, 144, 4, 0.08);
-    border: 1px solid rgba(191, 144, 4, 0.15);
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
     margin-top: 0.1rem;
   }
 
@@ -567,7 +528,7 @@ const services = [
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--text-muted);
     margin-bottom: 0.2rem;
   }
 
@@ -586,7 +547,7 @@ const services = [
     padding: 1.25rem;
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid var(--border-light);
   }
 
   .note-line {
@@ -600,7 +561,7 @@ const services = [
 
   .info-cta-note em {
     font-style: normal;
-    color: var(--accent);
+    color: var(--text-muted);
     font-family: 'DM Mono', monospace;
     font-weight: 700;
     font-size: 0.75rem;
@@ -707,6 +668,13 @@ const services = [
     color: var(--text-subtle);
   }
 
+  /* Map */
+  .contact-map {
+    margin-top: 2.5rem;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+  }
+
   /* Form success */
   .form-success {
     display: none;
@@ -714,8 +682,8 @@ const services = [
     align-items: center;
     gap: 1.25rem;
     padding: 2rem;
-    border: 1px solid rgba(191, 144, 4, 0.25);
-    background: rgba(191, 144, 4, 0.04);
+    border: 1px solid rgba(0, 212, 180, 0.25);
+    background: rgba(0, 212, 180, 0.04);
     margin-top: 1rem;
   }
 
@@ -723,11 +691,11 @@ const services = [
     color: var(--accent);
     flex-shrink: 0;
     padding: 0.75rem;
-    border: 1px solid rgba(191, 144, 4, 0.3);
+    border: 1px solid rgba(0, 212, 180, 0.3);
   }
 
   .success-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--text);
@@ -862,7 +830,7 @@ const services = [
 
   .partner-card:hover {
     border-color: var(--accent);
-    background: rgba(191, 144, 4, 0.06);
+    background: rgba(0, 212, 180, 0.06);
   }
 
   .pc-icon {

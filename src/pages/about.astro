@@ -217,79 +217,20 @@ const regions = [
       <div class="regions-grid">
         {regions.map((r) => (
           <div class="region-card">
-            <div class="region-media">
-              <img
-                src={r.image}
-                alt={r.imageAlt}
-                class="region-img"
-                onerror="this.style.background='var(--navy)';"
-              />
-              <div class="region-img-overlay"></div>
-              <div class="region-flag">{r.flag}</div>
+            <div class="region-top">
               <span class="region-badge">{r.highlight}</span>
             </div>
-            <div class="region-body">
-              <div class="region-meta">
-                <p class="region-city">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  {r.city}
-                </p>
-                <h3 class="region-name">{r.country}</h3>
-              </div>
-              <p class="region-desc">{r.desc}</p>
-            </div>
+            <h3 class="region-name">{r.country}</h3>
+            <p class="region-city">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {r.city}
+            </p>
+            <p class="region-desc">{r.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
-
-  <!-- ===== TECH IMAGES GALLERY ===== -->
-  <section class="gallery-section">
-    <div class="gallery-grid">
-      <div class="gallery-item large">
-        <img
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
-          alt="Security camera technology"
-          onerror="this.style.background='var(--bg-card)';"
-        />
-        <div class="gallery-label">Digital Security</div>
-      </div>
-      <div class="gallery-item">
-        <img
-          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80"
-          alt="Solar panels"
-          onerror="this.style.background='var(--bg-card)';"
-        />
-        <div class="gallery-label">Solar Power</div>
-      </div>
-      <div class="gallery-item">
-        <img
-          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80"
-          alt="Server room networking"
-          onerror="this.style.background='var(--bg-card)';"
-        />
-        <div class="gallery-label">Networking</div>
-      </div>
-      <div class="gallery-item">
-        <img
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
-          alt="IT infrastructure systems"
-          onerror="this.style.background='var(--bg-card)';"
-        />
-        <div class="gallery-label">IT Protocols</div>
-      </div>
-      <div class="gallery-item">
-        <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
-          alt="Modern city infrastructure"
-          onerror="this.style.background='var(--bg-card)';"
-        />
-        <div class="gallery-label">Southern Africa</div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== CTA ===== -->
   <section class="about-cta">
     <div class="container about-cta-inner">
@@ -376,13 +317,14 @@ const regions = [
   }
 
   .page-title {
-    font-size: clamp(2.5rem, 5.5vw, 5rem);
-    line-height: 1.0;
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    line-height: 1.15;
+    font-weight: 600;
   }
 
   .page-title em {
     color: var(--accent);
-    font-style: italic;
+    font-style: normal;
   }
 
   .page-subtitle {
@@ -430,7 +372,7 @@ const regions = [
   }
 
   .mission-quote {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-style: italic;
     font-size: 1rem;
     color: var(--text);
@@ -480,7 +422,7 @@ const regions = [
   }
 
   .badge-year {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 2rem;
     font-weight: 900;
     color: var(--bg);
@@ -616,10 +558,10 @@ const regions = [
   }
 
   .value-number {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 4rem;
     font-weight: 900;
-    color: rgba(191, 144, 4, 0.1);
+    color: rgba(0, 212, 180, 0.1);
     line-height: 1;
     position: absolute;
     top: 1.5rem;
@@ -629,13 +571,13 @@ const regions = [
   .value-icon {
     color: var(--accent);
     padding: 0.75rem;
-    background: rgba(191, 144, 4, 0.08);
+    background: rgba(0, 212, 180, 0.08);
     width: fit-content;
-    border: 1px solid rgba(191, 144, 4, 0.15);
+    border: 1px solid rgba(0, 212, 180, 0.15);
   }
 
   .value-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--text);
@@ -667,75 +609,45 @@ const regions = [
   .region-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    overflow: hidden;
-    transition: border-color 0.25s, transform 0.25s;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.25s;
   }
 
   .region-card:hover {
     border-color: var(--accent);
-    transform: translateY(-4px);
   }
 
-  .region-media {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-  }
-
-  .region-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.7) saturate(0.85);
-    transition: filter 0.4s ease, transform 0.5s ease;
-  }
-
-  .region-card:hover .region-img {
-    filter: brightness(0.85) saturate(1);
-    transform: scale(1.05);
-  }
-
-  .region-img-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(8, 8, 15,0.8) 0%, transparent 55%);
-    pointer-events: none;
-  }
-
-  .region-body {
-    padding: 1.75rem;
+  .region-top {
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .region-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .region-badge {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--bg);
-    background: var(--accent);
-    padding: 0.25rem 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
   }
 
   .region-flag {
-    position: absolute;
-    top: 0.9rem;
-    right: 0.9rem;
-    font-size: 1.75rem;
+    font-size: 2rem;
     line-height: 1;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  }
+
+  .region-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border: 1px solid var(--border-light);
+    padding: 0.2rem 0.6rem;
+  }
+
+  .region-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
   }
 
   .region-city {
@@ -743,18 +655,11 @@ const regions = [
     align-items: center;
     gap: 0.35rem;
     font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent);
-  }
-
-  .region-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--text);
+    color: var(--text-muted);
   }
 
   .region-desc {
@@ -762,6 +667,7 @@ const regions = [
     font-size: 0.875rem;
     color: var(--text-muted);
     line-height: 1.7;
+    margin-top: 0.25rem;
   }
 
   /* GALLERY */

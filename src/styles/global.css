@@ -6,9 +6,9 @@
   --bg-deep: #040408;
   --bg-section: #0b0b14;
   /* Brand palette */
-  --accent: #BF9004;
-  --accent-light: #D4A00A;
-  --accent-dark: #9A7303;
+  --accent: #00d4b4;
+  --accent-light: #26e0c0;
+  --accent-dark: #00b89f;
   --cta: #F20C36;
   --cta-light: #f53d5c;
   --blue: #0B3ED9;
@@ -80,8 +80,8 @@ a {
 }
 
 .display-heading {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
   line-height: 1.0;
   color: var(--text);
   letter-spacing: -0.025em;

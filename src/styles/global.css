@@ -5,15 +5,18 @@
   --bg-card: #0d0d18;
   --bg-deep: #040408;
   --bg-section: #0b0b14;
-  --accent: #00d4b4;
-  --accent-light: #00f0ce;
-  --accent-dark: #009e87;
-  --cta: #f05828;
-  --cta-light: #ff6b3d;
-  --navy: #091428;
+  /* Brand palette */
+  --accent: #BF9004;
+  --accent-light: #D4A00A;
+  --accent-dark: #9A7303;
+  --cta: #F20C36;
+  --cta-light: #f53d5c;
+  --blue: #0B3ED9;
+  --blue-light: #4d79ff;
+  --navy: #04091e;
   --text: #ece9e2;
-  --text-muted: #606d7e;
-  --text-subtle: #282e38;
+  --text-muted: #8a9ab0;
+  --text-subtle: #2a3040;
   --border: #141420;
   --border-light: #1e1e2c;
 }
@@ -133,16 +136,16 @@ a {
 }
 
 .btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(0, 212, 180, 0.05);
+  border-color: var(--blue);
+  color: var(--blue-light);
+  background: rgba(11, 62, 217, 0.08);
 }
 
 /* Reveal animation */
 @keyframes revealUp {
   from {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -152,14 +155,14 @@ a {
 
 .reveal {
   opacity: 0;
-  animation: revealUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: revealUp 0.4s ease forwards;
 }
 
-.reveal-delay-1 { animation-delay: 0.08s; }
-.reveal-delay-2 { animation-delay: 0.18s; }
-.reveal-delay-3 { animation-delay: 0.3s; }
-.reveal-delay-4 { animation-delay: 0.44s; }
-.reveal-delay-5 { animation-delay: 0.58s; }
+.reveal-delay-1 { animation-delay: 0.05s; }
+.reveal-delay-2 { animation-delay: 0.12s; }
+.reveal-delay-3 { animation-delay: 0.2s; }
+.reveal-delay-4 { animation-delay: 0.28s; }
+.reveal-delay-5 { animation-delay: 0.36s; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal {

@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 const services = [
   {
     id: 'digital-security',
-    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/></svg>`,
+    iconLabel: 'Camera',
     label: 'Digital Security',
     desc: 'Advanced CCTV surveillance and intelligent security systems protecting homes, businesses and communities.',
     href: '/services#digital-security',
@@ -13,7 +13,7 @@ const services = [
   },
   {
     id: 'networking',
-    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M5 8v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M12 12v4"/></svg>`,
+    iconLabel: 'Network',
     label: 'Networking',
     desc: 'Enterprise-grade networking infrastructure — from structured cabling to wireless and fibre solutions.',
     href: '/services#networking',
@@ -22,7 +22,7 @@ const services = [
   },
   {
     id: 'it-protocols',
-    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+    iconLabel: 'Code',
     label: 'IT Protocols',
     desc: 'Comprehensive IT management, server configuration, software deployment, and system integration.',
     href: '/services#it-protocols',
@@ -31,7 +31,7 @@ const services = [
   },
   {
     id: 'solar',
-    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`,
+    iconLabel: 'Solar',
     label: 'Solar Systems',
     desc: 'Clean, reliable solar energy and power bank solutions to keep your operations running 24/7.',
     href: '/services#solar',
@@ -153,7 +153,7 @@ const stats = [
               <div class="service-card-img-overlay"></div>
             </div>
             <div class="service-card-body">
-              <div class="service-icon" set:html={service.icon} />
+              <div class="service-icon-label">{service.iconLabel}</div>
               <h3 class="service-name">{service.label}</h3>
               <p class="service-desc">{service.desc}</p>
               <div class="service-arrow">
@@ -268,155 +268,97 @@ const stats = [
     </div>
   </section>
 
-  <!-- ===== SURVEILLANCE CAMERAS ===== -->
+  <!-- ===== CAMERA SOLUTIONS ===== -->
   <section class="cameras-section">
     <div class="container">
       <div class="cameras-header">
         <div class="cameras-header-left">
-          <p class="section-label">Surveillance Systems</p>
+          <p class="section-label">Hikvision Partner</p>
           <h2 class="display-heading cameras-title">
-            Every Angle.<br />Every Threat.<br /><em>Covered.</em>
+            Our Camera<br /><em>Solutions.</em>
           </h2>
         </div>
         <div class="cameras-header-right">
           <p class="body-text cameras-intro">
-            From compact dome cameras to high-powered long-range bullet lenses,
-            our surveillance portfolio covers residential homes, commercial premises, and industrial sites.
-            We supply, install, and maintain the full range.
+            We supply and install Hikvision's full camera range — from AI-driven detection
+            to full-colour night vision. Each system is matched to your site and budget.
           </p>
-          <a href="/services#digital-security" class="btn-outline">
-            All Security Solutions
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+          <p class="cameras-no-price-note">
+            <span class="no-price-badge">NB</span>
+            No prices are shown. Click <em>Sales Enquiries</em> on any product to request a quote.
+          </p>
         </div>
       </div>
 
-      <!-- Feature image + stat bar -->
-      <div class="cameras-feature">
-        <img
-          src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1400&q=80"
-          alt="Professional surveillance camera installation"
-          class="cameras-feature-img"
-          onerror="this.style.background='var(--bg-card)';"
-        />
-        <div class="cameras-feature-overlay"></div>
-        <div class="cameras-feature-pills">
-          <span class="cam-pill">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-            HD &amp; 4K Resolution
-          </span>
-          <span class="cam-pill">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-            Night Vision IR
-          </span>
-          <span class="cam-pill">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-            Remote Monitoring
-          </span>
-          <span class="cam-pill">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-            Motion Detection AI
-          </span>
-        </div>
-      </div>
-
-      <!-- Camera product cards -->
+      <!-- Hikvision product cards -->
       <div class="cameras-grid">
         <div class="camera-card">
-          <div class="camera-img-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80"
-              alt="Dome CCTV camera"
-              class="camera-img"
-              onerror="this.style.background='var(--bg-card)';"
-            />
-            <span class="camera-badge">Best Seller</span>
+          <div class="camera-card-header">
+            <span class="camera-word-badge">Camera</span>
+            <span class="camera-num">01</span>
           </div>
           <div class="camera-info">
-            <div class="camera-type">01 / Dome Camera</div>
-            <h3 class="camera-name">Indoor & Outdoor Dome</h3>
-            <p class="camera-desc">360° coverage in a vandal-resistant dome housing. Ideal for retail, offices and entrances.</p>
-            <ul class="camera-specs">
-              <li>Up to 4K resolution</li>
-              <li>IR night vision 30m</li>
-              <li>IP66 weatherproof</li>
-            </ul>
+            <h3 class="camera-name">Hikvision AcuSense (2.0)</h3>
+            <p class="camera-desc">Eliminates false alarms. Detects humans and vehicles only — no alerts for animals or falling leaves.</p>
+          </div>
+          <div class="camera-card-footer">
+            <a href="/contact" class="btn-enquiry">
+              Sales Enquiries
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
 
         <div class="camera-card">
-          <div class="camera-img-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1548504769-900b70ed122e?auto=format&fit=crop&w=700&q=80"
-              alt="Bullet CCTV security camera"
-              class="camera-img"
-              onerror="this.style.background='var(--bg-card)';"
-            />
+          <div class="camera-card-header">
+            <span class="camera-word-badge">Camera</span>
+            <span class="camera-num">02</span>
           </div>
           <div class="camera-info">
-            <div class="camera-type">02 / Bullet Camera</div>
-            <h3 class="camera-name">Long-Range Bullet</h3>
-            <p class="camera-desc">Powerful directional lens for car parks, perimeters, and long corridors. High deterrent value.</p>
-            <ul class="camera-specs">
-              <li>Up to 80m IR range</li>
-              <li>Varifocal lens 2.8–12mm</li>
-              <li>H.265+ compression</li>
-            </ul>
+            <h3 class="camera-name">Hikvision ColorVu</h3>
+            <p class="camera-desc">Full colour monitoring even in pitch-black darkness. Ideal for Nyanga's long nights and low-light environments.</p>
+          </div>
+          <div class="camera-card-footer">
+            <a href="/contact" class="btn-enquiry">
+              Sales Enquiries
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
 
         <div class="camera-card">
-          <div class="camera-img-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1560732488-6b0df240254a?auto=format&fit=crop&w=700&q=80"
-              alt="PTZ surveillance camera"
-              class="camera-img"
-              onerror="this.style.background='var(--bg-card)';"
-            />
-            <span class="camera-badge camera-badge--new">Advanced</span>
+          <div class="camera-card-header">
+            <span class="camera-word-badge">Camera</span>
+            <span class="camera-num">03</span>
           </div>
           <div class="camera-info">
-            <div class="camera-type">03 / PTZ Camera</div>
-            <h3 class="camera-name">Pan-Tilt-Zoom</h3>
-            <p class="camera-desc">Full motorised control for large open areas. Follow movement automatically with AI tracking.</p>
-            <ul class="camera-specs">
-              <li>360° continuous pan</li>
-              <li>Auto-tracking AI</li>
-              <li>30× optical zoom</li>
-            </ul>
+            <h3 class="camera-name">Hikvision Thermal &amp; Dual Spectrum</h3>
+            <p class="camera-desc">Best for farm boundaries and large plots. Detects intruders by heat signature regardless of lighting conditions.</p>
+          </div>
+          <div class="camera-card-footer">
+            <a href="/contact" class="btn-enquiry">
+              Sales Enquiries
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
 
         <div class="camera-card">
-          <div class="camera-img-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=700&q=80"
-              alt="Network IP security camera"
-              class="camera-img"
-              onerror="this.style.background='var(--bg-card)';"
-            />
+          <div class="camera-card-header">
+            <span class="camera-word-badge">Storage</span>
+            <span class="camera-num">04</span>
           </div>
           <div class="camera-info">
-            <div class="camera-type">04 / IP Network Camera</div>
-            <h3 class="camera-name">Smart IP System</h3>
-            <p class="camera-desc">Internet-connected with cloud storage and app access. Monitor your property from anywhere.</p>
-            <ul class="camera-specs">
-              <li>Cloud & local storage</li>
-              <li>Mobile app control</li>
-              <li>Two-way audio</li>
-            </ul>
+            <h3 class="camera-name">Hikvision NVRs &amp; Storage</h3>
+            <p class="camera-desc">Reliable 24/7 recording with remote access via the Hik-Connect app. Scalable storage for any installation size.</p>
+          </div>
+          <div class="camera-card-footer">
+            <a href="/contact" class="btn-enquiry">
+              Sales Enquiries
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
-      </div>
-
-      <div class="cameras-cta-row">
-        <p class="body-text cameras-cta-note">
-          Not sure which system suits your property?
-        </p>
-        <a href="/contact" class="btn-primary">
-          Get a Free Assessment
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
       </div>
     </div>
   </section>
@@ -433,7 +375,7 @@ const stats = [
       <div class="cta-overlay"></div>
     </div>
     <div class="container cta-inner">
-      <p class="section-label" style="color: rgba(0, 212, 180,0.9)">Partner With Us</p>
+      <p class="section-label">Partner With Us</p>
       <h2 class="display-heading cta-title">
         Become Part of<br />Something Bigger.
       </h2>
@@ -497,7 +439,7 @@ const stats = [
   .grid-line {
     width: 1px;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(0, 212, 180,0.08), transparent);
+    background: linear-gradient(to bottom, transparent, rgba(11, 62, 217, 0.06), transparent);
   }
 
   .hero-inner {
@@ -648,7 +590,7 @@ const stats = [
   }
 
   .stat-item:hover {
-    background: rgba(0, 212, 180, 0.05);
+    background: rgba(191, 144, 4, 0.05);
   }
 
   .stat-value {
@@ -768,17 +710,22 @@ const stats = [
     transform: translateY(-4px);
   }
 
-  .service-icon {
+  .service-icon-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
     color: var(--accent);
-    padding: 0.75rem;
-    background: rgba(0, 212, 180, 0.08);
+    padding: 0.35rem 0.75rem;
+    background: rgba(191, 144, 4, 0.1);
     width: fit-content;
-    border: 1px solid rgba(0, 212, 180, 0.15);
+    border: 1px solid rgba(191, 144, 4, 0.2);
     transition: background 0.25s;
   }
 
-  .service-card:hover .service-icon {
-    background: rgba(0, 212, 180, 0.15);
+  .service-card:hover .service-icon-label {
+    background: rgba(191, 144, 4, 0.18);
   }
 
   .service-name {
@@ -971,7 +918,7 @@ const stats = [
     margin-left: auto;
   }
 
-  /* ===== CAMERAS ===== */
+  /* ===== CAMERA SOLUTIONS ===== */
   .cameras-section {
     padding: 8rem 0;
     background: var(--bg-section);
@@ -1000,7 +947,7 @@ const stats = [
     padding-top: 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.75rem;
   }
 
   .cameras-intro {
@@ -1008,66 +955,36 @@ const stats = [
     line-height: 1.85;
   }
 
-  /* Feature panoramic image */
-  .cameras-feature {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 21/7;
-    overflow: hidden;
-    margin-bottom: 3rem;
-    border: 1px solid var(--border-light);
-  }
-
-  .cameras-feature-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.55) saturate(0.85);
-    transition: filter 0.5s ease;
-  }
-
-  .cameras-feature:hover .cameras-feature-img {
-    filter: brightness(0.7) saturate(1);
-  }
-
-  .cameras-feature-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(8,8,15,0.6) 0%, transparent 50%, rgba(8,8,15,0.3) 100%);
-    pointer-events: none;
-  }
-
-  .cameras-feature-pills {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 1.75rem;
+  .cameras-no-price-note {
     display: flex;
+    align-items: baseline;
     gap: 0.75rem;
-    flex-wrap: wrap;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding: 1rem 1.25rem;
+    background: rgba(242, 12, 54, 0.06);
+    border-left: 3px solid var(--cta);
   }
 
-  .cam-pill {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(8,8,15,0.85);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--border-light);
-    padding: 0.4rem 0.9rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+  .cameras-no-price-note em {
+    font-style: normal;
     color: var(--text);
   }
 
-  .cam-pill svg {
-    color: var(--accent);
+  .no-price-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--bg);
+    background: var(--cta);
+    padding: 0.2rem 0.5rem;
     flex-shrink: 0;
   }
 
-  /* Camera product cards */
+  /* Product cards */
   .cameras-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1079,67 +996,49 @@ const stats = [
     background: var(--bg-card);
     display: flex;
     flex-direction: column;
+    padding: 0;
     overflow: hidden;
-    transition: background 0.25s;
+    transition: background 0.2s;
   }
 
   .camera-card:hover {
-    background: #101018;
+    background: #0f0f1a;
   }
 
-  .camera-img-wrap {
-    position: relative;
-    aspect-ratio: 4/3;
-    overflow: hidden;
+  .camera-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
   }
 
-  .camera-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.72) saturate(0.8);
-    transition: filter 0.4s ease, transform 0.5s ease;
-  }
-
-  .camera-card:hover .camera-img {
-    filter: brightness(0.9) saturate(1);
-    transform: scale(1.05);
-  }
-
-  .camera-badge {
-    position: absolute;
-    top: 0.85rem;
-    left: 0.85rem;
+  .camera-word-badge {
     font-family: 'DM Mono', monospace;
-    font-size: 0.55rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--bg);
-    background: var(--cta);
-    padding: 0.25rem 0.65rem;
+    color: var(--accent);
+    background: rgba(191, 144, 4, 0.1);
+    border: 1px solid rgba(191, 144, 4, 0.2);
+    padding: 0.25rem 0.6rem;
   }
 
-  .camera-badge--new {
-    background: var(--accent);
-    color: var(--bg);
+  .camera-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--text-subtle);
   }
 
   .camera-info {
-    padding: 1.5rem;
+    padding: 1.75rem 1.5rem 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: 0.65rem;
+    gap: 0.75rem;
     flex: 1;
-  }
-
-  .camera-type {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.58rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--accent);
   }
 
   .camera-name {
@@ -1147,57 +1046,43 @@ const stats = [
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--text);
-    line-height: 1.2;
+    line-height: 1.25;
   }
 
   .camera-desc {
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    line-height: 1.7;
+    line-height: 1.75;
   }
 
-  .camera-specs {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    margin-top: 0.25rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--border);
+  .camera-card-footer {
+    padding: 1.25rem 1.5rem 1.5rem;
   }
 
-  .camera-specs li {
+  .btn-enquiry {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
     font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     font-weight: 500;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text);
+    background: transparent;
+    text-decoration: none;
+    padding: 0.7rem 1.25rem;
+    border: 1px solid var(--border-light);
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    width: 100%;
+    justify-content: center;
   }
 
-  .camera-specs li::before {
-    content: '›';
-    color: var(--accent);
-    font-size: 0.9rem;
-    line-height: 1;
-  }
-
-  .cameras-cta-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-top: 3rem;
-    padding-top: 3rem;
-    border-top: 1px solid var(--border);
-    flex-wrap: wrap;
-  }
-
-  .cameras-cta-note {
-    font-size: 0.95rem;
+  .btn-enquiry:hover {
+    border-color: var(--cta);
+    color: var(--cta);
+    background: rgba(242, 12, 54, 0.06);
   }
 
   @media (max-width: 1100px) {
@@ -1212,17 +1097,8 @@ const stats = [
       gap: 2rem;
     }
 
-    .cameras-feature {
-      aspect-ratio: 16/9;
-    }
-
     .cameras-grid {
       grid-template-columns: 1fr;
-    }
-
-    .cameras-cta-row {
-      flex-direction: column;
-      align-items: flex-start;
     }
   }
 

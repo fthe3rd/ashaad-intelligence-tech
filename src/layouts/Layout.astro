@@ -35,10 +35,7 @@ const currentPath = Astro.url.pathname;
     <header class="site-header" id="site-header">
       <div class="header-inner">
         <a href="/" class="logo" aria-label="Ashaad Intelligent Technologies Home">
-          <span class="logo-mark">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </span>
-          <span class="logo-text">ASHAAD <em>INTELLIGENT</em> TECH</span>
+          <img src="/images/ashaad-logo.jpeg" alt="Ashaad Intelligent Technologies" class="logo-img" />
         </a>
 
         <nav class="main-nav" aria-label="Main navigation">
@@ -81,8 +78,7 @@ const currentPath = Astro.url.pathname;
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="/" class="footer-logo">
-            <span class="logo-mark">A</span>
-            <span>ASHAAD INTELLIGENT TECHNOLOGIES</span>
+            <img src="/images/ashaad-logo.jpeg" alt="Ashaad Intelligent Technologies" class="footer-logo-img" />
           </a>
           <p class="footer-tagline">Serving Mankind Through Technology.<br />Building a Smarter, Connected World.</p>
           <div class="footer-socials">
@@ -183,7 +179,7 @@ const currentPath = Astro.url.pathname;
   .site-header.scrolled {
     background: rgba(8, 8, 15, 0.96);
     backdrop-filter: blur(14px);
-    box-shadow: 0 1px 0 rgba(0, 212, 180, 0.15);
+    box-shadow: 0 1px 0 rgba(191, 144, 4, 0.2);
   }
 
   .header-inner {
@@ -199,35 +195,15 @@ const currentPath = Astro.url.pathname;
   .logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
     text-decoration: none;
     flex-shrink: 0;
   }
 
-  .logo-mark {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    background: var(--accent);
-    color: var(--bg);
-    flex-shrink: 0;
-  }
-
-  .logo-text {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    color: var(--text);
-    line-height: 1.35;
-    text-transform: uppercase;
-  }
-
-  .logo-text em {
-    font-style: normal;
-    color: var(--accent);
+  .logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+    object-fit: contain;
   }
 
   .main-nav {
@@ -323,11 +299,13 @@ const currentPath = Astro.url.pathname;
     display: none;
     flex-direction: column;
     padding: 1.5rem 0;
-    border-top: 1px solid var(--border);
-    gap: 0.5rem;
+    border-top: 1px solid var(--border-light);
+    gap: 0.25rem;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease;
+    transition: max-height 0.3s ease;
+    background: rgba(8, 8, 15, 0.98);
+    backdrop-filter: blur(16px);
   }
 
   .mobile-nav.open {
@@ -336,14 +314,15 @@ const currentPath = Astro.url.pathname;
 
   .mobile-link {
     font-family: 'DM Mono', monospace;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--text);
     text-decoration: none;
-    padding: 0.5rem 0;
+    padding: 0.65rem 0;
     transition: color 0.2s;
+    border-bottom: 1px solid var(--border);
   }
 
   .mobile-link.active,
@@ -385,15 +364,14 @@ const currentPath = Astro.url.pathname;
   .footer-logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
     text-decoration: none;
     margin-bottom: 1.5rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text);
+  }
+
+  .footer-logo-img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
   }
 
   .footer-tagline {
@@ -425,7 +403,7 @@ const currentPath = Astro.url.pathname;
   .social-btn:hover {
     border-color: var(--accent);
     color: var(--accent);
-    background: rgba(0, 212, 180, 0.07);
+    background: rgba(191, 144, 4, 0.08);
   }
 
   .footer-links {
@@ -512,8 +490,8 @@ const currentPath = Astro.url.pathname;
       grid-template-columns: 1fr;
     }
 
-    .logo-text {
-      display: none;
+    .logo-img {
+      height: 40px;
     }
   }
 

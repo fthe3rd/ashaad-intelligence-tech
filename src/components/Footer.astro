@@ -1,0 +1,162 @@
+---
+import Ticker from './Ticker.astro';
+---
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand-col">
+      <div class="footer-brand-name">ASHAAD <span class="orange">INTELLIGENT TECHNOLOGIES</span></div>
+      <div class="footer-tagline">"Serving Mankind Through Technology"</div>
+      <p class="footer-about">
+        Full-spectrum technology services across Zimbabwe, Mozambique and South Africa. Digital security, networking, IT protocols and solar energy solutions since 2018.
+      </p>
+    </div>
+
+    <div>
+      <div class="footer-heading">Services</div>
+      <ul class="footer-links">
+        <li><a href="/services#digital-security">Digital Security</a></li>
+        <li><a href="/services#networking">Networking Solutions</a></li>
+        <li><a href="/services#it-protocols">IT Protocols</a></li>
+        <li><a href="/services#solar">Solar Systems</a></li>
+        <li><a href="/products">Camera Products</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-heading">Company</div>
+      <ul class="footer-links">
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+
+      <div class="footer-heading" style="margin-top: 32px;">Location</div>
+      <ul class="footer-links">
+        <li><span>Harare</span></li>
+        <li><span>Zimbabwe</span></li>
+        <li><span>Also: Mozambique &amp; South Africa</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">
+      © 2025 <span>Ashaad Intelligent Technologies</span> (Private) Limited
+    </div>
+    <a href="mailto:info@ashaadtech.co.zw" class="footer-email">
+      info@ashaadtech.co.zw
+    </a>
+  </div>
+
+  <div class="footer-ticker-wrap">
+    <Ticker />
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: #0a0a0a;
+    padding: 64px 48px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+
+  .footer-brand-name .orange { color: var(--orange); }
+
+  .footer-tagline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 20px;
+  }
+
+  .footer-about {
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--ash);
+    max-width: 300px;
+  }
+
+  .footer-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 18px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a,
+  .footer-links span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: var(--ash);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--bone); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 24px 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-copy {
+    font-size: 11px;
+    color: var(--ash);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-copy span { color: var(--orange); }
+
+  .footer-email {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: var(--ash);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-email:hover { color: var(--orange); }
+
+  .footer-ticker-wrap {
+    margin: 0 -48px;
+  }
+
+  @media (max-width: 900px) {
+    footer { padding: 48px 24px 0; }
+    .footer-top { grid-template-columns: 1fr; gap: 36px; }
+    .footer-ticker-wrap { margin: 0 -24px; }
+  }
+</style>

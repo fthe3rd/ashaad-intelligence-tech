@@ -1,392 +1,78 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { cameraProducts, CONTACT_NUMBER } from '../data/products';
-
-// Derive a tel: link from the contact number (strip spaces/non-digits)
-const telNumber = CONTACT_NUMBER.replace(/[^\d+]/g, '');
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductsGrid from '../components/ProductsGrid.astro';
+import ProductsCTA from '../components/ProductsCTA.astro';
 ---
 
-<Layout
+<BaseLayout
   title="Camera Products"
-  description="Browse our full range of Hikvision and Dahua camera solutions. No prices displayed — contact us for a tailored quote."
+  description="Browse our full range of Hikvision and Dahua camera solutions. Contact us for a tailored quote."
 >
-
-  <!-- ===== PAGE HERO ===== -->
+  <!-- Page hero -->
   <section class="page-hero">
-    <div class="container page-hero-inner">
-      <div class="breadcrumb">
-        <a href="/">Home</a>
-        <span>/</span>
-        <span>Products</span>
-      </div>
-      <p class="section-label reveal">Hikvision &amp; Dahua</p>
-      <h1 class="display-heading page-title reveal reveal-delay-2">
-        Camera Products
-      </h1>
-      <p class="page-subtitle body-text reveal reveal-delay-3">
-        AI-driven detection, full-colour night vision, thermal imaging and robust storage — matched to your site and budget.
-      </p>
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-content">
+      <div class="section-label">Camera Solutions</div>
+      <h1 class="page-hero-title"><span>OUR</span><br>PRODUCTS</h1>
+      <p class="page-hero-sub">Hikvision and Dahua camera solutions for every application. No prices displayed — contact us for a tailored quote that fits your project and budget.</p>
     </div>
   </section>
 
-  <!-- ===== PRODUCTS GRID ===== -->
-  <section class="products-section">
-    <div class="container">
-      <div class="products-grid">
-        {cameraProducts.map((product, i) => (
-          <article class="product-card">
-
-            <!-- Image or branded placeholder -->
-            <div class="product-img-wrap">
-              {product.image ? (
-                <img
-                  src={`/images/cameras/${product.image}`}
-                  alt={product.imageAlt ?? `${product.brand} ${product.name}`}
-                  class="product-img"
-                />
-              ) : (
-                <div class="product-img-placeholder" data-brand={product.brand}>
-                  <span class="placeholder-brand">{product.brand}</span>
-                  <span class="placeholder-category">{product.category}</span>
-                </div>
-              )}
-              {product.badge && (
-                <span class="product-badge">{product.badge}</span>
-              )}
-            </div>
-
-            <!-- Card body -->
-            <div class="product-body">
-              <div class="product-meta">
-                <span class="product-brand-label">{product.brand}</span>
-                <span class="product-category-badge">{product.category}</span>
-              </div>
-              <h2 class="product-name">{product.name}</h2>
-            </div>
-
-            <!-- Card footer -->
-            <div class="product-footer">
-              <a href="/contact" class="btn-enquiry">
-                Sales Enquiries
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA ===== -->
-  <section class="products-cta">
-    <div class="container products-cta-inner">
-      <div>
-        <p class="section-label">Get a Quote</p>
-        <h2 class="display-heading products-cta-title">Not sure which system suits your property?</h2>
-        <p class="body-text products-cta-text">
-          Our team will assess your site and recommend the right solution. No obligation.
-        </p>
-      </div>
-      <div class="products-cta-actions">
-        <a href="/contact" class="btn-primary">
-          Sales Inquiry
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-</Layout>
+  <ProductsCTA />
+  <ProductsGrid />
+  <ProductsCTA />
+</BaseLayout>
 
 <style>
-  /* ===== PAGE HERO ===== */
   .page-hero {
-    background: var(--bg);
-    padding: 9rem 0 4rem;
-    border-bottom: 1px solid var(--border);
+    min-height: 45vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 140px 48px 80px;
+    position: relative;
+    overflow: hidden;
   }
 
-  .page-hero-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+  .page-hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(232,119,34,0.07) 0%, transparent 60%),
+      linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+  }
+
+  .page-hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(232,119,34,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,119,34,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  }
+
+  .page-hero-content {
+    position: relative; z-index: 2;
     max-width: 700px;
   }
 
-  .breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
+  .page-hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 10vw, 120px);
+    line-height: 0.9;
+    margin-bottom: 20px;
   }
 
-  .breadcrumb a {
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  .page-hero-title span { color: var(--orange); }
 
-  .breadcrumb a:hover {
-    color: var(--accent);
-  }
-
-  .page-title {
-    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
-    line-height: 1.1;
-    font-weight: 600;
-    margin-top: 0.5rem;
-  }
-
-  .page-subtitle {
-    font-size: 1rem;
-    max-width: 520px;
-    line-height: 1.75;
-  }
-
-
-
-  /* ===== PRODUCTS GRID ===== */
-  .products-section {
-    padding: 6rem 0;
-    background: var(--bg);
-  }
-
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--border);
-  }
-
-  /* Individual product card */
-  .product-card {
-    background: var(--bg-card);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    transition: background 0.2s;
-  }
-
-  .product-card:hover {
-    background: #0f0f1a;
-  }
-
-  /* Image area */
-  .product-img-wrap {
-    position: relative;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-  }
-
-  .product-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.8) saturate(0.85);
-    transition: filter 0.3s, transform 0.4s;
-  }
-
-  .product-card:hover .product-img {
-    filter: brightness(0.95) saturate(1);
-    transform: scale(1.03);
-  }
-
-  /* Branded placeholder when no image */
-  .product-img-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: linear-gradient(135deg, #04091e 0%, #0d1635 50%, #070b1a 100%);
-    border-bottom: 1px solid var(--border-light);
-  }
-
-  .product-img-placeholder[data-brand="Hikvision"] {
-    background: linear-gradient(135deg, #0a0a18 0%, #0f1630 50%, #080814 100%);
-  }
-
-  .product-img-placeholder[data-brand="Dahua"] {
-    background: linear-gradient(135deg, #080f05 0%, #0f1e08 50%, #060c04 100%);
-  }
-
-  .placeholder-brand {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: rgba(0, 212, 180, 0.25);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  .placeholder-category {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.15);
-  }
-
-  .product-badge {
-    position: absolute;
-    top: 0.85rem;
-    left: 0.85rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.55rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--bg);
-    background: var(--accent);
-    padding: 0.25rem 0.6rem;
-  }
-
-  /* Card body */
-  .product-body {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    padding: 1.5rem 1.5rem 1rem;
-    flex: 1;
-  }
-
-  .product-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  .product-brand-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.58rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
-
-  .product-category-badge {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.55rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--accent);
-    background: rgba(0, 212, 180, 0.1);
-    border: 1px solid rgba(0, 212, 180, 0.2);
-    padding: 0.18rem 0.5rem;
-  }
-
-  .product-name {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.3;
-  }
-
-  /* Card footer */
-  .product-footer {
-    padding: 1rem 1.5rem 1.5rem;
-  }
-
-  .btn-enquiry {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text);
-    background: transparent;
-    text-decoration: none;
-    padding: 0.7rem 1.25rem;
-    border: 1px solid var(--border-light);
-    transition: border-color 0.2s, color 0.2s, background 0.2s;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .btn-enquiry:hover {
-    border-color: var(--cta);
-    color: var(--cta);
-    background: rgba(242, 12, 54, 0.06);
-  }
-
-  /* ===== BOTTOM CTA ===== */
-  .products-cta {
-    padding: 6rem 0;
-    background: var(--bg-section);
-    border-top: 1px solid var(--border);
-  }
-
-  .products-cta-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .products-cta-title {
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
-    margin-top: 0.75rem;
-    line-height: 1.1;
-  }
-
-  .products-cta-text {
-    font-size: 0.9375rem;
-    margin-top: 0.75rem;
+  .page-hero-sub {
+    font-size: 15px;
+    color: var(--ash);
     max-width: 480px;
+    line-height: 1.7;
+    margin-top: 20px;
   }
 
-  .products-cta-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    min-width: 220px;
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 1200px) {
-    .products-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .products-cta-inner {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-
-    .products-cta-actions {
-      flex-direction: row;
-      flex-wrap: wrap;
-      min-width: 0;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .products-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .hero-contact {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.35rem;
-    }
+  @media (max-width: 900px) {
+    .page-hero { padding: 120px 24px 60px; }
   }
 </style>

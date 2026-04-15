@@ -1,822 +1,409 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-const values = [
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>`,
-    title: 'Professionalization',
-    desc: 'Every project is executed with the highest standards of technical excellence, training, and industry best practice.',
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-    title: 'Dedication',
-    desc: 'We are unwavering in our commitment to customers — before, during and long after every installation and deployment.',
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>`,
-    title: 'Concentration',
-    desc: 'Focused expertise in our four core domains means deeper knowledge, faster solutions, and better outcomes.',
-  },
-];
-
-const regions = [
-  {
-    country: 'Zimbabwe',
-    flag: '🇿🇼',
-    desc: 'Our headquarters and primary market. We serve individuals, businesses, and government institutions across the nation.',
-    highlight: 'Primary HQ',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Modern buildings in Zimbabwe',
-    city: 'Harare',
-  },
-  {
-    country: 'Mozambique',
-    flag: '🇲🇿',
-    desc: 'Expanding our reach across the border, delivering reliable technology solutions to our neighbours.',
-    highlight: 'Active Region',
-    image: 'https://images.unsplash.com/photo-1589139981099-b3a4a78e8cf3?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Mozambique landscape and coastline',
-    city: 'Maputo',
-  },
-  {
-    country: 'South Africa',
-    flag: '🇿🇦',
-    desc: 'Serving the broader Southern African market with premium technology products and services.',
-    highlight: 'Active Region',
-    image: 'https://images.unsplash.com/photo-1577948000111-9c970dfe3743?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Johannesburg skyline South Africa',
-    city: 'Johannesburg',
-  },
-];
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Layout title="About Us" description="Learn about Ashaad Intelligent Technologies — founded in 2018, committed to bringing smart technology to Zimbabwe, Mozambique and South Africa.">
-  <!-- ===== PAGE HERO ===== -->
-  <section class="page-hero">
-    <div class="page-hero-bg">
-      <img
-        src="https://images.unsplash.com/photo-1497366754035-f200581374b8?auto=format&fit=crop&w=1600&q=80"
-        alt="Modern technology workspace"
-        class="page-hero-img"
-        onerror="this.style.background='var(--navy)';"
-      />
-      <div class="page-hero-overlay"></div>
-    </div>
-    <div class="container page-hero-inner">
-      <div class="breadcrumb">
-        <a href="/">Home</a>
-        <span>/</span>
-        <span>About</span>
-      </div>
-      <p class="section-label reveal">Our Story</p>
-      <h1 class="display-heading page-title reveal reveal-delay-2">
-        Built on Purpose,<br />
-        <em>Driven by Mission.</em>
-      </h1>
-      <p class="page-subtitle body-text reveal reveal-delay-3">
-        Since 2018, Ashaad Intelligent Technologies has been on a mission to bring<br class="br-desktop" />
-        the digital world to every family and organization across Southern Africa.
-      </p>
+<BaseLayout
+  title="About Us"
+  description="Founded in 2018, Ashaad Intelligent Technologies delivers cutting-edge digital infrastructure across Zimbabwe, Mozambique and South Africa."
+>
+
+  <!-- ── Page Hero ──────────────────────────────── -->
+  <section class="about-hero">
+    <div class="about-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80')"></div>
+    <div class="about-hero-overlay"></div>
+    <div class="about-hero-content">
+      <div class="about-hero-label">Who We Are</div>
+      <h1 class="about-hero-title">ASHAAD INTELLIGENT<br><span>TECHNOLOGIES</span></h1>
+      <p class="about-hero-sub">Built on purpose, driven by mission. Bringing the digital world to every family and every organisation across Southern Africa since 2018.</p>
     </div>
   </section>
 
-  <!-- ===== STORY ===== -->
-  <section class="story-section" id="story">
-    <div class="container story-inner">
-      <div class="story-content">
-        <p class="section-label">How We Began</p>
-        <h2 class="display-heading story-title">
-          From Zimbabwe<br />to the Region.
-        </h2>
-        <p class="body-text">
-          Ashaad Intelligent Technologies PLT was founded in 2018 with a clear and simple belief:
-          that cutting-edge technology should not be a privilege of the few. From our home in Zimbabwe,
-          we set out to deliver world-class digital security, networking, IT systems, and clean energy
-          solutions to individuals, businesses and communities across Southern Africa.
-        </p>
-        <p class="body-text" style="margin-top: 1rem;">
-          Today, we are recognised as a leading service provider in the region — operating across
-          Zimbabwe, Mozambique, and South Africa — with a growing portfolio of solutions that
-          connect, protect, and power our clients every day.
-        </p>
-        <div class="story-mission">
-          <div class="mission-line"></div>
-          <blockquote class="mission-quote">
-            "Bringing the Digital World to Everyone, Every Family, and Every Organization —
-            Building a Smart World Where Everything is Connected and Security is Guaranteed."
-          </blockquote>
-        </div>
+  <!-- ── Story Section ──────────────────────────── -->
+  <section class="about-story section">
+    <div class="story-inner">
+      <div class="story-text">
+        <div class="section-label">Our Story</div>
+        <h2 class="story-heading">BUILT ON<br><span>PURPOSE &amp;</span><br>MISSION</h2>
+        <p>Ashaad Intelligent Technologies was founded in 2018 in Harare, Zimbabwe with a single mission: to make enterprise-grade digital infrastructure accessible to every organisation, large or small. From humble beginnings in CCTV installation, we grew into a full-spectrum technology company serving Zimbabwe, Mozambique and South Africa.</p>
+        <p style="margin-top: 16px;">Our team combines local market knowledge with internationally-sourced equipment and best-practice deployment — delivering digital security, connectivity, clean power, and intelligent IT systems to clients who demand reliability.</p>
       </div>
-      <div class="story-media">
-        <div class="story-img-stack">
-          <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=700&q=80"
-            alt="Modern buildings and technology infrastructure"
-            class="story-img-main"
-            onerror="this.style.background='var(--bg-card)';"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=500&q=80"
-            alt="Network infrastructure server room"
-            class="story-img-inset"
-            onerror="this.style.background='var(--navy)';"
-          />
-        </div>
-        <div class="story-badge">
-          <div class="badge-inner">
-            <span class="badge-year">2018</span>
-            <span class="badge-text">Est. Zimbabwe</span>
-          </div>
-        </div>
+      <div class="story-image">
+        <img
+          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80"
+          alt="Digital infrastructure — network and connectivity"
+          loading="lazy"
+        />
       </div>
     </div>
   </section>
 
-  <!-- ===== VISION FULL BLEED ===== -->
-  <section class="vision-section" id="mission">
-    <div class="vision-bg">
-      <img
-        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80"
-        alt="Connected digital world"
-        class="vision-img"
-        onerror="this.style.background='var(--navy)';"
-      />
-      <div class="vision-overlay"></div>
-    </div>
-    <div class="container vision-inner">
-      <div class="vision-content">
-        <p class="section-label">Our Vision</p>
-        <h2 class="display-heading vision-title">
-          A Connected,<br />Secure World<br />for All.
-        </h2>
+  <!-- ── Regions & Credentials ─────────────────── -->
+  <section class="accred-section">
+    <div class="accred-inner">
+      <div class="section-label">Where We Operate</div>
+      <h2 class="accred-title">REGIONAL <span>PRESENCE</span></h2>
+      <p class="accred-intro">Ashaad Intelligent Technologies operates across three countries in Southern Africa, delivering consistent technology solutions with local support in each market.</p>
+
+      <div class="accred-grid">
+
+        <!-- Zimbabwe -->
+        <div class="accred-card">
+          <div class="accred-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/>
+              <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+          </div>
+          <div class="accred-body">
+            <div class="accred-label-text">Primary Market</div>
+            <div class="accred-value">Zimbabwe</div>
+            <div class="accred-desc">Headquartered in Harare, Zimbabwe. Our primary market since founding in 2018, serving residential, commercial and government clients nationwide.</div>
+          </div>
+        </div>
+
+        <!-- Mozambique -->
+        <div class="accred-card">
+          <div class="accred-badge accred-badge--gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <div class="accred-body">
+            <div class="accred-label-text">Active Region</div>
+            <div class="accred-value">Mozambique</div>
+            <div class="accred-desc">Active operations in Maputo and surrounding areas. Delivering networking, solar and CCTV solutions to a growing base of Mozambican clients.</div>
+          </div>
+        </div>
+
+        <!-- South Africa -->
+        <div class="accred-card">
+          <div class="accred-badge accred-badge--blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <div class="accred-body">
+            <div class="accred-label-text">Active Region</div>
+            <div class="accred-value">South Africa</div>
+            <div class="accred-desc">Extending our reach into the South African market from Johannesburg. Supporting clients with enterprise security and infrastructure deployments.</div>
+          </div>
+        </div>
+
+        <!-- Founded -->
+        <div class="accred-card">
+          <div class="accred-badge accred-badge--orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div class="accred-body">
+            <div class="accred-label-text">Established</div>
+            <div class="accred-value">Since 2018</div>
+            <div class="accred-desc">Over six years of operations in Southern Africa, continuously expanding our service offerings and regional footprint to serve more clients.</div>
+          </div>
+        </div>
+
       </div>
-      <div class="vision-pillars">
-        <div class="pillar">
-          <div class="pillar-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h3>Nationwide Reach</h3>
-          <p>Serving clients across Zimbabwe and into neighbouring countries with reliable, consistent service delivery.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>Security Guaranteed</h3>
-          <p>Every system we deploy is built around the principle that security is a right, not a luxury.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
-          </div>
-          <h3>Clean Power</h3>
-          <p>Solar and power solutions ensure that technology keeps running regardless of grid constraints.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3>For Everyone</h3>
-          <p>From family homes to large enterprises — our products and pricing serve all levels of the market.</p>
-        </div>
+
+      <div class="accred-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <span>We respond to all enquiries within 24 hours. For urgent requirements, call us directly on +263 780 000 000 — Mon to Sat, 8:00 AM to 6:00 PM.</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== CORE VALUES ===== -->
-  <section class="values-section">
-    <div class="container">
-      <div class="values-header">
-        <p class="section-label">Enterprise Spirit</p>
-        <h2 class="display-heading section-title">
-          How We Work,<br />Every Day.
-        </h2>
-      </div>
-      <div class="values-grid">
-        {values.map((v, i) => (
-          <div class="value-card">
-            <div class="value-number">0{i + 1}</div>
-            <div class="value-icon" set:html={v.icon} />
-            <h3 class="value-title">{v.title}</h3>
-            <p class="value-desc">{v.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== REGIONS ===== -->
-  <section class="about-regions" id="regions">
-    <div class="container">
-      <div class="regions-header">
-        <p class="section-label">Where We Operate</p>
-        <h2 class="display-heading section-title">
-          Our Southern<br />African Footprint.
-        </h2>
-      </div>
-      <div class="regions-grid">
-        {regions.map((r) => (
-          <div class="region-card">
-            <div class="region-top">
-              <span class="region-badge">{r.highlight}</span>
-            </div>
-            <h3 class="region-name">{r.country}</h3>
-            <p class="region-city">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              {r.city}
-            </p>
-            <p class="region-desc">{r.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-  <!-- ===== CTA ===== -->
+  <!-- ── CTA ────────────────────────────────────── -->
   <section class="about-cta">
-    <div class="container about-cta-inner">
-      <div class="about-cta-text">
-        <p class="section-label">Join the Journey</p>
-        <h2 class="display-heading about-cta-title">
-          Ready to Build<br />the Future Together?
-        </h2>
-      </div>
-      <div class="about-cta-actions">
-        <a href="/contact" class="btn-primary">
-          Contact Us
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="/services" class="btn-outline">Our Services</a>
-      </div>
-    </div>
+    <h2 class="about-cta-title">Ready to Connect?</h2>
+    <a href="tel:+263780000000" class="btn-call-about">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 5.9 5.9l1-1.02a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      Call Us Now
+    </a>
   </section>
-</Layout>
+
+</BaseLayout>
 
 <style>
-  /* PAGE HERO */
-  .page-hero {
+  /* ── Hero ──────────────────────────────────────── */
+  .about-hero {
+    min-height: 65vh;
     position: relative;
-    padding: 160px 0 100px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 80px 80px;
     overflow: hidden;
   }
 
-  .page-hero-bg {
+  .about-hero-bg {
     position: absolute;
     inset: 0;
-    z-index: 0;
+    background-size: cover;
+    background-position: center 40%;
   }
 
-  .page-hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.3) saturate(0.7);
-  }
-
-  .page-hero-overlay {
+  .about-hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
-      105deg,
-      rgba(8, 8, 15,0.95) 40%,
-      rgba(8, 8, 15,0.4) 100%
+      to top,
+      rgba(17,16,16,0.92) 0%,
+      rgba(17,16,16,0.4) 60%,
+      rgba(17,16,16,0.2) 100%
     );
   }
 
-  .page-hero-inner {
+  .about-hero-content {
     position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    max-width: 850px;
+    z-index: 2;
+    max-width: 720px;
   }
 
-  .breadcrumb {
+  .about-hero-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
+    gap: 14px;
   }
 
-  .breadcrumb a {
-    text-decoration: none;
-    transition: color 0.2s;
+  .about-hero-label::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--orange);
+    flex-shrink: 0;
   }
 
-  .breadcrumb a:hover {
-    color: var(--accent);
+  .about-hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 100px);
+    line-height: 0.9;
+    margin-bottom: 24px;
   }
 
-  .breadcrumb span:last-child {
-    color: var(--text);
+  .about-hero-title span { color: var(--orange); }
+
+  .about-hero-sub {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ash);
+    max-width: 500px;
   }
 
-  .page-title {
-    font-size: clamp(1.6rem, 3vw, 2.25rem);
-    line-height: 1.15;
-    font-weight: 600;
-  }
-
-  .page-title em {
-    color: var(--accent);
-    font-style: normal;
-  }
-
-  .page-subtitle {
-    font-size: 1rem;
-    max-width: 600px;
-    line-height: 1.8;
-  }
-
-  /* STORY */
-  .story-section {
-    padding: 7rem 0;
-    background: var(--bg);
-  }
+  /* ── Story ─────────────────────────────────────── */
+  .about-story { background: var(--dark); }
 
   .story-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: 80px;
     align-items: center;
   }
 
-  .story-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  .story-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 0.9;
+    margin: 16px 0 32px;
   }
 
-  .story-title {
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    margin-top: 1rem;
+  .story-heading span { color: var(--orange); }
+
+  .story-text p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--ash);
   }
 
-  .story-mission {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 0.5rem;
-    padding: 1.5rem;
-    background: var(--bg-card);
-  }
-
-  .mission-line {
-    width: 3px;
-    flex-shrink: 0;
-    background: var(--accent);
-  }
-
-  .mission-quote {
-    font-family: 'Space Grotesk', sans-serif;
-    font-style: italic;
-    font-size: 1rem;
-    color: var(--text);
-    line-height: 1.6;
-  }
-
-  /* Story media */
-  .story-media {
+  .story-image {
     position: relative;
-  }
-
-  .story-img-stack {
-    position: relative;
-  }
-
-  .story-img-main {
-    width: 100%;
-    aspect-ratio: 3/4;
-    object-fit: cover;
-    border: 1px solid var(--border-light);
-  }
-
-  .story-img-inset {
-    position: absolute;
-    bottom: -3rem;
-    left: -3rem;
-    width: 55%;
+    overflow: hidden;
     aspect-ratio: 4/3;
-    object-fit: cover;
-    border: 4px solid var(--bg);
   }
 
-  .story-badge {
-    position: absolute;
-    top: 2rem;
-    right: -1.5rem;
-    z-index: 10;
-  }
-
-  .badge-inner {
-    background: var(--accent);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  .badge-year {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--bg);
-    line-height: 1;
-  }
-
-  .badge-text {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(8, 8, 15, 0.7);
-  }
-
-  /* VISION */
-  .vision-section {
-    position: relative;
-    padding: 9rem 0;
-    overflow: hidden;
-  }
-
-  .vision-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .vision-img {
+  .story-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.2) saturate(0.6);
+    display: block;
   }
 
-  .vision-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to right,
-      rgba(8, 8, 15,0.95) 40%,
-      rgba(8, 8, 15,0.5) 100%
-    );
+  /* ── Accreditations / Regions ─────────────────── */
+  .accred-section {
+    background: var(--charcoal);
+    padding: 100px 48px;
   }
 
-  .vision-inner {
-    position: relative;
-    z-index: 10;
+  .accred-inner { max-width: 1200px; }
+
+  .accred-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 0.9;
+    margin: 16px 0 24px;
+  }
+
+  .accred-title span { color: var(--orange); }
+
+  .accred-intro {
+    font-size: 15px;
+    color: var(--ash);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 60px;
+  }
+
+  .accred-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
   }
 
-  .vision-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1.05;
-    color: var(--text);
-    margin-top: 1rem;
-  }
-
-  .vision-pillars {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-
-  .pillar {
-    padding: 1.5rem;
-    background: rgba(8, 8, 15, 0.85);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--border-light);
+  .accred-card {
+    background: var(--dark);
+    padding: 40px 36px;
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    transition: border-color 0.25s;
+    gap: 28px;
+    align-items: flex-start;
+    border-left: 3px solid transparent;
+    transition: border-color 0.3s, background 0.3s;
   }
 
-  .pillar:hover {
-    border-color: var(--accent);
+  .accred-card:hover {
+    background: #1a1919;
+    border-left-color: var(--orange);
   }
 
-  .pillar-icon {
-    color: var(--accent);
+  .accred-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
 
-  .pillar h3 {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.85rem;
-    font-weight: 700;
+  .accred-badge svg {
+    width: 24px;
+    height: 24px;
+    color: var(--ash);
+  }
+
+  .accred-badge--gold { background: rgba(218,165,32,0.1); border-color: rgba(218,165,32,0.3); }
+  .accred-badge--gold svg { color: #daa520; }
+
+  .accred-badge--blue { background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.3); }
+  .accred-badge--blue svg { color: #60a5fa; }
+
+  .accred-badge--orange { background: rgba(232,119,34,0.12); border-color: rgba(232,119,34,0.35); }
+  .accred-badge--orange svg { color: var(--orange); }
+
+  .accred-body { flex: 1; }
+
+  .accred-label-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ash);
+    margin-bottom: 8px;
+  }
+
+  .accred-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
     letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text);
+    color: var(--bone);
+    margin-bottom: 10px;
   }
 
-  .pillar p {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    line-height: 1.6;
+  .accred-desc {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--ash);
   }
 
-  /* VALUES */
-  .values-section {
-    padding: 7rem 0;
-    background: var(--bg-section);
-  }
-
-  .values-header {
-    margin-bottom: 4rem;
-  }
-
-  .values-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border);
-  }
-
-  .value-card {
-    background: var(--bg-card);
-    padding: 3rem 2.5rem;
+  .accred-note {
+    margin-top: 40px;
     display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.25s;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 24px 28px;
+    background: rgba(232,119,34,0.06);
+    border: 1px solid rgba(232,119,34,0.15);
   }
 
-  .value-card:hover {
-    background: #0f1c2b;
+  .accred-note svg {
+    width: 18px;
+    height: 18px;
+    color: var(--orange);
+    flex-shrink: 0;
+    margin-top: 2px;
   }
 
-  .value-number {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 4rem;
-    font-weight: 900;
-    color: rgba(0, 212, 180, 0.1);
-    line-height: 1;
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
+  .accred-note span {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--ash);
   }
 
-  .value-icon {
-    color: var(--accent);
-    padding: 0.75rem;
-    background: rgba(0, 212, 180, 0.08);
-    width: fit-content;
-    border: 1px solid rgba(0, 212, 180, 0.15);
-  }
-
-  .value-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--text);
-  }
-
-  .value-desc {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-  }
-
-  /* REGIONS */
-  .about-regions {
-    padding: 7rem 0;
-    background: var(--bg);
-  }
-
-  .regions-header {
-    margin-bottom: 4rem;
-  }
-
-  .regions-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  .region-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    transition: border-color 0.25s;
-  }
-
-  .region-card:hover {
-    border-color: var(--accent);
-  }
-
-  .region-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.25rem;
-  }
-
-  .region-flag {
-    font-size: 2rem;
-    line-height: 1;
-  }
-
-  .region-badge {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.58rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    border: 1px solid var(--border-light);
-    padding: 0.2rem 0.6rem;
-  }
-
-  .region-name {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text);
-  }
-
-  .region-city {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
-
-  .region-desc {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin-top: 0.25rem;
-  }
-
-  /* GALLERY */
-  .gallery-section {
-    padding: 0;
-    background: var(--bg-deep);
-  }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 2px;
-    background: var(--bg-deep);
-    max-height: 600px;
-  }
-
-  .gallery-item {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-    filter: brightness(0.7) saturate(0.8);
-  }
-
-  .gallery-item:hover img {
-    transform: scale(1.04);
-    filter: brightness(0.85) saturate(1);
-  }
-
-  .gallery-item.large {
-    grid-row: 1 / 3;
-    min-height: 500px;
-  }
-
-  .gallery-item:not(.large) {
-    min-height: 249px;
-  }
-
-  .gallery-label {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text);
-    background: rgba(8, 8, 15, 0.8);
-    padding: 0.4rem 0.75rem;
-    backdrop-filter: blur(4px);
-  }
-
-  /* ABOUT CTA */
+  /* ── CTA ─────────────────────────────────────────── */
   .about-cta {
-    padding: 7rem 0;
-    background: var(--bg-section);
-    border-top: 1px solid var(--border);
-  }
-
-  .about-cta-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-    flex-wrap: wrap;
-  }
-
-  .about-cta-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    background: var(--orange);
+    padding: 80px 48px;
+    text-align: center;
   }
 
   .about-cta-title {
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    line-height: 1.1;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 8vw, 100px);
+    color: var(--dark);
+    margin-bottom: 40px;
+    line-height: 0.9;
   }
 
-  .about-cta-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    flex-shrink: 0;
+  .btn-call-about {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bone);
+    background: var(--dark);
+    padding: 20px 52px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    clip-path: polygon(0 0, 100% 0, 100% 72%, 95% 100%, 0 100%);
   }
 
-  /* Responsive */
-  .br-desktop { display: block; }
+  .btn-call-about svg { width: 18px; height: 18px; }
+  .btn-call-about:hover { background: #1a1a1a; transform: translateY(-3px); }
 
-  @media (max-width: 1100px) {
-    .story-inner,
-    .vision-inner {
-      grid-template-columns: 1fr;
-      gap: 4rem;
-    }
-
-    .story-img-inset {
-      position: static;
-      margin-top: 1rem;
-      width: 60%;
-    }
-
-    .story-badge {
-      top: 1rem;
-      right: 1rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .values-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .regions-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .vision-pillars {
-      grid-template-columns: 1fr;
-    }
-
-    .gallery-grid {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-      max-height: none;
-    }
-
-    .gallery-item.large {
-      grid-row: auto;
-      min-height: 280px;
-    }
-
-    .gallery-item:not(.large) {
-      min-height: 200px;
-    }
-
-    .about-cta-inner {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .br-desktop { display: none; }
-
-    .page-title { font-size: 2.5rem; }
+  /* ── Responsive ──────────────────────────────────── */
+  @media (max-width: 900px) {
+    .about-hero { padding: 0 24px 60px; min-height: 55vh; }
+    .story-inner { grid-template-columns: 1fr; gap: 40px; }
+    .accred-section { padding: 60px 24px; }
+    .accred-grid { grid-template-columns: 1fr; }
+    .about-cta { padding: 60px 24px; }
   }
 </style>

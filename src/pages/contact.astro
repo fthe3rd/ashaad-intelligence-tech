@@ -1,904 +1,321 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-const offices = [
-  {
-    country: 'Zimbabwe',
-    flag: '🇿🇼',
-    status: 'Headquarters',
-    city: 'Harare, Zimbabwe',
-    description: 'Our primary base and founding home. Serving individuals, enterprises, and government institutions nationwide.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Harare city skyline and buildings',
-  },
-  {
-    country: 'Mozambique',
-    flag: '🇲🇿',
-    status: 'Active Region',
-    city: 'Maputo, Mozambique',
-    description: 'Bringing digital connectivity and smart security solutions across the border.',
-    image: 'https://images.unsplash.com/photo-1589139981099-b3a4a78e8cf3?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Mozambique landscape and city',
-  },
-  {
-    country: 'South Africa',
-    flag: '🇿🇦',
-    status: 'Active Region',
-    city: 'Johannesburg, South Africa',
-    description: 'Serving the broader Southern African market with premium technology products and services.',
-    image: 'https://images.unsplash.com/photo-1577948000111-9c970dfe3743?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Johannesburg skyline South Africa',
-  },
-];
-
-const contactDetails = [
-  {
-    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
-    label: 'Headquarters',
-    value: 'Harare, Zimbabwe',
-  },
-  {
-    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.76a16 16 0 0 0 6.29 6.29l1.72-1.72a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
-    label: 'Phone',
-    value: '+263 78 000 0000',
-  },
-  {
-    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
-    label: 'Email',
-    value: 'info@ashaadtech.co.zw',
-  },
-  {
-    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
-    label: 'Working Hours',
-    value: 'Mon – Sat: 8:00 AM – 6:00 PM',
-  },
-];
-
-const services = [
-  'Digital Security (CCTV)',
-  'Networking Solutions',
-  'IT Protocols & Management',
-  'Solar Systems & Power Banks',
-  'General Enquiry',
-  'Partnership / Become a Reseller',
-];
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
 ---
 
-<Layout
+<BaseLayout
   title="Contact Us"
-  description="Get in touch with Ashaad Intelligent Technologies. We serve Zimbabwe, Mozambique and South Africa with solar systems, IT protocols, networking and CCTV products."
+  description="Get in touch with Ashaad Intelligent Technologies in Zimbabwe. Phone, email, or use our contact form."
 >
-  <!-- ===== HERO ===== -->
-  <section class="contact-hero">
-    <div class="hero-bg">
-      <img
-        src="https://images.unsplash.com/photo-1653566031486-dc4ead13a35d?auto=format&fit=crop&w=1600&q=80"
-        alt="Modern technology office"
-        class="hero-bg-img"
-        onerror="this.style.opacity='0';"
-      />
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="container hero-inner">
-      <div class="breadcrumb">
-        <a href="/">Home</a>
-        <span>/</span>
-        <span>Contact</span>
-      </div>
-      <p class="section-label reveal">Get in Touch</p>
-      <h1 class="display-heading hero-title reveal reveal-delay-2">
-        Let's Build Something<br />
-        <em>Great Together.</em>
-      </h1>
-      <p class="body-text hero-subtitle reveal reveal-delay-3">
-        Whether you're looking for a security system, network infrastructure,<br class="br-desktop" />
-        solar solution, or a strategic partnership — we're ready to help.
-      </p>
-    </div>
-  </section>
+  <section class="contact-page">
+    <div class="page-bg"></div>
+    <div class="page-grid"></div>
 
-  <!-- ===== CONTACT MAIN ===== -->
-  <section class="contact-main">
-    <div class="container contact-grid">
-
-      <!-- LEFT: Info Column -->
-      <div class="contact-info-col">
-        <div class="info-media">
-          <img
-            src="https://images.unsplash.com/photo-1510849911856-cdc9335e5597?auto=format&fit=crop&w=800&q=80"
-            alt="Ashaad team working on technology solutions"
-            class="info-img"
-            onerror="this.style.background='var(--navy)';"
-          />
-          <div class="info-img-overlay"></div>
-          <div class="info-badge">
-            <span class="badge-pulse"></span>
-            <span>We Respond Within 24h</span>
-          </div>
-        </div>
+    <div class="contact-layout">
+      <!-- Info panel -->
+      <div class="contact-info">
+        <div class="section-label">Get In Touch</div>
+        <h1 class="contact-title">LET'S<br><span>TALK</span></h1>
+        <p class="contact-intro">Ready to secure, connect, or power your organisation? Reach out to our team and we'll get back to you within 24 hours.</p>
 
         <div class="contact-details">
-          <p class="section-label">Reach Us</p>
-          <h2 class="display-heading info-title">
-            We're Here<br />For You.
-          </h2>
-          <p class="body-text info-text">
-            Ashaad Intelligent Technologies is committed to delivering the best service.
-            Reach out for a consultation, quote, or to learn how we can serve your needs.
-          </p>
-
-          <div class="details-list">
-            {contactDetails.map((d) => (
-              <div class="detail-item">
-                <div class="detail-icon" set:html={d.icon} />
-                <div>
-                  <div class="detail-label">{d.label}</div>
-                  <div class="detail-value">{d.value}</div>
-                </div>
-              </div>
-            ))}
+          <div class="contact-detail-item">
+            <div class="detail-label">Phone</div>
+            <a href="tel:+263780000000" class="detail-value">+263 780 000 000</a>
           </div>
-
-          <div class="info-cta-note">
-            <div class="note-line"></div>
-            <p class="body-text">
-              <em>Professionalization &middot; Dedication &middot; Concentration</em><br />
-              <span>Our enterprise spirit, every interaction.</span>
-            </p>
+          <div class="contact-detail-item">
+            <div class="detail-label">Email</div>
+            <a href="mailto:info@ashaadtech.co.zw" class="detail-value">info@ashaadtech.co.zw</a>
+          </div>
+          <div class="contact-detail-item">
+            <div class="detail-label">Location</div>
+            <div class="detail-value">Harare, Zimbabwe<br />Also serving Mozambique &amp; South Africa</div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="detail-label">Hours</div>
+            <div class="detail-value">Mon – Sat: 8:00 – 18:00<br />Emergency enquiries welcome</div>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT: Form + Map Column -->
-      <div class="contact-form-col">
-        <div class="form-header">
-          <p class="section-label">Send a Message</p>
-          <h2 class="display-heading form-title">Start the<br />Conversation.</h2>
+      <!-- Form panel -->
+      <div class="contact-form-panel">
+        <div class="form-panel-header">
+          <div class="section-label">Send a Message</div>
         </div>
-
-        <form
-          id="contact-form"
-          class="contact-form"
-          action="https://api.web3forms.com/submit"
-          method="POST"
-        >
-          <!-- Web3Forms config -->
-          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
-          <input type="hidden" name="subject" value="New Enquiry — Ashaad Intelligent Technologies" />
-          <input type="hidden" name="from_name" value="Ashaad Website" />
-          <input type="hidden" name="redirect" value="false" />
-          <input type="checkbox" name="botcheck" style="display:none;" />
-
-          <div class="form-field">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Full Name"
-              required
-              autocomplete="name"
-            />
-          </div>
-
-          <div class="form-field">
-            <input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="Email or Phone Number"
-              required
-            />
-          </div>
-
-          <div class="form-field">
-            <textarea
-              name="message"
-              id="message"
-              rows="6"
-              placeholder="How can we help you?"
-              required
-            ></textarea>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="submit-btn" id="submit-btn">
-              <span class="btn-label">Send Message</span>
-              <span class="btn-loading" aria-hidden="true" style="display:none">Sending…</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
-            </button>
-            <p class="form-note">Response within 24 hours. No spam.</p>
-          </div>
-        </form>
-
-        <div class="form-success" id="form-success" style="display:none;">
-          <div class="success-mark">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div>
-            <p class="success-title">Message received.</p>
-            <p class="success-sub">We'll be in touch shortly.</p>
-          </div>
-        </div>
-
-        <!-- Map -->
-        <div class="contact-map">
-          <iframe
-            src="https://maps.google.com/maps?q=Harare,+Zimbabwe&output=embed"
-            width="100%"
-            height="300"
-            style="border:0; display:block;"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Ashaad Intelligent Technologies — Harare, Zimbabwe"
-          ></iframe>
-        </div>
+        <ContactForm />
       </div>
     </div>
   </section>
 
-  <!-- ===== REACH STRIP ===== -->
-  <div class="reach-strip container">
-    <span class="reach-label">We serve</span>
-    {offices.map((o, i) => (
-      <>
-        <span class="reach-country">{o.flag} {o.country}</span>
-        {i < offices.length - 1 && <span class="reach-sep">/</span>}
-      </>
-    ))}
-    <a href="/about#regions" class="reach-link">
-      Our reach
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-  </div>
+  <!-- FAQ Section -->
+  <section class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+    <div class="faq-inner">
+      <div class="faq-header">
+        <div class="section-label">Frequently Asked Questions</div>
+        <h2 class="faq-title">GOT <span>QUESTIONS?</span></h2>
+        <p class="faq-subtitle">Everything you need to know about working with Ashaad Intelligent Technologies.</p>
+      </div>
 
-</Layout>
+      <div class="faq-list">
 
-<script>
-  const form = document.getElementById('contact-form') as HTMLFormElement | null;
-  const successEl = document.getElementById('form-success');
-  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
-  const btnLabel = submitBtn?.querySelector('.btn-label') as HTMLElement | null;
-  const btnLoading = submitBtn?.querySelector('.btn-loading') as HTMLElement | null;
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary class="faq-summary">
+            <span itemprop="name">Where is Ashaad Intelligent Technologies located and what areas do you serve?</span>
+          </summary>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+              <p>Ashaad Intelligent Technologies is headquartered in <strong>Harare, Zimbabwe</strong>. We serve clients across Zimbabwe and have active operations in <strong>Mozambique</strong> (Maputo) and <strong>South Africa</strong> (Johannesburg). Whether your project is local or regional, our teams can mobilise to deliver.</p>
+            </div>
+          </div>
+        </details>
 
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary class="faq-summary">
+            <span itemprop="name">What services does Ashaad Intelligent Technologies offer?</span>
+          </summary>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+              <p>We provide four core technology services:</p>
+              <ul>
+                <li><strong>Digital Security</strong> — CCTV, access control, video analytics, alarms</li>
+                <li><strong>Networking</strong> — structured cabling, fibre optic, wireless, enterprise switches</li>
+                <li><strong>IT Protocols</strong> — servers, cloud, cybersecurity, helpdesk support</li>
+                <li><strong>Solar Systems &amp; Power Banks</strong> — panels, battery storage, inverters, UPS</li>
+              </ul>
+            </div>
+          </div>
+        </details>
 
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary class="faq-summary">
+            <span itemprop="name">Do you sell cameras and security equipment directly?</span>
+          </summary>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+              <p>Yes. We supply <strong>Hikvision</strong> and <strong>Dahua</strong> camera products along with a full range of security and networking hardware. Browse our <a href="/products">camera products page</a> for an overview. We do not display prices publicly — contact us for a tailored quote based on your requirements.</p>
+            </div>
+          </div>
+        </details>
 
-    // Show loading state
-    if (submitBtn) submitBtn.disabled = true;
-    if (btnLabel) btnLabel.style.display = 'none';
-    if (btnLoading) btnLoading.style.display = 'inline';
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary class="faq-summary">
+            <span itemprop="name">How do I get a quote for my project?</span>
+          </summary>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+              <p>Getting started is straightforward:</p>
+              <ul>
+                <li>Fill in our <strong>contact form</strong> above — we respond within 24 hours</li>
+                <li>Call us on <strong>+263 780 000 000</strong> (Mon–Sat, 8am–6pm)</li>
+                <li>Email <strong>info@ashaadtech.co.zw</strong></li>
+              </ul>
+              <p>After your initial enquiry, one of our consultants will schedule a site assessment or consultation at your convenience.</p>
+            </div>
+          </div>
+        </details>
 
-    try {
-      const data = new FormData(form);
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: data,
-      });
-      const result = await response.json();
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary class="faq-summary">
+            <span itemprop="name">Do you provide after-installation support and maintenance?</span>
+          </summary>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+              <p>Yes. All our installations come with post-installation support. We offer <strong>maintenance contracts</strong> for security systems, network infrastructure, and solar installations — covering regular health checks, firmware updates, and responsive fault resolution. Contact us to discuss a support package suited to your system.</p>
+            </div>
+          </div>
+        </details>
 
-      if (result.success) {
-        form.style.display = 'none';
-        if (successEl) successEl.style.display = 'flex';
-      } else {
-        throw new Error(result.message || 'Submission failed');
-      }
-    } catch (err) {
-      // Reset button on error
-      if (submitBtn) submitBtn.disabled = false;
-      if (btnLabel) btnLabel.style.display = 'inline';
-      if (btnLoading) btnLoading.style.display = 'none';
-      alert('Something went wrong. Please try again or reach out via WhatsApp.');
-    }
-  });
-</script>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
 
 <style>
-  /* ===== HERO ===== */
-  .contact-hero {
+  /* ── Contact Page ─────────────────────────────── */
+  .contact-page {
+    min-height: 100vh;
+    padding: 140px 48px 100px;
     position: relative;
-    min-height: 65vh;
-    display: flex;
-    flex-direction: column;
     overflow: hidden;
   }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background: var(--navy);
-  }
-
-  .hero-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    filter: brightness(0.4) saturate(0.7);
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
+  .page-bg {
+    position: absolute; inset: 0;
     background:
-      linear-gradient(110deg, rgba(8, 8, 15,0.92) 40%, rgba(8, 8, 15,0.3) 100%),
-      linear-gradient(to bottom, transparent 50%, var(--bg) 100%);
+      radial-gradient(ellipse at 80% 20%, rgba(232,119,34,0.06) 0%, transparent 60%),
+      linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
   }
-
-  .hero-inner {
-    position: relative;
-    z-index: 10;
-    padding-top: 160px;
-    padding-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    max-width: 900px;
-    flex: 1;
+  .page-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(232,119,34,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,119,34,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
   }
-
-  .breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
-
-  .breadcrumb a {
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .breadcrumb a:hover { color: var(--accent); }
-
-  .hero-title {
-    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    font-weight: 600;
-  }
-
-  .hero-title em {
-    font-style: normal;
-    color: var(--text);
-  }
-
-  .hero-subtitle {
-    font-size: 1.05rem;
-    max-width: 580px;
-    line-height: 1.8;
-  }
-
-  .hero-strip {
-    position: relative;
-    z-index: 10;
-    background: var(--bg-deep);
-    border-top: 1px solid var(--border);
-    overflow: hidden;
-    padding: 0.65rem 0;
-  }
-
-  .strip-text {
-    display: flex;
-    align-items: center;
-    gap: 1.75rem;
-    white-space: nowrap;
-    animation: ticker 28s linear infinite;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-subtle);
-  }
-
-  .strip-text .dot { color: var(--accent); }
-
-  @keyframes ticker {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  /* ===== CONTACT MAIN ===== */
-  .contact-main {
-    padding: 7rem 0;
-    background: var(--bg);
-  }
-
-  .contact-grid {
+  .contact-layout {
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 5rem;
-    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; z-index: 2;
   }
-
-  /* Info Column */
-  .info-media {
-    position: relative;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    margin-bottom: 3rem;
-    border: 1px solid var(--border-light);
+  .contact-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 8vw, 100px);
+    line-height: 0.9;
+    margin-bottom: 24px;
   }
-
-  .info-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
+  .contact-title span { color: var(--orange); }
+  .contact-intro {
+    font-size: 15px;
+    color: var(--ash);
+    line-height: 1.8;
+    margin-bottom: 48px;
+    max-width: 380px;
   }
-
-  .info-media:hover .info-img {
-    transform: scale(1.03);
-  }
-
-  .info-img-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(8, 8, 15,0.7) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  .info-badge {
-    position: absolute;
-    bottom: 1.25rem;
-    left: 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: rgba(8, 8, 15,0.85);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--border-light);
-    padding: 0.5rem 1rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text);
-  }
-
-  .badge-pulse {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #22c55e;
-    animation: pulse-green 2s infinite;
-    flex-shrink: 0;
-  }
-
-  @keyframes pulse-green {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(1.3); }
-  }
-
   .contact-details {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 32px;
   }
-
-  .info-title {
-    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
-    margin-top: 0.5rem;
-  }
-
-  .info-text {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    max-width: 420px;
-  }
-
-  .details-list {
+  .contact-detail-item {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    margin-top: 0.5rem;
+    gap: 6px;
   }
-
-  .detail-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .detail-icon {
-    color: var(--text-muted);
-    flex-shrink: 0;
-    padding: 0.6rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    margin-top: 0.1rem;
-  }
-
   .detail-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 0.2rem;
+    color: var(--orange);
   }
-
   .detail-value {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    color: var(--text);
-    line-height: 1.5;
-  }
-
-  .info-cta-note {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    margin-top: 1rem;
-    padding: 1.25rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--border-light);
-  }
-
-  .note-line {
-    display: none;
-  }
-
-  .info-cta-note p {
-    font-size: 0.875rem;
-    line-height: 1.7;
-  }
-
-  .info-cta-note em {
-    font-style: normal;
-    color: var(--text-muted);
-    font-family: 'DM Mono', monospace;
-    font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .info-cta-note span {
-    color: var(--text-muted);
-    display: block;
-    margin-top: 0.25rem;
-  }
-
-  /* Form Column */
-  .form-header {
-    margin-bottom: 3rem;
-  }
-
-  .form-title {
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    margin-top: 0.75rem;
-    line-height: 1.05;
-  }
-
-  /* Minimal form */
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .form-field {
-    border-bottom: 1px solid var(--border-light);
-    transition: border-color 0.2s;
-  }
-
-  .form-field:first-of-type {
-    border-top: 1px solid var(--border-light);
-  }
-
-  .form-field:focus-within {
-    border-color: var(--accent);
-  }
-
-  .form-field input,
-  .form-field textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    color: var(--text);
-    padding: 1.25rem 0;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1rem;
-    outline: none;
-    resize: none;
+    font-size: 15px;
+    color: var(--bone);
     line-height: 1.6;
-  }
-
-  .form-field input::placeholder,
-  .form-field textarea::placeholder {
-    color: var(--text-subtle);
-    font-size: 0.95rem;
-  }
-
-  .form-actions {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 2.5rem;
-    flex-wrap: wrap;
-  }
-
-  .submit-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #fff;
-    background: var(--cta);
-    border: none;
-    padding: 1rem 2rem;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.18s;
-  }
-
-  .submit-btn:hover:not(:disabled) {
-    background: var(--cta-light);
-    transform: translateY(-2px);
-  }
-
-  .submit-btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
-
-  .form-note {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.08em;
-    color: var(--text-subtle);
-  }
-
-  /* Map */
-  .contact-map {
-    margin-top: 2.5rem;
-    border: 1px solid var(--border-light);
-    overflow: hidden;
-  }
-
-  /* Form success */
-  .form-success {
-    display: none;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.25rem;
-    padding: 2rem;
-    border: 1px solid rgba(0, 212, 180, 0.25);
-    background: rgba(0, 212, 180, 0.04);
-    margin-top: 1rem;
-  }
-
-  .success-mark {
-    color: var(--accent);
-    flex-shrink: 0;
-    padding: 0.75rem;
-    border: 1px solid rgba(0, 212, 180, 0.3);
-  }
-
-  .success-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 0.2rem;
-  }
-
-  .success-sub {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-  }
-
-  /* ===== REACH STRIP ===== */
-  .reach-strip {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    padding: 1.5rem 2rem;
-    border-top: 1px solid var(--border);
-    margin: 0 auto;
-  }
-
-  .reach-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--text-subtle);
-  }
-
-  .reach-country {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-  }
-
-  .reach-sep {
-    color: var(--text-subtle);
-  }
-
-  .reach-link {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
     text-decoration: none;
-    margin-left: auto;
     transition: color 0.2s;
   }
+  a.detail-value:hover { color: var(--orange); }
+  .form-panel-header { margin-bottom: 32px; }
 
-  .reach-link:hover {
-    color: var(--accent-light);
+  /* ── FAQ Section ──────────────────────────────── */
+  .faq-section {
+    background: var(--charcoal);
+    padding: 100px 48px;
+  }
+  .faq-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .faq-header {
+    margin-bottom: 56px;
+  }
+  .faq-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 0.92;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  .faq-title span { color: var(--orange); }
+  .faq-subtitle {
+    font-size: 14px;
+    color: var(--ash);
+    line-height: 1.8;
+    max-width: 520px;
   }
 
-  /* ===== PARTNER SECTION ===== */
-  .partner-section {
-    position: relative;
-    padding: 8rem 0;
-    overflow: hidden;
-  }
-
-  .partner-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .partner-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.25) saturate(0.6);
-  }
-
-  .partner-overlay {
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(110deg, rgba(8, 8, 15,0.9) 50%, rgba(15,32,64,0.7) 100%);
-  }
-
-  .partner-inner {
-    position: relative;
-    z-index: 10;
-  }
-
-  .partner-content {
-    max-width: 780px;
+  /* ── FAQ Accordion ────────────────────────────── */
+  .faq-list {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
   }
 
-  .partner-title {
-    font-size: clamp(2.2rem, 4.5vw, 3.75rem);
-    line-height: 1.0;
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
 
-  .partner-text {
-    font-size: 1rem;
-    max-width: 560px;
-    line-height: 1.85;
-  }
-
-  .partner-cards {
+  .faq-summary {
+    list-style: none;
     display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-top: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
+    cursor: pointer;
+    color: var(--bone);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(15px, 2vw, 18px);
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+    user-select: none;
   }
+  .faq-summary::-webkit-details-marker { display: none; }
 
-  .partner-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.25rem 1.5rem;
-    background: rgba(8, 8, 15,0.85);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--border-light);
-    flex: 1;
-    min-width: 180px;
-    transition: border-color 0.25s, background 0.25s;
-  }
-
-  .partner-card:hover {
-    border-color: var(--accent);
-    background: rgba(0, 212, 180, 0.06);
-  }
-
-  .pc-icon {
-    color: var(--accent);
+  .faq-summary::after {
+    content: '▼';
+    font-size: 11px;
+    color: var(--orange);
     flex-shrink: 0;
-    margin-top: 0.1rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
   }
 
-  .pc-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text);
-    margin-bottom: 0.3rem;
+  .faq-summary:hover { color: var(--orange); }
+  .faq-item[open] > .faq-summary { color: var(--orange); }
+  .faq-item[open] > .faq-summary::after { transform: rotate(180deg); }
+
+  .faq-answer {
+    padding-bottom: 24px;
   }
 
-  .pc-desc {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    line-height: 1.5;
+  .faq-answer p {
+    font-size: 14px;
+    color: var(--ash);
+    line-height: 1.85;
+    margin-bottom: 12px;
   }
+  .faq-answer p:last-child { margin-bottom: 0; }
 
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 1100px) {
-    .contact-grid {
-      grid-template-columns: 1fr;
-      gap: 4rem;
-    }
-
-    .info-media {
-      aspect-ratio: 16/7;
-    }
+  .faq-answer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
+  .faq-answer ul li {
+    font-size: 13px;
+    color: var(--bone);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+  }
+  .faq-answer ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+  }
+  .faq-answer a {
+    color: var(--orange);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(232,119,34,0.3);
+    transition: border-color 0.2s;
+  }
+  .faq-answer a:hover { border-color: var(--orange); }
 
+  /* ── Responsive ───────────────────────────────── */
   @media (max-width: 900px) {
-    .offices-header {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .offices-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .office-card:hover {
-      transform: none;
-    }
-
-    .partner-cards {
-      flex-direction: column;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .form-row {
-      grid-template-columns: 1fr;
-    }
-
-    .submit-btn {
-      width: 100%;
-      clip-path: none;
-    }
-
-    .hero-title {
-      font-size: 2.2rem;
-    }
+    .contact-page { padding: 120px 24px 80px; }
+    .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+    .faq-section { padding: 60px 24px; }
+    .faq-summary { padding: 20px 0; }
   }
 </style>

@@ -1,519 +1,336 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import Ticker from '../components/Ticker.astro';
 
 const services = [
   {
+    num: '01',
     id: 'digital-security',
-    number: '01',
-    title: 'Digital Security',
-    subtitle: 'Protect What Matters Most',
-    description: `Our digital security solutions cover the full spectrum of surveillance and protection. From high-definition CCTV camera installations to intelligent video analytics, access control systems, and remote monitoring — we design and implement security infrastructure that gives you complete, real-time visibility and control.`,
+    name: 'Digital Security',
+    tagline: 'Protect What Matters Most.',
+    desc: 'Our digital security division designs and installs comprehensive CCTV and access control systems for residential, commercial, and industrial clients. We supply and configure leading brands including Hikvision and Dahua, with remote monitoring capability, video analytics, and 24/7 technical support. Whether you need a single camera or a full estate surveillance solution, we deliver systems that work.',
     features: [
-      'CCTV Surveillance Systems (HD & IP)',
-      'Video Analytics & Motion Detection',
-      'Access Control & Biometrics',
-      'Remote Monitoring Solutions',
-      'Alarm Systems & Integration',
-      '24/7 Technical Support',
+      'CCTV design, supply &amp; installation',
+      'Video analytics &amp; AI detection',
+      'Access control &amp; intercoms',
+      'Remote monitoring &amp; cloud storage',
+      'Alarm systems &amp; perimeter protection',
+      '24/7 technical support',
     ],
-    image: 'https://images.unsplash.com/photo-1666613789268-e8f311259920?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Security camera surveillance system',
-    accent: '#BF9004',
+    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=900&q=80',
   },
   {
+    num: '02',
     id: 'networking',
-    number: '02',
-    title: 'Networking',
-    subtitle: 'Connect Your World',
-    description: `Reliable connectivity is the backbone of any modern organization. We design, install, and maintain networking infrastructure that scales with your needs — from structured cabling and enterprise switches to wireless access points, fibre optic solutions, and VoIP systems. We ensure your network is fast, stable, and secure.`,
+    name: 'Networking Solutions',
+    tagline: 'Connect Your World.',
+    desc: 'Reliable network infrastructure is the backbone of every modern organisation. We design, deploy, and manage structured cabling, fibre optic networks, enterprise-grade wireless, and secure WAN connectivity. From small office LANs to multi-site enterprise networks, our certified engineers deliver infrastructure built to handle today\'s workloads and tomorrow\'s growth.',
     features: [
-      'Structured Cabling (Cat5e/Cat6/Cat6a)',
-      'Fibre Optic Installation',
-      'Wireless & Wi-Fi Solutions',
-      'Enterprise Switches & Routers',
-      'VoIP & Unified Communications',
-      'Network Security & Firewalls',
+      'Structured cabling &amp; Cat6/Cat6A',
+      'Fibre optic installation &amp; termination',
+      'Enterprise wireless &amp; access points',
+      'Managed switches &amp; routers',
+      'VoIP telephony systems',
+      'Network security &amp; firewall configuration',
     ],
-    image: 'https://images.unsplash.com/photo-1691435828932-911a7801adfb?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Network server room and data cables',
-    accent: '#BF9004',
-    reverse: true,
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80',
   },
   {
+    num: '03',
     id: 'it-protocols',
-    number: '03',
-    title: 'IT Protocols',
-    subtitle: 'Smart Systems, Smarter Management',
-    description: `From server configuration to software deployment and end-user support, our IT protocols service covers the complete technology lifecycle of your organization. We implement industry-standard protocols and best practices to ensure your systems are efficient, secure, and future-ready.`,
+    name: 'IT Protocols',
+    tagline: 'Smart Systems, Smarter Management.',
+    desc: 'Our IT protocols division handles the full spectrum of server infrastructure, software deployment, and day-to-day IT management. We implement cybersecurity frameworks, set up cloud environments, manage active directory and identity services, and provide responsive helpdesk support for your team. We keep your systems running, patched, and protected — so you can focus on your business.',
     features: [
-      'Server Setup & Configuration',
-      'Software Deployment & Licensing',
-      'IT Infrastructure Management',
-      'Cybersecurity & Data Protection',
-      'Cloud Integration & Migration',
-      'Helpdesk & User Support',
+      'Server setup, configuration &amp; virtualisation',
+      'Software deployment &amp; licence management',
+      'Active directory &amp; identity management',
+      'Cybersecurity audits &amp; hardening',
+      'Cloud infrastructure (Azure / AWS / hybrid)',
+      'IT helpdesk &amp; managed support',
     ],
-    image: 'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'IT systems and digital infrastructure',
-    accent: '#BF9004',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=900&q=80',
   },
   {
+    num: '04',
     id: 'solar',
-    number: '04',
-    title: 'Solar Systems & Power Banks',
-    subtitle: 'Clean Energy, Always On',
-    description: `Power outages should never stop your business or compromise your security. Our solar energy solutions provide clean, sustainable power for residential homes, commercial buildings, and industrial facilities. Combined with our high-capacity power bank systems, we ensure your critical technology infrastructure runs without interruption.`,
+    name: 'Solar Systems &amp; Power Banks',
+    tagline: 'Clean Energy, Always On.',
+    desc: 'Power outages and load shedding shouldn\'t stop your operations. We design and install solar photovoltaic systems, battery storage solutions, and inverter/UPS systems that keep your business running regardless of the grid. From a home backup system to a full commercial solar installation, our energy solutions are sized to your consumption, budget, and future needs.',
     features: [
-      'Solar Panel Installation & Design',
-      'Battery Storage Systems',
-      'Power Banks & UPS Solutions',
-      'Grid-Tied & Off-Grid Systems',
-      'Load Shedding Solutions',
-      'Maintenance & Monitoring',
+      'Solar panel supply &amp; installation',
+      'Lithium &amp; lead-acid battery storage',
+      'Inverter &amp; UPS system sizing',
+      'Grid-tied, off-grid &amp; hybrid systems',
+      'Load-shedding protection solutions',
+      'System monitoring &amp; performance reporting',
     ],
-    image: 'https://images.unsplash.com/photo-1721620845374-1cef4ceae9cf?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Solar panel installation on rooftop',
-    accent: '#BF9004',
-    reverse: true,
+    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80',
   },
 ];
 ---
 
-<Layout title="Services" description="Explore Ashaad Intelligent Technologies' four core services: digital security, networking, IT protocols, and solar energy solutions.">
-  <!-- ===== PAGE HERO ===== -->
-  <section class="page-hero">
-    <div class="page-hero-bg">
-      <img
-        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80"
-        alt="Digital technology infrastructure"
-        class="page-hero-img"
-        onerror="this.style.background='var(--navy)';"
-      />
-      <div class="page-hero-overlay"></div>
-    </div>
-    <div class="container page-hero-inner">
-      <div class="breadcrumb">
-        <a href="/">Home</a>
-        <span>/</span>
-        <span>Services</span>
-      </div>
-      <p class="section-label reveal">What We Offer</p>
-      <h1 class="display-heading page-title reveal reveal-delay-2">
-        Four Pillars of Smart Technology
-      </h1>
-      <p class="page-subtitle body-text reveal reveal-delay-3">
-        Comprehensive technology solutions built for the needs of Southern Africa —
-        from digital security to clean energy and everything in between.
-      </p>
+<BaseLayout
+  title="Services"
+  description="Explore four core services: digital security, networking, IT protocols, and solar energy solutions across Zimbabwe, Mozambique and South Africa."
+>
 
-      <!-- Services quick nav -->
-      <div class="services-nav reveal reveal-delay-4">
-        {services.map((s) => (
-          <a href={`#${s.id}`} class="snav-link">
-            <span class="snav-num">{s.number}</span>
-            {s.title}
+  <!-- Page hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-content">
+      <div class="section-label">What We Offer</div>
+      <h1 class="page-hero-title"><span>OUR</span><br>SERVICES</h1>
+      <p class="page-hero-sub">Four core divisions delivering digital security, networking, IT infrastructure and clean solar energy across Zimbabwe, Mozambique and South Africa.</p>
+
+      <!-- Quick nav -->
+      <div class="services-nav">
+        {services.map(s => (
+          <a href={`#${s.id}`} class="services-nav-link">
+            <span class="services-nav-num">{s.num}</span>
+            <span set:html={s.name}></span>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ===== SERVICE SECTIONS ===== -->
-  {services.map((service) => (
-    <section class={`service-section ${service.reverse ? 'reverse' : ''}`} id={service.id}>
-      <div class="service-media">
+  <!-- Ticker -->
+  <Ticker />
+
+  <!-- Service detail sections -->
+  {services.map((s, i) => (
+    <section class={`service-detail ${i % 2 === 1 ? 'service-detail--reverse' : ''}`} id={s.id}>
+      <div class="service-image-wrap">
         <img
-          src={service.image}
-          alt={service.imageAlt}
-          class="service-img"
-          onerror="this.style.background='var(--bg-card)';"
+          src={s.image}
+          alt={s.name}
+          loading="lazy"
+          decoding="async"
         />
-        <div class="service-img-overlay"></div>
-        <div class="service-number-badge">{service.number}</div>
+        <div class="service-num-overlay">{s.num}</div>
       </div>
-      <div class="service-content">
-        <p class="section-label">{service.title}</p>
-        <h2 class="display-heading service-title">{service.subtitle}</h2>
-        <p class="body-text service-desc">{service.description}</p>
-        <div class="feature-list">
-          {service.features.map((f) => (
-            <div class="feature-item">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>{f}</span>
-            </div>
+      <div class="service-info">
+        <div class="section-label" set:html={`Service ${s.num}`}></div>
+        <h2 class="service-name" set:html={s.name}></h2>
+        <p class="service-tagline" set:html={s.tagline}></p>
+        <p class="service-desc">{s.desc}</p>
+        <ul class="service-features">
+          {s.features.map(f => (
+            <li set:html={f}></li>
           ))}
-        </div>
-        <a href="/contact" class="btn-primary">
-          Enquire About This Service
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        </ul>
+        <a href="/contact" class="btn-primary">Request a Quote</a>
       </div>
     </section>
   ))}
 
-</Layout>
+  <CTASection title={"LET'S CONNECT\nYOUR WORLD"} />
+
+</BaseLayout>
 
 <style>
-  /* PAGE HERO */
+  /* ── Page Hero ───────────────────────────────── */
   .page-hero {
+    min-height: 55vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 140px 48px 80px;
     position: relative;
-    padding: 160px 0 100px;
     overflow: hidden;
   }
 
   .page-hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(232,119,34,0.07) 0%, transparent 60%),
+      linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
   }
 
-  .page-hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.25) saturate(0.6);
+  .page-hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(232,119,34,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,119,34,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
   }
 
-  .page-hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      105deg,
-      rgba(8, 8, 15,0.97) 40%,
-      rgba(8, 8, 15,0.5) 100%
-    );
+  .page-hero-content {
+    position: relative; z-index: 2;
+    max-width: 900px;
   }
 
-  .page-hero-inner {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    max-width: 850px;
+  .page-hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 10vw, 120px);
+    line-height: 0.9;
+    margin-bottom: 20px;
   }
 
-  .breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
+  .page-hero-title span { color: var(--orange); }
+
+  .page-hero-sub {
+    font-size: 15px;
+    color: var(--ash);
+    max-width: 500px;
+    line-height: 1.7;
+    margin-top: 20px;
+    margin-bottom: 48px;
   }
 
-  .breadcrumb a {
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .breadcrumb a:hover { color: var(--accent); }
-  .breadcrumb span:last-child { color: var(--text); }
-
-  .page-title {
-    font-size: clamp(1.6rem, 3vw, 2.25rem);
-    line-height: 1.1;
-    font-weight: 600;
-  }
-
-  .page-subtitle {
-    font-size: 1rem;
-    max-width: 600px;
-    line-height: 1.8;
-  }
-
+  /* ── Services quick nav ────────────────────────── */
   .services-nav {
     display: flex;
-    gap: 0.5rem;
-    flex-wrap: nowrap;
-    margin-top: 0.5rem;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
-  .snav-link {
+  .services-nav-link {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
+    gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--ash);
     text-decoration: none;
-    border: 1px solid var(--border);
-    padding: 0.5rem 1rem;
-    transition: border-color 0.2s, color 0.2s;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 16px;
+    transition: all 0.2s;
   }
 
-  .snav-link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+  .services-nav-link:hover {
+    color: var(--dark);
+    background: var(--orange);
+    border-color: var(--orange);
   }
 
-  .snav-num {
-    color: var(--accent);
-    font-size: 0.65rem;
+  .services-nav-num {
+    color: var(--orange);
+    font-size: 9px;
+    letter-spacing: 0.1em;
   }
 
-  /* SERVICE SECTIONS */
-  .service-section {
+  .services-nav-link:hover .services-nav-num { color: var(--dark); }
+
+  /* ── Service detail ────────────────────────────── */
+  .service-detail {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 600px;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
+    min-height: 580px;
+    background: var(--dark);
   }
 
-  .service-section.reverse {
+  .service-detail:nth-child(even) {
+    background: var(--charcoal);
+  }
+
+  .service-detail--reverse {
     direction: rtl;
   }
 
-  .service-section.reverse > * {
+  .service-detail--reverse > * {
     direction: ltr;
   }
 
-  .service-media {
+  .service-image-wrap {
     position: relative;
     overflow: hidden;
-    min-height: 500px;
   }
 
-  .service-img {
+  .service-image-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s ease;
-    filter: brightness(0.75) saturate(0.85);
+    display: block;
+    transition: transform 0.7s ease;
   }
 
-  .service-section:hover .service-img {
-    transform: scale(1.03);
+  .service-detail:hover .service-image-wrap img {
+    transform: scale(1.04);
   }
 
-  .service-img-overlay {
+  .service-num-overlay {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to right,
-      rgba(8, 8, 15,0.2) 0%,
-      rgba(8, 8, 15,0.05) 100%
-    );
-  }
-
-  .service-section.reverse .service-img-overlay {
-    background: linear-gradient(
-      to left,
-      rgba(8, 8, 15,0.2) 0%,
-      rgba(8, 8, 15,0.05) 100%
-    );
-  }
-
-  .service-number-badge {
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 4rem;
-    font-weight: 900;
-    color: rgba(0, 212, 180, 0.35);
+    bottom: 24px;
+    left: 24px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
     line-height: 1;
+    color: rgba(232,119,34,0.18);
     pointer-events: none;
+    user-select: none;
   }
 
-  .service-content {
-    padding: 5rem 4rem;
+  .service-info {
+    padding: 64px 56px;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
     justify-content: center;
-    background: var(--bg-card);
+    gap: 20px;
   }
 
-  .service-title {
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
-    line-height: 1.1;
-    margin-top: 0.5rem;
+  .service-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 4.5vw, 64px);
+    line-height: 0.92;
+    margin-top: 8px;
+    color: var(--bone);
+  }
+
+  .service-tagline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    color: var(--orange);
+    font-weight: 600;
   }
 
   .service-desc {
-    font-size: 0.9375rem;
-    line-height: 1.8;
+    font-size: 14px;
+    color: var(--ash);
+    line-height: 1.85;
   }
 
-  .feature-list {
+  .service-features {
+    list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.6rem;
-    margin: 0.5rem 0;
+    gap: 8px 24px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 20px;
   }
 
-  .feature-item {
+  .service-features li {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    color: var(--bone);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8rem;
-    color: var(--text-muted);
+    gap: 8px;
   }
 
-  .feature-item svg {
-    color: var(--accent);
+  .service-features li::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: var(--orange);
     flex-shrink: 0;
   }
 
-  /* WHY SECTION */
-  .why-section {
-    position: relative;
-    padding: 9rem 0;
-    overflow: hidden;
-  }
-
-  .why-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .why-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.2) saturate(0.5);
-  }
-
-  .why-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to right,
-      rgba(8, 8, 15,0.97) 35%,
-      rgba(8, 8, 15,0.6) 100%
-    );
-  }
-
-  .why-inner {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .why-title {
-    font-size: clamp(2.5rem, 4.5vw, 3.75rem);
-    line-height: 1.05;
-    margin-top: 1rem;
-    max-width: 600px;
-  }
-
-  .why-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-  }
-
-  .why-card {
-    padding: 2rem 1.5rem;
-    background: rgba(8, 8, 15, 0.85);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--border-light);
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    transition: border-color 0.25s;
-  }
-
-  .why-card:hover {
-    border-color: var(--accent);
-  }
-
-  .why-icon {
-    color: var(--accent);
-  }
-
-  .why-card h3 {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text);
-  }
-
-  .why-card p {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-
-  /* CTA */
-  .services-cta {
-    padding: 7rem 0;
-    background: var(--bg-section);
-    border-top: 1px solid var(--border);
-  }
-
-  .services-cta-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-    flex-wrap: wrap;
-  }
-
-  .services-cta-title {
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    line-height: 1.1;
-    margin-top: 1rem;
-  }
-
-  .services-cta-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    flex-shrink: 0;
-  }
-
-  /* Responsive */
-  @media (max-width: 1000px) {
-    .service-section,
-    .service-section.reverse {
-      grid-template-columns: 1fr;
-      direction: ltr;
-    }
-
-    .service-content {
-      padding: 3rem 2rem;
-    }
-
-    .service-media {
-      min-height: 350px;
-    }
-
-    .why-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 640px) {
-    .why-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .feature-list {
-      grid-template-columns: 1fr;
-    }
-
-    .services-cta-inner {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .page-title { font-size: 2.5rem; }
+  /* ── Responsive ──────────────────────────────────── */
+  @media (max-width: 900px) {
+    .page-hero { padding: 120px 24px 60px; }
+    .service-detail { grid-template-columns: 1fr; min-height: auto; direction: ltr; }
+    .service-detail--reverse { direction: ltr; }
+    .service-image-wrap { height: 320px; }
+    .service-info { padding: 40px 24px; }
+    .service-features { grid-template-columns: 1fr; }
   }
 </style>

@@ -19,7 +19,6 @@ import ProductsCTA from '../components/ProductsCTA.astro';
     </div>
   </section>
 
-  <ProductsCTA />
   <ProductsGrid />
   <ProductsCTA />
 </BaseLayout>
@@ -37,15 +36,15 @@ import ProductsCTA from '../components/ProductsCTA.astro';
   .page-hero-bg {
     position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse at 30% 50%, rgba(232,119,34,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse at 30% 50%, rgba(212,34,34,0.07) 0%, transparent 60%),
       linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
   }
 
   .page-hero-grid {
     position: absolute; inset: 0;
     background-image:
-      linear-gradient(rgba(232,119,34,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(232,119,34,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(212,34,34,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,34,34,0.04) 1px, transparent 1px);
     background-size: 80px 80px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
   }
@@ -62,7 +61,7 @@ import ProductsCTA from '../components/ProductsCTA.astro';
     margin-bottom: 20px;
   }
 
-  .page-hero-title span { color: var(--orange); }
+  .page-hero-title span { color: var(--accent); }
 
   .page-hero-sub {
     font-size: 15px;

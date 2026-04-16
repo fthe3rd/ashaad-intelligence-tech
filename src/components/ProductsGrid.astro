@@ -106,7 +106,10 @@ const products = cameraProducts.map(p => ({
     card.addEventListener('click', () => {
       const id = (card as HTMLElement).dataset.id!;
       const dialog = document.getElementById(`dialog-${id}`) as HTMLDialogElement | null;
-      dialog?.showModal();
+      if (dialog) {
+        dialog.showModal();
+        document.body.classList.add('modal-open');
+      }
     });
   });
 
@@ -116,6 +119,12 @@ const products = cameraProducts.map(p => ({
     closeBtn?.addEventListener('click', () => d.close());
     d.addEventListener('click', (e) => {
       if (e.target === d) d.close();
+    });
+    d.addEventListener('close', () => {
+      // Only remove the class when no dialogs remain open
+      if (!document.querySelector('dialog[open]')) {
+        document.body.classList.remove('modal-open');
+      }
     });
   });
 </script>
@@ -150,8 +159,8 @@ const products = cameraProducts.map(p => ({
   .filter-btn:hover,
   .filter-btn.active {
     color: var(--dark);
-    background: var(--orange);
-    border-color: var(--orange);
+    background: var(--accent);
+    border-color: var(--accent);
   }
 
   /* ── Grid ── */
@@ -176,7 +185,7 @@ const products = cameraProducts.map(p => ({
   .product-img-wrap {
     width: 100%;
     aspect-ratio: 4/3;
-    background: #0a0a0a;
+    background: var(--charcoal);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -198,7 +207,7 @@ const products = cameraProducts.map(p => ({
   .product-info-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(232,119,34,0.9);
+    background: rgba(212,34,34,0.9);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -261,10 +270,10 @@ const products = cameraProducts.map(p => ({
     font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--orange);
-    background: rgba(232,119,34,0.1);
+    color: var(--accent);
+    background: rgba(212,34,34,0.1);
     padding: 3px 10px;
-    border: 1px solid rgba(232,119,34,0.25);
+    border: 1px solid rgba(212,34,34,0.25);
   }
 
   /* ── Dialog / Lightbox ── */
@@ -338,7 +347,7 @@ const products = cameraProducts.map(p => ({
     font-size: 10px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--orange);
+    color: var(--accent);
   }
 
   .dialog-title {
@@ -371,7 +380,7 @@ const products = cameraProducts.map(p => ({
     font-size: 10px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--orange);
+    color: var(--accent);
     margin-bottom: 12px;
   }
 
@@ -397,7 +406,7 @@ const products = cameraProducts.map(p => ({
     display: block;
     width: 16px;
     height: 1px;
-    background: var(--orange);
+    background: var(--accent);
     flex-shrink: 0;
   }
 

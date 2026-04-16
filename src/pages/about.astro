@@ -9,8 +9,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- ── Page Hero ──────────────────────────────── -->
   <section class="about-hero">
-    <div class="about-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80')"></div>
-    <div class="about-hero-overlay"></div>
     <div class="about-hero-content">
       <div class="about-hero-label">Who We Are</div>
       <h1 class="about-hero-title">ASHAAD INTELLIGENT<br><span>TECHNOLOGIES</span></h1>
@@ -29,7 +27,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="story-image">
         <img
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80"
+          src="/images/data-center.jpg"
           alt="Digital infrastructure — network and connectivity"
           loading="lazy"
         />
@@ -44,76 +42,150 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="accred-title">REGIONAL <span>PRESENCE</span></h2>
       <p class="accred-intro">Ashaad Intelligent Technologies operates across three countries in Southern Africa, delivering consistent technology solutions with local support in each market.</p>
 
-      <div class="accred-grid">
+      <div class="accred-layout">
 
-        <!-- Zimbabwe -->
-        <div class="accred-card">
-          <div class="accred-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/>
-              <circle cx="12" cy="10" r="2.5"/>
-            </svg>
-          </div>
-          <div class="accred-body">
-            <div class="accred-label-text">Primary Market</div>
-            <div class="accred-value">Zimbabwe</div>
-            <div class="accred-desc">Headquartered in Harare, Zimbabwe. Our primary market since founding in 2018, serving residential, commercial and government clients nationwide.</div>
-          </div>
-        </div>
+        <!-- Cards column -->
+        <div class="accred-cards-col">
+          <div class="accred-grid">
 
-        <!-- Mozambique -->
-        <div class="accred-card">
-          <div class="accred-badge accred-badge--gold">
+            <!-- Zimbabwe -->
+            <div class="accred-card">
+              <div class="accred-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/>
+                  <circle cx="12" cy="10" r="2.5"/>
+                </svg>
+              </div>
+              <div class="accred-body">
+                <div class="accred-label-text">Primary Market</div>
+                <div class="accred-value">Zimbabwe</div>
+                <div class="accred-desc">Headquartered in Harare, Zimbabwe. Our primary market since founding in 2018, serving residential, commercial and government clients nationwide.</div>
+              </div>
+            </div>
+
+            <!-- Mozambique -->
+            <div class="accred-card">
+              <div class="accred-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <div class="accred-body">
+                <div class="accred-label-text">Active Region</div>
+                <div class="accred-value">Mozambique</div>
+                <div class="accred-desc">Active operations in Maputo and surrounding areas. Delivering networking, solar and CCTV solutions to a growing base of Mozambican clients.</div>
+              </div>
+            </div>
+
+            <!-- South Africa -->
+            <div class="accred-card">
+              <div class="accred-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <div class="accred-body">
+                <div class="accred-label-text">Active Region</div>
+                <div class="accred-value">South Africa</div>
+                <div class="accred-desc">Extending our reach into the South African market from Johannesburg. Supporting clients with enterprise security and infrastructure deployments.</div>
+              </div>
+            </div>
+
+            <!-- Founded -->
+            <div class="accred-card">
+              <div class="accred-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="accred-body">
+                <div class="accred-label-text">Established</div>
+                <div class="accred-value">Since 2018</div>
+                <div class="accred-desc">Over six years of operations in Southern Africa, continuously expanding our service offerings and regional footprint to serve more clients.</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="accred-note">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/>
-              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
             </svg>
-          </div>
-          <div class="accred-body">
-            <div class="accred-label-text">Active Region</div>
-            <div class="accred-value">Mozambique</div>
-            <div class="accred-desc">Active operations in Maputo and surrounding areas. Delivering networking, solar and CCTV solutions to a growing base of Mozambican clients.</div>
+            <span>We respond to all enquiries within 24 hours. For urgent requirements, call us directly on +263 780 000 000 — Mon to Sat, 8:00 AM to 6:00 PM.</span>
           </div>
         </div>
 
-        <!-- South Africa -->
-        <div class="accred-card">
-          <div class="accred-badge accred-badge--blue">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-            </svg>
-          </div>
-          <div class="accred-body">
-            <div class="accred-label-text">Active Region</div>
-            <div class="accred-value">South Africa</div>
-            <div class="accred-desc">Extending our reach into the South African market from Johannesburg. Supporting clients with enterprise security and infrastructure deployments.</div>
-          </div>
+        <!-- Africa map column -->
+        <div class="accred-map-col">
+          <!-- Real country paths from Southern-Africa.svg (Adobe Illustrator export).
+               viewBox crops to the three-country region only (coords 490–990, 830–1240).
+               Green fill and scale group removed; styled with site design tokens. -->
+          <svg viewBox="490 830 500 410" fill="none" xmlns="http://www.w3.org/2000/svg" class="africa-map" aria-label="Map showing Zimbabwe, Mozambique and South Africa">
+
+            <!-- Zimbabwe -->
+            <path
+              d="m 731.6301,938.93986 5.062,10.253 c 1.662,1.932 3.829,3.733 3.679,6.873 3.95,6.754 8.877,11.555 13.383,17.197 3.456,1.083 6.513,2.646 8.613,5.423 2.121,2.56 4.534,5.14 8.792,5.798 -1.797,10.423 2.88,19.39904 7.776,21.26804 5.8,0.264 11.286,1.344 15.444,5.309 11.798,1.407 13.177,3.046 15.969,4.653 9.664,-3.231 14.169,2.163 19.664,5.882 1.315,-7.878 5.956,-12.288 11.21,-16.442 4.148,-6.04204 7.953,-15.50204 11.916,-23.39604 2.938,-4.894 0.57,-10.066 -0.14,-15.153 l 0.779,-6.488 c 7.14,-17.904 4.949,-28.592 3.79,-41.189 l -28.988,-11.188 -12.18,-0.868 0.403,-4.127 c -10.326,-3.347 -18.729,1.163 -26.43,5.411 l -0.349,9.508 c -23.713,10.578 -24.974,16.328 -31.502,22.978 l -3.537,1.097 -2.883,-2.551 -20.471,-0.248 z"
+              fill="#1D1C1C" stroke="rgba(212,34,34,0.6)" stroke-width="1.5" stroke-linejoin="round"
+            />
+
+            <!-- Mozambique -->
+            <path
+              d="m 813.2681,893.00386 3.532,9.24 -0.271,4.62 12.23,0.919 28.652,11.15 c 2.934,16.013 1.055,29.401 -3.597,41.277 -0.126,2.325 -0.901,4.547 -0.62,6.677 0.529,3.994 2.498,9.5 0.263,14.083 -5.755,11.799 -11.131,23.61004 -12.518,24.37804 -4.752,2.63 -10.658,10.319 -10.822,16.479 l 2.86,70.741 10.833,0.698 2.886,-10.018 -4.349,1.631 c 0.665,-3.963 -0.249,-7.926 3.914,-11.889 l 34.763,-13.74 c 4.305,-3.16 6.978,-7.95 9.972,-12.42 l -4.059,-1.402 7.198,-27.168 -3.698,-1.256 -2.991,-22.86504 c -9.848,-6.039 -4.15,-15.426 -0.177,-17.621 l 21.013,-17.856 1.733,3.559 7.794,-8.61 -1.719,-2.654 5.066,-0.928 1.505,-4.36 25.749,-12.671 6.431,0.066 c 4.876,-3.693 8.792,-7.66 15.901,-10.716 l -0.455,-3.816 8.579,-6.638 c 2.059,-2.113 3.827,-5.242 6.521,-5.132 l 0.376,-4.254 -1.632,-1.809 4.694,-7.039 1.188,-4.698 -0.749,-3.071 -2.875,-4.371 0.995,-17.214 c -2.193,-2.131 -0.982,-3.581 0.191,-5.038 l -0.567,-19.004 6.902,-11.628 c 0.178,-3.186 0.436,-6.371 -0.727,-9.557 -10.592,6.303 -28.314,17.276 -37.271,11.647 -3.924,0.479 -8.328,0.472 -12.125,5.409 -3.224,-0.301 -6.136,-0.913 -9.992,-0.583 l -12.677,2.296 c -2.301,-2.75 -4.612,-5.479 -9.948,-2.497 l -18.494,-0.603 -2.889,28.912 c 9.122,7.341 17.152,16.784 21.162,26.46 2.441,5.892 -1.979,14.385 -2.833,21.907 l -9.176,3.97 0.479,12.881 -4.52,0.685 c 1.1,-2.69 2.316,-5.436 -1.628,-5.772 -4.992,-4.232 -8.817,-9.003 -9.345,-15.296 3.822,-6.22 5.361,-13.253 4.349,-21.199 l -8.897,-1.63 c -3.464,0.84 -7.48,0.769 -8.385,-1.99 -2.401,-7.333 -4.728,-7.72 -7.449,-6.979 l -50.276,16.307 z"
+              fill="#1D1C1C" stroke="rgba(212,34,34,0.6)" stroke-width="1.5" stroke-linejoin="round"
+            />
+
+            <!-- South Africa -->
+            <path
+              d="m 586.9911,1119.1599 26.844,54.016 0.352,12.35 c -1.357,2.971 -3.582,3.058 -6.071,2.577 -1.008,1.417 -1.953,3.251 0.258,4.632 3.326,5.905 5.733,13.087 9.971,18.147 3.481,4.158 8.646,6.333 12.741,9.921 l 10.659,0.852 c 2.194,-1.541 0.199,-3.642 8.15,-4.416 l 15.613,-0.101 c 4.929,-1.936 -0.617,-6.811 15.459,-5.617 2.641,0.334 3.785,3.232 7.927,0.993 7.463,-1.203 14.589,1.642 21.86,2.736 2.155,-1.722 1.353,-4.65 13.46,-2.311 l 1.238,-4.709 14.189,0.223 84.114,-78.167 c 13.34,-5.536 16.289,-21.69 20.027,-37.039 l -10.561,-0.707 c -0.109,-1.279 -10.139,5.896 -11.411,6.037 -5.423,0.604 -8.553,-1.149 -7.773,-10.649 0.581,-7.081 8.167,-12.721 10.172,-14.031 2.675,-1.748 5.343,4.839 8.006,3.099 0,0 -0.941,-30.122 -2.067,-55.32 -5.664,-3.446 -9.726,-9.368 -19.815,-5.973 -5.297,-3.958 -10.594,-3.553 -15.89,-4.789 l -58.19,46.15 -2.136,9.643 c -6.611,3.495 -13.223,3.02 -19.834,3.723 -5.008,-3.808 -10.404,-6.057 -16.273,-6.414 l -9.707,8.497 c -0.908,4.679 -3.628,5.127 -5.712,7.061 -3.303,1.915 -5.029,4.355 -5.746,7.132 -9.782,2.419 -16.644,0.821 -23.017,-1.448 1.229,-5.72 4.907,-9.435 1.839,-18.669 l -13.531,-15.135 -1.76,64.997 c -4.093,1.772 -8.186,4.463 -12.278,8.392 -6.822,-0.584 -12.491,-1.531 -21.953,0.177 -1.534,-7.177 -8.09,-19.044 -19.154,-5.86 z"
+              fill="#1D1C1C" stroke="rgba(212,34,34,0.6)" stroke-width="1.5" stroke-linejoin="round"
+            />
+
+            <!-- Eswatini — enclave in SA -->
+            <path
+              d="m 832.3051,1077.5389 0.757,14.712 c -4.398,2.2 -7.667,4.4 -11.413,6.601 -4.11,-0.103 -6.742,-1.181 -7.393,-4.471 -1.037,-5.241 -0.446,-8.811 2.463,-13.216 2.114,-3.203 5.937,-7.245 8.501,-7.674 1.319,-0.221 3.267,1.759 4.404,3.429 l 2.681,0.619 z"
+              fill="#232323" stroke="rgba(212,34,34,0.3)" stroke-width="1" stroke-linejoin="round"
+            />
+
+            <!-- Lesotho — enclave in SA -->
+            <path
+              d="m 778.1011,1147.3989 c -1.207,0.114 -3.313,0.468 -4.825,1.072 -1.113,0.445 -2.119,0.913 -2.949,1.743 -0.674,0.674 -0.854,1.673 -1.072,2.547 -0.229,0.914 -2.082,2.096 -2.815,2.279 -1.027,0.257 -2.413,0 -3.485,0 -2.145,0 -3.166,-0.469 -4.424,-2.146 -1.534,-2.046 -3.46,-3.622 -4.825,-5.897 -0.967,-1.61 -1.848,-2.593 -2.413,-4.29 -0.425,-1.273 -0.269,-2.688 -0.269,-4.021 0,-1.714 0.789,-3.276 2.279,-4.021 0.179,-0.09 0.357,-0.179 0.536,-0.269 1.752,-0.876 2.188,-2.857 3.485,-4.155 1.429,-1.429 3.281,-2.697 4.826,-4.021 0.981,-0.842 2.383,-1.594 3.484,-2.145 1.693,-0.847 3.308,-1.296 5.095,-1.743 1.341,-0.335 2.903,-0.793 4.021,-1.072 0.221,-0.055 0.446,-0.089 0.67,-0.134 0.224,-0.045 0.447,-0.09 0.67,-0.134 1.58,-0.316 3.572,0.473 4.424,1.608 1.167,1.556 2.628,3.057 3.754,4.558 0.588,0.785 0.553,2.714 1.072,3.753 0.741,1.484 1.622,2.588 2.145,4.156 0.535,1.605 -0.235,3.286 -0.938,4.691 -0.836,1.673 -1.967,2.638 -3.217,3.888 -1.023,1.023 -2.116,1.854 -3.218,2.681 -0.581,0.436 -1.365,0.685 -2.011,1.072 z"
+              fill="#232323" stroke="rgba(212,34,34,0.3)" stroke-width="1" stroke-linejoin="round"
+            />
+
+            <!-- ── Zimbabwe pin ── -->
+            <circle cx="778" cy="958" r="13" fill="rgba(212,34,34,0.15)" class="map-pulse map-pulse--1"/>
+            <circle cx="778" cy="958" r="5" fill="var(--accent)"/>
+
+            <!-- ── Mozambique pin ── -->
+            <circle cx="868" cy="970" r="13" fill="rgba(212,34,34,0.15)" class="map-pulse map-pulse--2"/>
+            <circle cx="868" cy="970" r="5" fill="var(--accent)"/>
+
+            <!-- ── South Africa pin ── -->
+            <circle cx="700" cy="1145" r="13" fill="rgba(212,34,34,0.15)" class="map-pulse map-pulse--3"/>
+            <circle cx="700" cy="1145" r="5" fill="var(--accent)"/>
+
+            <!-- Zimbabwe label -->
+            <line x1="773" y1="953" x2="618" y2="880" stroke="rgba(212,34,34,0.45)" stroke-width="0.75"/>
+            <text x="616" y="876" fill="#F2EDE6" font-family="'Bebas Neue', sans-serif" font-size="13" letter-spacing="0.08em">ZIMBABWE</text>
+            <text x="616" y="891" fill="#6B6B6B" font-family="'Barlow Condensed', sans-serif" font-size="9" letter-spacing="0.22em">HARARE</text>
+
+            <!-- Mozambique label (right-aligned to stay within viewBox) -->
+            <line x1="873" y1="966" x2="958" y2="908" stroke="rgba(212,34,34,0.45)" stroke-width="0.75"/>
+            <text x="960" y="904" fill="#F2EDE6" font-family="'Bebas Neue', sans-serif" font-size="13" letter-spacing="0.08em" text-anchor="end">MOZAMBIQUE</text>
+            <text x="960" y="919" fill="#6B6B6B" font-family="'Barlow Condensed', sans-serif" font-size="9" letter-spacing="0.22em" text-anchor="end">MAPUTO</text>
+
+            <!-- South Africa label -->
+            <line x1="695" y1="1149" x2="600" y2="1192" stroke="rgba(212,34,34,0.45)" stroke-width="0.75"/>
+            <text x="598" y="1188" fill="#F2EDE6" font-family="'Bebas Neue', sans-serif" font-size="13" letter-spacing="0.08em">SOUTH AFRICA</text>
+            <text x="598" y="1203" fill="#6B6B6B" font-family="'Barlow Condensed', sans-serif" font-size="9" letter-spacing="0.22em">JOHANNESBURG</text>
+
+          </svg>
         </div>
 
-        <!-- Founded -->
-        <div class="accred-card">
-          <div class="accred-badge accred-badge--orange">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12 6 12 12 16 14"/>
-            </svg>
-          </div>
-          <div class="accred-body">
-            <div class="accred-label-text">Established</div>
-            <div class="accred-value">Since 2018</div>
-            <div class="accred-desc">Over six years of operations in Southern Africa, continuously expanding our service offerings and regional footprint to serve more clients.</div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="accred-note">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8" x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
-        <span>We respond to all enquiries within 24 hours. For urgent requirements, call us directly on +263 780 000 000 — Mon to Sat, 8:00 AM to 6:00 PM.</span>
       </div>
     </div>
   </section>
@@ -171,7 +243,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: 11px;
     letter-spacing: 0.35em;
     text-transform: uppercase;
-    color: var(--orange);
+    color: var(--accent);
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -183,7 +255,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: block;
     width: 40px;
     height: 1px;
-    background: var(--orange);
+    background: var(--accent);
     flex-shrink: 0;
   }
 
@@ -194,7 +266,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 24px;
   }
 
-  .about-hero-title span { color: var(--orange); }
+  .about-hero-title span { color: var(--accent); }
 
   .about-hero-sub {
     font-size: 15px;
@@ -220,7 +292,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin: 16px 0 32px;
   }
 
-  .story-heading span { color: var(--orange); }
+  .story-heading span { color: var(--accent); }
 
   .story-text p {
     font-size: 15px;
@@ -247,7 +319,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding: 100px 48px;
   }
 
-  .accred-inner { max-width: 1200px; }
+  .accred-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 
   .accred-title {
     font-family: 'Bebas Neue', sans-serif;
@@ -256,7 +331,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin: 16px 0 24px;
   }
 
-  .accred-title span { color: var(--orange); }
+  .accred-title span { color: var(--accent); }
 
   .accred-intro {
     font-size: 15px;
@@ -264,6 +339,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     max-width: 560px;
     line-height: 1.7;
     margin-bottom: 60px;
+  }
+
+  /* Two-column: cards on left, map on right */
+  .accred-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 72px;
+    align-items: start;
   }
 
   .accred-grid {
@@ -274,9 +357,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .accred-card {
     background: var(--dark);
-    padding: 40px 36px;
+    padding: 32px 28px;
     display: flex;
-    gap: 28px;
+    gap: 22px;
     align-items: flex-start;
     border-left: 3px solid transparent;
     transition: border-color 0.3s, background 0.3s;
@@ -284,15 +367,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .accred-card:hover {
     background: #1a1919;
-    border-left-color: var(--orange);
+    border-left-color: var(--accent);
   }
 
+  /* Unified icon style — all use accent */
   .accred-badge {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(212,34,34,0.1);
+    border: 1px solid rgba(212,34,34,0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -300,19 +384,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .accred-badge svg {
-    width: 24px;
-    height: 24px;
-    color: var(--ash);
+    width: 22px;
+    height: 22px;
+    color: var(--accent);
   }
-
-  .accred-badge--gold { background: rgba(218,165,32,0.1); border-color: rgba(218,165,32,0.3); }
-  .accred-badge--gold svg { color: #daa520; }
-
-  .accred-badge--blue { background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.3); }
-  .accred-badge--blue svg { color: #60a5fa; }
-
-  .accred-badge--orange { background: rgba(232,119,34,0.12); border-color: rgba(232,119,34,0.35); }
-  .accred-badge--orange svg { color: var(--orange); }
 
   .accred-body { flex: 1; }
 
@@ -340,19 +415,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .accred-note {
-    margin-top: 40px;
+    margin-top: 4px;
     display: flex;
     align-items: flex-start;
     gap: 14px;
     padding: 24px 28px;
-    background: rgba(232,119,34,0.06);
-    border: 1px solid rgba(232,119,34,0.15);
+    background: rgba(212,34,34,0.06);
+    border: 1px solid rgba(212,34,34,0.15);
   }
 
   .accred-note svg {
     width: 18px;
     height: 18px;
-    color: var(--orange);
+    color: var(--accent);
     flex-shrink: 0;
     margin-top: 2px;
   }
@@ -363,9 +438,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--ash);
   }
 
+  /* Africa map */
+  .accred-map-col {
+    position: sticky;
+    top: 120px;
+  }
+
+  .africa-map {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @keyframes mapPulse {
+    0%   { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(2.8); opacity: 0; }
+  }
+
+  .map-pulse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: mapPulse 2.4s ease-out infinite;
+  }
+  .map-pulse--2 { animation-delay: 0.8s; }
+  .map-pulse--3 { animation-delay: 1.6s; }
+
   /* ── CTA ─────────────────────────────────────────── */
   .about-cta {
-    background: var(--orange);
+    background: var(--accent);
     padding: 80px 48px;
     text-align: center;
   }
@@ -399,6 +499,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .btn-call-about:hover { background: #1a1a1a; transform: translateY(-3px); }
 
   /* ── Responsive ──────────────────────────────────── */
+  @media (max-width: 1100px) {
+    .accred-layout { grid-template-columns: 1fr; gap: 48px; }
+    .accred-map-col { position: static; max-width: 360px; }
+  }
+
   @media (max-width: 900px) {
     .about-hero { padding: 0 24px 60px; min-height: 55vh; }
     .story-inner { grid-template-columns: 1fr; gap: 40px; }

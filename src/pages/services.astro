@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CTASection from '../components/CTASection.astro';
 import Ticker from '../components/Ticker.astro';
 
 const services = [
@@ -18,7 +17,7 @@ const services = [
       'Alarm systems &amp; perimeter protection',
       '24/7 technical support',
     ],
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=900&q=80',
+    image: '/images/solar-panels.jpg',
   },
   {
     num: '02',
@@ -34,7 +33,7 @@ const services = [
       'VoIP telephony systems',
       'Network security &amp; firewall configuration',
     ],
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80',
+    image: '/images/server-rack-hero.jpg',
   },
   {
     num: '03',
@@ -50,7 +49,7 @@ const services = [
       'Cloud infrastructure (Azure / AWS / hybrid)',
       'IT helpdesk &amp; managed support',
     ],
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=900&q=80',
+    image: '/images/it-setup.jpg',
   },
   {
     num: '04',
@@ -66,7 +65,7 @@ const services = [
       'Load-shedding protection solutions',
       'System monitoring &amp; performance reporting',
     ],
-    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80',
+    image: '/images/solar-installation.jpg',
   },
 ];
 ---
@@ -127,7 +126,6 @@ const services = [
     </section>
   ))}
 
-  <CTASection title={"LET'S CONNECT\nYOUR WORLD"} />
 
 </BaseLayout>
 
@@ -145,15 +143,15 @@ const services = [
   .page-hero-bg {
     position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse at 30% 50%, rgba(232,119,34,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse at 30% 50%, rgba(212,34,34,0.07) 0%, transparent 60%),
       linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
   }
 
   .page-hero-grid {
     position: absolute; inset: 0;
     background-image:
-      linear-gradient(rgba(232,119,34,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(232,119,34,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(212,34,34,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,34,34,0.04) 1px, transparent 1px);
     background-size: 80px 80px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
   }
@@ -170,7 +168,7 @@ const services = [
     margin-bottom: 20px;
   }
 
-  .page-hero-title span { color: var(--orange); }
+  .page-hero-title span { color: var(--accent); }
 
   .page-hero-sub {
     font-size: 15px;
@@ -205,12 +203,12 @@ const services = [
 
   .services-nav-link:hover {
     color: var(--dark);
-    background: var(--orange);
-    border-color: var(--orange);
+    background: var(--accent);
+    border-color: var(--accent);
   }
 
   .services-nav-num {
-    color: var(--orange);
+    color: var(--accent);
     font-size: 9px;
     letter-spacing: 0.1em;
   }
@@ -261,7 +259,7 @@ const services = [
     font-family: 'Bebas Neue', sans-serif;
     font-size: 80px;
     line-height: 1;
-    color: rgba(232,119,34,0.18);
+    color: rgba(212,34,34,0.18);
     pointer-events: none;
     user-select: none;
   }
@@ -286,7 +284,7 @@ const services = [
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 16px;
     letter-spacing: 0.08em;
-    color: var(--orange);
+    color: var(--accent);
     font-weight: 600;
   }
 
@@ -320,7 +318,7 @@ const services = [
     display: block;
     width: 16px;
     height: 1px;
-    background: var(--orange);
+    background: var(--accent);
     flex-shrink: 0;
   }
 

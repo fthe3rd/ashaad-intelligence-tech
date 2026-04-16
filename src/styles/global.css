@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400&display=swap');
-
 /* CSS CUSTOM PROPERTIES */
 :root {
-  --orange: #E87722;
+  --accent: #D42222;
   --dark: #111010;
   --charcoal: #1D1C1C;
   --steel: #2A2A2A;
@@ -10,6 +8,13 @@
   --bone: #F2EDE6;
   --white: #FFFFFF;
 }
+
+/* When a modal dialog is open the browser renders it in the top layer,
+   above z-index: 9999. Hide the custom cursor and restore the native one
+   so the pointer is always visible inside the dialog. */
+body.modal-open { cursor: auto; }
+body.modal-open .cursor,
+body.modal-open .cursor-ring { opacity: 0; pointer-events: none; }
 
 /* GLOBAL RESET */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -29,18 +34,18 @@ body {
 .cursor {
   position: fixed;
   width: 12px; height: 12px;
-  background: var(--orange);
+  background: var(--white);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
   transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
-  mix-blend-mode: normal;
+  mix-blend-mode: difference;
 }
 .cursor-ring {
   position: fixed;
   width: 36px; height: 36px;
-  border: 1px solid rgba(232,119,34,0.5);
+  border: 1px solid rgba(255,255,255,0.5);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
@@ -70,7 +75,7 @@ body {
   font-size: 10px;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--accent);
   margin-bottom: 20px;
   display: flex; align-items: center; gap: 12px;
 }
@@ -79,7 +84,7 @@ body {
   display: block;
   flex: 1;
   height: 1px;
-  background: linear-gradient(to right, rgba(232,119,34,0.4), transparent);
+  background: linear-gradient(to right, rgba(212,34,34,0.4), transparent);
   max-width: 80px;
 }
 
@@ -88,8 +93,8 @@ body {
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--dark);
-  background: var(--orange);
+  color: var(--white);
+  background: var(--accent);
   padding: 16px 36px;
   text-decoration: none;
   transition: all 0.2s;
@@ -97,7 +102,7 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75%, 94% 100%, 0 100%);
   border: none;
 }
-.btn-primary:hover { background: var(--bone); transform: translateY(-2px); }
+.btn-primary:hover { background: var(--bone); color: var(--dark); transform: translateY(-2px); }
 
 .btn-ghost {
   font-family: 'Barlow Condensed', sans-serif;
@@ -111,7 +116,7 @@ body {
   padding-bottom: 4px;
   transition: all 0.2s;
 }
-.btn-ghost:hover { color: var(--orange); border-color: var(--orange); }
+.btn-ghost:hover { color: var(--accent); border-color: var(--accent); }
 
 .btn-dark {
   font-family: 'Barlow Condensed', sans-serif;

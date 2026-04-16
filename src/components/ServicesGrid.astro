@@ -4,28 +4,28 @@ const services = [
     id: 'digital-security',
     name: 'Digital Security',
     icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=70',
+    image: '/images/solar-panels.jpg',
     href: '/services#digital-security',
   },
   {
     id: 'networking',
     name: 'Networking Solutions',
     icon: `<rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>`,
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=70',
+    image: '/images/server-rack-hero.jpg',
     href: '/services#networking',
   },
   {
     id: 'it-protocols',
     name: 'IT Protocols',
     icon: `<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>`,
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=70',
+    image: '/images/it-setup.jpg',
     href: '/services#it-protocols',
   },
   {
     id: 'solar',
     name: 'Solar Systems',
     icon: `<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>`,
-    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=70',
+    image: '/images/solar-installation.jpg',
     href: '/services#solar',
   },
 ];
@@ -86,7 +86,7 @@ const services = [
     margin-top: 16px;
   }
 
-  .services-title span { color: var(--orange); }
+  .services-title span { color: var(--accent); }
 
   .services-grid {
     display: grid;
@@ -112,7 +112,7 @@ const services = [
   }
 
   .svc-card:hover .svc-overlay {
-    background: rgba(232,119,34,0.85);
+    background: rgba(212,34,34,0.85);
   }
 
   .svc-content {

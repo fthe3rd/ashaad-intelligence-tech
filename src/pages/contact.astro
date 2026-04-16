@@ -142,14 +142,14 @@ import ContactForm from '../components/ContactForm.astro';
   .page-bg {
     position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse at 80% 20%, rgba(232,119,34,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(212,34,34,0.06) 0%, transparent 60%),
       linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
   }
   .page-grid {
     position: absolute; inset: 0;
     background-image:
-      linear-gradient(rgba(232,119,34,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(232,119,34,0.03) 1px, transparent 1px);
+      linear-gradient(rgba(212,34,34,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,34,34,0.03) 1px, transparent 1px);
     background-size: 80px 80px;
     mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
   }
@@ -167,7 +167,7 @@ import ContactForm from '../components/ContactForm.astro';
     line-height: 0.9;
     margin-bottom: 24px;
   }
-  .contact-title span { color: var(--orange); }
+  .contact-title span { color: var(--accent); }
   .contact-intro {
     font-size: 15px;
     color: var(--ash);
@@ -190,7 +190,7 @@ import ContactForm from '../components/ContactForm.astro';
     font-size: 10px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--orange);
+    color: var(--accent);
   }
   .detail-value {
     font-size: 15px;
@@ -199,7 +199,7 @@ import ContactForm from '../components/ContactForm.astro';
     text-decoration: none;
     transition: color 0.2s;
   }
-  a.detail-value:hover { color: var(--orange); }
+  a.detail-value:hover { color: var(--accent); }
   .form-panel-header { margin-bottom: 32px; }
 
   /* ── FAQ Section ──────────────────────────────── */
@@ -221,7 +221,7 @@ import ContactForm from '../components/ContactForm.astro';
     margin-top: 16px;
     margin-bottom: 16px;
   }
-  .faq-title span { color: var(--orange); }
+  .faq-title span { color: var(--accent); }
   .faq-subtitle {
     font-size: 14px;
     color: var(--ash);
@@ -260,14 +260,14 @@ import ContactForm from '../components/ContactForm.astro';
   .faq-summary::after {
     content: '▼';
     font-size: 11px;
-    color: var(--orange);
+    color: var(--accent);
     flex-shrink: 0;
     transition: transform 0.3s ease;
     display: inline-block;
   }
 
-  .faq-summary:hover { color: var(--orange); }
-  .faq-item[open] > .faq-summary { color: var(--orange); }
+  .faq-summary:hover { color: var(--accent); }
+  .faq-item[open] > .faq-summary { color: var(--accent); }
   .faq-item[open] > .faq-summary::after { transform: rotate(180deg); }
 
   .faq-answer {
@@ -301,15 +301,15 @@ import ContactForm from '../components/ContactForm.astro';
     content: '—';
     position: absolute;
     left: 0;
-    color: var(--orange);
+    color: var(--accent);
   }
   .faq-answer a {
-    color: var(--orange);
+    color: var(--accent);
     text-decoration: none;
-    border-bottom: 1px solid rgba(232,119,34,0.3);
+    border-bottom: 1px solid rgba(212,34,34,0.3);
     transition: border-color 0.2s;
   }
-  .faq-answer a:hover { border-color: var(--orange); }
+  .faq-answer a:hover { border-color: var(--accent); }
 
   /* ── Responsive ───────────────────────────────── */
   @media (max-width: 900px) {

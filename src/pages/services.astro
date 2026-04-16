@@ -65,7 +65,12 @@ const services = [
       'Load-shedding protection solutions',
       'System monitoring &amp; performance reporting',
     ],
-    image: '/images/solar-installation.jpg',
+    images: [
+      '/images/solar-panel-in-farm.jpeg',
+      '/images/solar-pump.jpeg',
+      '/images/irigation-plants.jpeg',
+      '/images/borehole-drilling.jpeg',
+    ],
   },
 ];
 ---
@@ -103,12 +108,33 @@ const services = [
   {services.map((s, i) => (
     <section class={`service-detail ${i % 2 === 1 ? 'service-detail--reverse' : ''}`} id={s.id}>
       <div class="service-image-wrap">
-        <img
-          src={s.image}
-          alt={s.name}
-          loading="lazy"
-          decoding="async"
-        />
+        {'images' in s && s.images ? (
+          <div class="carousel" data-carousel>
+            {s.images.map((src, idx) => (
+              <img
+                src={src}
+                alt={`${s.name} ${idx + 1}`}
+                loading="lazy"
+                decoding="async"
+                class={`carousel-slide${idx === 0 ? ' is-active' : ''}`}
+              />
+            ))}
+            <button class="carousel-btn carousel-prev" aria-label="Previous image">&#8249;</button>
+            <button class="carousel-btn carousel-next" aria-label="Next image">&#8250;</button>
+            <div class="carousel-dots">
+              {s.images.map((_, idx) => (
+                <button class={`carousel-dot${idx === 0 ? ' is-active' : ''}`} aria-label={`Go to slide ${idx + 1}`}></button>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <img
+            src={(s as any).image}
+            alt={s.name}
+            loading="lazy"
+            decoding="async"
+          />
+        )}
         <div class="service-num-overlay">{s.num}</div>
       </div>
       <div class="service-info">
@@ -238,17 +264,22 @@ const services = [
   .service-image-wrap {
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
   }
 
-  .service-image-wrap img {
+  /* Single-image services only — not carousel slides */
+  .service-image-wrap > img {
+    flex: 1;
+    min-height: 0;
     width: 100%;
-    height: 100%;
     object-fit: cover;
     display: block;
     transition: transform 0.7s ease;
   }
 
-  .service-detail:hover .service-image-wrap img {
+  .service-detail:hover .service-image-wrap > img {
     transform: scale(1.04);
   }
 
@@ -322,13 +353,130 @@ const services = [
     flex-shrink: 0;
   }
 
+  /* ── Carousel ────────────────────────────────────── */
+  .carousel {
+    flex: 1;           /* fills the flex service-image-wrap */
+    min-height: 0;     /* required for flex children to shrink correctly */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  .carousel-slide.is-active {
+    opacity: 1;
+  }
+
+  .service-detail:hover .carousel-slide.is-active {
+    transform: scale(1.04);
+    transition: opacity 0.6s ease, transform 0.7s ease;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(17,16,16,0.65);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--bone);
+    font-size: 28px;
+    line-height: 1;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    padding: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 88% 100%, 0 100%);
+  }
+
+  .carousel-prev { left: 16px; }
+  .carousel-next { right: 16px; }
+
+  .carousel-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--dark);
+  }
+
+  .carousel-dots {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+
+  .carousel-dot {
+    width: 20px;
+    height: 3px;
+    background: rgba(255,255,255,0.3);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, width 0.2s;
+  }
+
+  .carousel-dot.is-active {
+    background: var(--accent);
+    width: 32px;
+  }
+
   /* ── Responsive ──────────────────────────────────── */
   @media (max-width: 900px) {
     .page-hero { padding: 120px 24px 60px; }
     .service-detail { grid-template-columns: 1fr; min-height: auto; direction: ltr; }
     .service-detail--reverse { direction: ltr; }
-    .service-image-wrap { height: 320px; }
+    .service-image-wrap { min-height: 320px; max-height: 320px; }
     .service-info { padding: 40px 24px; }
     .service-features { grid-template-columns: 1fr; }
   }
 </style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach(carousel => {
+    const slides = carousel.querySelectorAll<HTMLElement>('.carousel-slide');
+    const dots = carousel.querySelectorAll<HTMLElement>('.carousel-dot');
+    const prev = carousel.querySelector<HTMLButtonElement>('.carousel-prev');
+    const next = carousel.querySelector<HTMLButtonElement>('.carousel-next');
+    let current = 0;
+    let timer: ReturnType<typeof setInterval>;
+
+    function goTo(idx: number) {
+      slides[current].classList.remove('is-active');
+      dots[current].classList.remove('is-active');
+      current = (idx + slides.length) % slides.length;
+      slides[current].classList.add('is-active');
+      dots[current].classList.add('is-active');
+    }
+
+    function startAuto() {
+      timer = setInterval(() => goTo(current + 1), 4000);
+    }
+
+    function resetAuto() {
+      clearInterval(timer);
+      startAuto();
+    }
+
+    prev?.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+    next?.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+    dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetAuto(); }));
+
+    startAuto();
+  });
+</script>

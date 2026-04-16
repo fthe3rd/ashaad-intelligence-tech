@@ -28,7 +28,7 @@ export interface Product {
 }
 
 /** Phone/WhatsApp number shown in the hero of the /products page. */
-export const CONTACT_NUMBER = '+263 780 000 000';
+export const CONTACT_NUMBER = '+263 77 743 2652';
 
 export const cameraProducts: Product[] = [
   {

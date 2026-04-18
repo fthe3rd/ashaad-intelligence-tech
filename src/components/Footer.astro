@@ -5,7 +5,9 @@ import Ticker from './Ticker.astro';
 <footer>
   <div class="footer-top">
     <div class="footer-brand-col">
-      <div class="footer-brand-name">ASHAAD <span class="orange">INTELLIGENT TECHNOLOGIES</span></div>
+      <a href="/" class="footer-logo-link">
+        <img src="/logo.png" alt="Ashaad Intelligent Technologies" class="footer-logo" />
+      </a>
       <div class="footer-tagline">"Serving Mankind Through Technology"</div>
       <p class="footer-about">
         Full-spectrum technology services across Zimbabwe, Mozambique and South Africa. Digital security, networking, IT protocols and solar energy solutions since 2018.
@@ -67,15 +69,16 @@ import Ticker from './Ticker.astro';
     margin-bottom: 48px;
   }
 
-  .footer-brand-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 0.05em;
-    margin-bottom: 6px;
-    line-height: 1.1;
+  .footer-logo-link {
+    display: inline-block;
+    margin-bottom: 12px;
   }
 
-  .footer-brand-name .orange { color: var(--accent); }
+  .footer-logo {
+    height: 56px;
+    width: auto;
+    display: block;
+  }
 
   .footer-tagline {
     font-family: 'Barlow Condensed', sans-serif;

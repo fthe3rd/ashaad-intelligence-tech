@@ -2,7 +2,11 @@
 import { cameraProducts } from '../data/products.ts';
 const products = cameraProducts.map(p => ({
   ...p,
-  image: p.image ? `/images/cameras/${p.image}` : '',
+  image: p.image
+    ? p.image.startsWith('/')
+      ? p.image
+      : `/images/cameras/${p.image}`
+    : '',
 }));
 ---
 
@@ -10,11 +14,12 @@ const products = cameraProducts.map(p => ({
   <!-- Filter buttons -->
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="hikvision">Hikvision</button>
-    <button class="filter-btn" data-filter="dahua">Dahua</button>
     <button class="filter-btn" data-filter="bullet">Bullet</button>
     <button class="filter-btn" data-filter="turret">Turret</button>
     <button class="filter-btn" data-filter="dome">Dome</button>
+    <button class="filter-btn" data-filter="alarm">Alarm</button>
+    <button class="filter-btn" data-filter="recorder">Recorder</button>
+    <button class="filter-btn" data-filter="storage">Storage</button>
   </div>
 
   <!-- Products grid -->
@@ -22,7 +27,6 @@ const products = cameraProducts.map(p => ({
     {products.map(p => (
       <button
         class="product-card"
-        data-brand={p.brand.toLowerCase()}
         data-category={p.category.toLowerCase()}
         data-id={p.id}
         aria-label={`View ${p.name} details`}
@@ -36,12 +40,10 @@ const products = cameraProducts.map(p => ({
           />
         </div>
         <div class="product-info-overlay">
-          <div class="product-overlay-brand">{p.brand}</div>
           <div class="product-overlay-name">{p.name}</div>
           <span class="product-overlay-cta">View Details →</span>
         </div>
         <div class="product-footer">
-          <span class="product-brand-tag">{p.brand}</span>
           <span class="product-category-tag">{p.badge}</span>
         </div>
       </button>
@@ -90,9 +92,8 @@ const products = cameraProducts.map(p => ({
       const filter = (btn as HTMLElement).dataset.filter!;
       cards.forEach(card => {
         const el = card as HTMLElement;
-        const brand = el.dataset.brand!;
         const cat = el.dataset.category!;
-        if (filter === 'all' || brand === filter || cat === filter) {
+        if (filter === 'all' || cat === filter) {
           el.style.display = '';
         } else {
           el.style.display = 'none';
@@ -220,14 +221,6 @@ const products = cameraProducts.map(p => ({
 
   .product-card:hover .product-info-overlay { opacity: 1; }
 
-  .product-overlay-brand {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(17,16,16,0.7);
-  }
-
   .product-overlay-name {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 22px;
@@ -250,19 +243,11 @@ const products = cameraProducts.map(p => ({
 
   .product-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 12px 16px;
     background: var(--charcoal);
     border-top: 1px solid rgba(255,255,255,0.05);
-  }
-
-  .product-brand-tag {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ash);
   }
 
   .product-category-tag {

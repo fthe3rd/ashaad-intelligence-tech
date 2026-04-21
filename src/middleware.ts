@@ -1,31 +1,24 @@
 import { defineMiddleware } from 'astro:middleware';
 
-const AUTH_TOKEN = 'ait-auth-v1';
-const AUTH_COOKIE = 'site-auth';
+const AUTH_TOKEN = 'peanuts';
 
-const BYPASS_PREFIXES = ['/_astro/', '/favicon', '/robots'];
-
-export const onRequest = defineMiddleware(({ request }, next) => {
+export const onRequest = defineMiddleware(({ request, redirect }, next) => {
   const { pathname } = new URL(request.url);
 
-  if (
-    pathname === '/login' ||
-    BYPASS_PREFIXES.some((prefix) => pathname.startsWith(prefix))
-  ) {
-    return next();
-  }
+  const bypass =
+    pathname.startsWith('/_astro/') ||
+    pathname.startsWith('/favicon') ||
+    pathname.startsWith('/robots') ||
+    pathname === '/login';
+
+  if (bypass) return next();
 
   const cookies = request.headers.get('cookie') ?? '';
-  const authCookie = cookies
+  const authenticated = cookies
     .split(';')
-    .map((c) => c.trim())
-    .find((c) => c.startsWith(`${AUTH_COOKIE}=`));
+    .some((c) => c.trim() === `site-auth=${AUTH_TOKEN}`);
 
-  const token = authCookie?.split('=')[1];
-
-  if (token !== AUTH_TOKEN) {
-    return Response.redirect(new URL('/login', request.url), 302);
-  }
+  if (!authenticated) return redirect('/login');
 
   return next();
 });

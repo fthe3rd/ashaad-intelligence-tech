@@ -1,0 +1,163 @@
+---
+export const prerender = false;
+
+const AUTH_TOKEN = 'ait-auth-v1';
+
+if (Astro.request.method === 'POST') {
+  const data = await Astro.request.formData();
+  const password = data.get('password');
+
+  if (password === import.meta.env.SITE_PASSWORD) {
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: '/',
+        'Set-Cookie': `site-auth=${AUTH_TOKEN}; Path=/; HttpOnly; SameSite=Lax; Max-Age=86400`,
+      },
+    });
+  }
+
+  return Response.redirect(new URL('/login?error=1', Astro.request.url), 302);
+}
+
+const hasError = Astro.url.searchParams.get('error') === '1';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashaad Intelligence Technologies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --dark: #111010;
+        --charcoal: #1D1C1C;
+        --steel: #2A2A2A;
+        --accent: #D42222;
+        --bone: #F2EDE6;
+        --ash: #6B6B6B;
+      }
+
+      body {
+        background: var(--dark);
+        color: var(--bone);
+        font-family: 'Barlow', sans-serif;
+        font-weight: 300;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+
+      .card {
+        background: var(--charcoal);
+        border: 1px solid var(--steel);
+        width: 100%;
+        max-width: 400px;
+        padding: 48px 40px;
+      }
+
+      .logo {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.2em;
+        color: var(--ash);
+        text-transform: uppercase;
+        margin-bottom: 40px;
+      }
+
+      h1 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 36px;
+        letter-spacing: 0.04em;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        font-size: 13px;
+        color: var(--ash);
+        margin-bottom: 36px;
+      }
+
+      label {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--ash);
+        margin-bottom: 10px;
+      }
+
+      input[type="password"] {
+        width: 100%;
+        background: var(--dark);
+        border: 1px solid var(--steel);
+        color: var(--bone);
+        font-family: 'Barlow', sans-serif;
+        font-size: 15px;
+        padding: 14px 16px;
+        outline: none;
+        transition: border-color 0.2s;
+        margin-bottom: 24px;
+      }
+
+      input[type="password"]:focus {
+        border-color: var(--accent);
+      }
+
+      .error {
+        font-size: 12px;
+        color: var(--accent);
+        margin-bottom: 16px;
+        margin-top: -16px;
+      }
+
+      button {
+        width: 100%;
+        background: var(--accent);
+        color: var(--bone);
+        border: none;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 16px;
+        letter-spacing: 0.12em;
+        padding: 16px;
+        cursor: pointer;
+        clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+        transition: opacity 0.2s;
+      }
+
+      button:hover { opacity: 0.85; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <p class="logo">Ashaad Intelligence Technologies</p>
+      <h1>Site Access</h1>
+      <p class="subtitle">Enter the password to continue.</p>
+      <form method="POST">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          autocomplete="current-password"
+          autofocus
+          required
+        />
+        {hasError && <p class="error">Incorrect password. Try again.</p>}
+        <button type="submit">Enter</button>
+      </form>
+    </div>
+  </body>
+</html>
